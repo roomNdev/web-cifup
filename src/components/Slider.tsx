@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function SimpleSlider({children}) {
   return (
-  <Carousel autoplay showDots showArrows scrollDistance={'slide'} swiping autoplayInterval={10000} wrapMode='wrap'>
+  <Carousel className='carousel' autoplay showArrows scrollDistance={'slide'} swiping autoplayInterval={10000} wrapMode='wrap'>
     {children}
   </Carousel>)
 }

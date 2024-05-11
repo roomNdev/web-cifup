@@ -42,7 +42,7 @@ function MembersItem({members}) {
                                 .filter((member) => member.area.slug.current === item.slug.current)
                                 .map(member => {
                                     return  <AuthorItemStyles className="author-item" >
-                                    <Link to={`/miembros/${member.slug.current}`}>
+                                    {/* <Link to={`/miembros/${member.slug.current}`}> */}
                                     <section className='image__wrapper'>
                                         <GatsbyImage
                                         image={member.profileImage.asset.gatsbyImageData}
@@ -51,19 +51,18 @@ function MembersItem({members}) {
                                         />
                                     </section>
                                     <section className='data'>
-                                        <Title 
-                                        tag={'h2'}
+                                    <Link to={`/miembros/${member.slug.current}`} 
                                         className="title">
                                         {member.name}
-                                        </Title>
-                                        <ParagraphText className="role">
+                                        </Link>
+                                        {/* <ParagraphText className="role">
+                                        
                                         {member.role}
-                                        </ParagraphText>
+                                        </ParagraphText> */}
                                         <div className='author_socialList'>
-                                        { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={16}></FaLinkedin></a> : <></>}
-                                        </div>
+                                        { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={20}></FaLinkedin></a> : <></>}                                        </div>
                                     </section>
-                                    </Link>
+                                    {/* </Link> */}
                         
                                 </AuthorItemStyles>
                                 })
@@ -72,7 +71,7 @@ function MembersItem({members}) {
                                 .filter((member) => member.area.slug.current === item.slug.current)
                                 .map(member => {
                                     return  <AuthorItemStyles className="author-item" >
-                                    <Link to={`/miembros/${member.slug.current}`}>
+                                    {/* <Link to={`/miembros/${member.slug.current}`}> */}
                                     <section className='image__wrapper'>
                                         <GatsbyImage
                                         image={member.profileImage.asset.gatsbyImageData}
@@ -81,19 +80,18 @@ function MembersItem({members}) {
                                         />
                                     </section>
                                     <section className='data'>
-                                        <Title 
-                                        tag={'h2'}
+                                    <Link to={`/miembros/${member.slug.current}`} 
                                         className="title">
                                         {member.name}
-                                        </Title>
-                                        <ParagraphText className="role">
+                                        </Link>
+                                        {/* <ParagraphText className="role">
+                                        
                                         {member.role}
-                                        </ParagraphText>
+                                        </ParagraphText> */}
                                         <div className='author_socialList'>
-                                        { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={16}></FaLinkedin></a> : <></>}
-                                        </div>
+                                        { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={20}></FaLinkedin></a> : <></>}                                        </div>
                                     </section>
-                                    </Link>
+                                    {/* </Link> */}
                         
                                 </AuthorItemStyles>
                                 })
@@ -102,7 +100,7 @@ function MembersItem({members}) {
                                 .filter((member) => member.area.slug.current === item.slug.current)
                                 .map(member => {
                                     return  <AuthorItemStyles className="author-item" >
-                                    <Link to={`/miembros/${member.slug.current}`}>
+                                    {/* <Link to={`/miembros/${member.slug.current}`}> */}
                                     <section className='image__wrapper'>
                                         <GatsbyImage
                                         image={member.profileImage.asset.gatsbyImageData}
@@ -111,19 +109,18 @@ function MembersItem({members}) {
                                         />
                                     </section>
                                     <section className='data'>
-                                        <Title 
-                                        tag={'h2'}
+                                    <Link to={`/miembros/${member.slug.current}`} 
                                         className="title">
                                         {member.name}
-                                        </Title>
-                                        <ParagraphText className="role">
+                                        </Link>
+                                        {/* <ParagraphText className="role">
+                                        
                                         {member.role}
-                                        </ParagraphText>
+                                        </ParagraphText> */}
                                         <div className='author_socialList'>
-                                        { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={16}></FaLinkedin></a> : <></>}
-                                        </div>
+                                        { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={20}></FaLinkedin></a> : <></>}                                        </div>
                                     </section>
-                                    </Link>
+                                    {/* </Link> */}
                         
                                 </AuthorItemStyles>
                                 })

@@ -15,15 +15,7 @@ const query = graphql`
       publicStoreURL
       publicIndexURL
     }
-    localSearchCategories {
-      publicStoreURL
-      publicIndexURL
-    }
     localSearchAuthors {
-      publicStoreURL
-      publicIndexURL
-    }
-    localSearchPoems {
       publicStoreURL
       publicIndexURL
     }
@@ -54,17 +46,9 @@ function Search() {
     publicIndexURL: blogsPublicIndexURL,
   } = data.localSearchBlogs;
   const {
-    publicStoreURL: categoriesPublicStoreURL,
-    publicIndexURL: categoriesPublicIndexURL,
-  } = data.localSearchCategories;
-  const {
     publicStoreURL: authorsPublicStoreURL,
     publicIndexURL: authorsPublicIndexURL,
   } = data.localSearchAuthors;
-  const {
-    publicStoreURL: poemsPublicStoreURL,
-    publicIndexURL: poemsPublicIndexURL,
-  } = data.localSearchPoems;
 
 
   const handleOnFocus = async () => {
@@ -72,37 +56,21 @@ function Search() {
     const [
       { data: blogsIndex },
       { data: blogsStore },
-      { data: categoriesIndex },
-      { data: categoriesStore },
       { data: authorsIndex },
       { data: authorsStore },
-      { data: poemsIndex },
-      { data: poemsStore },
     ] = await Promise.all([
       axios.get(`${blogsPublicIndexURL}`),
       axios.get(`${blogsPublicStoreURL}`),
-      axios.get(`${categoriesPublicIndexURL}`),
-      axios.get(`${categoriesPublicStoreURL}`),
       axios.get(`${authorsPublicIndexURL}`),
       axios.get(`${authorsPublicStoreURL}`),
-      axios.get(`${poemsPublicIndexURL}`),
-      axios.get(`${poemsPublicStoreURL}`),
     ]);
     setBlogsIndexStore({
       index: blogsIndex,
       store: blogsStore,
     });
-    setCategoriesIndexStore({
-      index: categoriesIndex,
-      store: categoriesStore,
-    });
     setAuthorsIndexStore({
       index: authorsIndex,
       store: authorsStore,
-    });
-    setPoemsIndexStore({
-      index: poemsIndex,
-      store: poemsStore,
     });
   };
 
@@ -128,9 +96,7 @@ function Search() {
               <SearchResult
                 searchQuery={searchQuery}
                 blogsIndexStore={blogsIndexStore}
-                categoriesIndexStore={categoriesIndexStore}
                 authorsIndexStore={authorsIndexStore}
-                poemsIndexStore={poemsIndexStore}
               />
             </div>
           )}

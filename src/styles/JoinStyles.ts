@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export default styled.div`
 display: flex;
 flex-direction: column;
-width: 100%;
+width: 80%;
+margin-inline: auto;
 margin-block: 4rem;
   h1 {
     text-align: center;
@@ -12,12 +13,16 @@ margin-block: 4rem;
     color: var(--text-1);
     margin-top: 60px;
   }
-  h2  {
-    text-align: left;
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--text-1);
-    margin-top: 60px;
+  .unirme_como {
+    
+    margin-left: 15%;
+    h2  {
+      text-align: left;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-1);
+      margin-top: 60px;
+    }
   }
   .button-container {
     display: flex;
@@ -37,7 +42,7 @@ margin-block: 4rem;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 70%;
+    width: 100%;
     margin-inline: auto;
     gap: 4rem;
     div {
@@ -62,6 +67,20 @@ margin-block: 4rem;
       border: 1px solid #ccc;
       padding: 8px;
     }
+  }
+  @media (max-width: 700px) {
+    .unirme_como {
+    
+    margin-left: 0;
+    h2  {
+    }
+  }
+  form {
+    width: 100%;
+    input, select, textarea {
+      width: 250px;
+    }
+  }
   }
 
 `;

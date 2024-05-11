@@ -8,10 +8,14 @@ export const AuthorItemStyles = styled.div`
   gap: 1rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  max-width: 280px;
-  min-width: 280px;
+  /* align-items: ; */
+  max-width: 260px;
+  min-width: 260px;
+  /* .icon {
+
+  } */
   a {
+    
     display: flex;
     width: 100%;
   }
@@ -29,7 +33,7 @@ export const AuthorItemStyles = styled.div`
     padding-inline: 16px;
   }
   .title {
-    color: var(--text-white);
+    color: var(--white);
     font-size: 12px;
     width: 100%;
     text-align: left;
@@ -51,7 +55,7 @@ export const AuthorItemStyles = styled.div`
     align-items: center;
     width: 100%;
       a {
-        width: 16px;
+        width: 20px;
         color: var(--primary-light-blue);
         transition: color .3s;
       }
@@ -61,19 +65,29 @@ export const AuthorItemStyles = styled.div`
       }
       @media only screen and (max-width: 768px) {
     
-      max-width: 150px;
-      min-width: 150px;
+      /* max-width: 150px;
+      min-width: 150px; */
       
       .profileImage {
         width: 80px;
         aspect-ratio: 1;
         border-radius: 50%;
       }
-      .title {
+      /* .title {
         font-size: 18px;
       }
   .role {
     font-size: 12px;
+  } */
   }
-  }
+  @media (max-width: 450px) {
+        .profileImage {
+          width: 50px;
+        }
+    }
+    @media (max-width: 300px) {
+        max-width: 200px;
+        min-width: 200px;
+        gap: 0;
+    }
 `;

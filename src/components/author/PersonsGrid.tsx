@@ -32,7 +32,21 @@ function PersonsGrid({authors, type}) {
                   linkedIn={item.linkedin}
                   profileImage={item.profileImage}
                   />
-                ))}
+                ))}{authors.map((item) => (
+
+                  <AuthorItem
+                    type={type}
+                    key={item.id}
+                    name={item.name}
+                    slug={item.slug}
+                    role={item.role}
+                    date={item.date}
+                    email={item.email}
+                    dateEnd={item.dateEnd}
+                    linkedIn={item.linkedin}
+                    profileImage={item.profileImage}
+                    />
+                  ))}
               </div>
             }
         </AuthorGridStyles>

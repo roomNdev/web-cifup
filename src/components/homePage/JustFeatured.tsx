@@ -8,10 +8,10 @@ import { FeaturedBlogsStyles } from '../../styles/homePage/FeaturedBlogsStyles';
 import Button from '../buttons/Button';
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 
-function FeaturedPosts() {
+function JustFeatured() {
   const data = useStaticQuery(graphql`
   {
-    allSanityBlog(sort: {publishedAt:DESC}, limit: 3) {
+    allSanityBlog(sort: {publishedAt:DESC}, limit: 4) {
       nodes {
             title
             slug {
@@ -47,21 +47,6 @@ function FeaturedPosts() {
     <FeaturedBlogsStyles>
       <h1>Manténte al día con nuestro blog!</h1>
       <section className='post_container'>
-      <article className='post'>
-              {/* <GatsbyImage 
-                image=
-                className='post_image'
-              /> */}
-                    <StaticImage
-       alt=''
-       src='../../images/bg-image.jpg'
-       class='post_image'
-      ></StaticImage>
-        <div>
-          <h2 className='post_title'>Este item es editable!</h2>
-          <p className='post_abstract'>A customizable first item</p>
-        </div>
-            </article>
       {
         featuredPosts.map((item) => { 
           return (
@@ -70,10 +55,8 @@ function FeaturedPosts() {
                 image={item.coverImage.asset.gatsbyImageData}
                 className='post_image'
               />
-              <div>
-                <h2 className='post_title'>{item.title}</h2>
-                <p className='post_abstract'>{item.excerpt._rawChildren}</p>
-              </div>
+              <h2 className='post_title'>{item.title}</h2>
+              <p className='post_abstract'>{item.excerpt._rawChildren}</p>
             </article>
           )
         })
@@ -83,4 +66,4 @@ function FeaturedPosts() {
   );
 }
 
-export default FeaturedPosts;
+export default JustFeatured;

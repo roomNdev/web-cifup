@@ -65,14 +65,8 @@ function Blogs({ data, pageContext }) {
               some fun facts. Enjoy and do not hesitate to reach out in case you
               have a topic we need to write about.
             </p>
-            <BlogGrid blogs={blogs} />
-            {numberOfPages > 1 && (
-              <Pagination
-                currentPage={currentPage}
-                numberOfPages={numberOfPages}
-                baseURL="/blog"
-              />
-            )}
+            <BlogGrid blogs={blogs}currentPage={currentPage} numberOfPages={numberOfPages} />
+            
           </BlogStyles>
         </div>
       </PageSpace>

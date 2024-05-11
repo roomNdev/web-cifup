@@ -10,6 +10,16 @@ export const BlogGridStyles = styled.div`
     grid-template-columns: repeat(auto-fill, 250px);
     gap: 3rem;
   } */
+  .filters-container {
+    margin-inline: 8%;
+  }
+  .ig-new{ 
+    width: 325px;
+    height: 325px;
+    img {
+    object-fit: cover  !important;
+    };
+  }
 
   .posts {
 
@@ -27,4 +37,32 @@ export const BlogGridStyles = styled.div`
   @media only screen and (max-width: 768px) {
     gap: 2rem;
   }
+  @media (max-width: 1100px) {
+    .ig-new {
+      width: 30%;
+      height: min-content;
+       img {
+        object-fit: fill  !important;
+       }
+    }
+  }
+  @media (max-width: 600px) {
+    .ig-new {
+      width: 48%;
+      height: min-content;
+       img {
+        object-fit: fill  !important;
+       }
+    }
+  }
+  /* @media (max-width: 400px) {
+    .ig-new {
+      width: 30%;
+      height: min-content;
+       img {
+        object-fit: fill  !important;
+       }
+    }
+  } */
+
 `;

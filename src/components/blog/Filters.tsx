@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FiltersStyles } from '../../styles/blog/FiltersStyles';
 import Button from '../buttons/Button';
 // import BlogItem from './BlogItem';
+import { SearchModalContext } from '../../contexts/searchModalContext';
+import { MdSearch } from 'react-icons/md';
 
-function Filters({ handleChangeFilters, posts }) {
+function Filters({ handleChangeFilters, current }) {
+  const { openSearchModal } = useContext(SearchModalContext);
 
+  const handleSearchModalOpen = () => {
+    openSearchModal();
+  };
     // const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQWRQekk2RGhWV1NBNTRXY202a0R4Ykw2cnJOSkJOT3RHT241Smk1LWxiWEd3Skt4dDV3RnFJWXQyV2lpaERwcWVpemFhczExSlJGVkRDa0ExcGFwMHFBS3Jsdk94TVo2QnFLS2l2THg5T3VCNElkU0JpWjJfUm8ZD`
     // const [feed, setFeed] = useState()
     // useEffect(() => {
@@ -27,17 +33,42 @@ function Filters({ handleChangeFilters, posts }) {
     //             )
     //         }, [])
     
-
+{/* <button className={`${current === "directiva" ? 'active' : ''}`} onClick={() => {
+          handleChangeFilters("directiva")
+        }}>Directiva</button>
+        <button className={`${current === "areas" ? 'active' : ''}`} onClick={() => {
+          handleChangeFilters("areas")
+        }}>Areas</button>
+        
+        <button className={`${current === "exmiembros" ? 'active' : ''}`} onClick={() => {
+          handleChangeFilters("exmiembros")
+        }}>Ex miembros</button>
+        <button className={`${current === "honorarios" ? 'active' : ''}`} onClick={() => {
+          handleChangeFilters("honorarios")
+        }}>Miembros honorarios</button>
+         */}
   return (
     <FiltersStyles>
-      <div className='filters'>
-        <button onClick={() => {
-          handleChangeFilters(posts)
+      <div className='filters-container'>
+        <div className='filters'> 
+        <button className={`${current === "articulos" ? 'active' : ''}`} onClick={() => {
+          handleChangeFilters('articulos')
         }}>Articulos</button>
-        <button onClick={() => {
-        // handleChangeFilters(feed)
+        <button className={`${current === "noticias" ? 'active' : ''}`} onClick={() => {
+        handleChangeFilters('noticias')
         }}>Noticias</button>
-      </div>
+        </div>
+        
+      <div
+                    className="searchIcon__wrapper"
+                    onClick={handleSearchModalOpen}
+                    onKeyDown={handleSearchModalOpen}
+                    tabIndex={0}
+                    role="button"
+                  >
+                    <MdSearch color=''/>
+                  </div>
+      </div> 
     </FiltersStyles>
   );
 }

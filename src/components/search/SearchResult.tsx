@@ -11,36 +11,22 @@ import ParagraphText from '../typography/ParagraphText';
 function SearchResult({
   searchQuery,
   blogsIndexStore,
-  categoriesIndexStore,
   authorsIndexStore,
-  poemsIndexStore,
 }) {
   const blogsResult = useFlexSearch(
     searchQuery,
     JSON.stringify(blogsIndexStore.index),
     blogsIndexStore.store
   );
-  const categoriesResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(categoriesIndexStore.index),
-    categoriesIndexStore.store
-  );
   const authorsResult = useFlexSearch(
     searchQuery,
     JSON.stringify(authorsIndexStore.index),
     authorsIndexStore.store
   );
-  const poemsResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(poemsIndexStore.index),
-    poemsIndexStore.store
-  );
 
   if (
     blogsResult.length === 0 &&
-    categoriesResult.length === 0 &&
-    authorsResult.length === 0 &&
-    poemsResult.length === 0
+    authorsResult.length === 0
   ) {
     return <ParagraphText>No Result Found.</ParagraphText>;
   }
@@ -55,14 +41,7 @@ function SearchResult({
           ))}
         </>
       )}
-      {categoriesResult.length > 0 && (
-        <>
-          <ParagraphText>Categories</ParagraphText>
-          {categoriesResult.map((result) => (
-            <CategorySearchResultItem key={result.id} category={result} />
-          ))}
-        </>
-      )}
+      
       {authorsResult.length > 0 && (
         <>
           <ParagraphText>Authors</ParagraphText>
@@ -71,14 +50,7 @@ function SearchResult({
           ))}
         </>
       )}
-      {poemsResult.length > 0 && (
-        <>
-          <ParagraphText>Escritura creativa</ParagraphText>
-          {poemsResult.map((result) => (
-            <PoemSearchResultItem key={result.id} poem={result} />
-          ))}
-        </>
-      )}
+      
     </>
   );
 }

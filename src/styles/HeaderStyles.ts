@@ -51,6 +51,13 @@ export default styled.header`
       justify-content: center;
       gap: 1rem;
       li {
+        &.active {
+         a {
+           background-color: #fff;
+           color: var(--text-primary);
+         }
+          
+        }
         &:hover {
           a {
             background-color: #fff;

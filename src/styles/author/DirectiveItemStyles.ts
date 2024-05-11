@@ -8,8 +8,8 @@ export const DirectiveItemStyles = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 260px;
-  min-width: 260px;
+  max-width: 240px;
+  min-width: 240px;
   .image__wrapper {
     display: flex;
     width: 100%;
@@ -42,7 +42,7 @@ export const DirectiveItemStyles = styled.div`
     right: 0px;
     padding-inline: 8px;
     background-color: var(--jet-stream);
-    z-index: 1000000000;
+    z-index: 10;
     color: var(--text-white);
   }
   .date {
@@ -68,19 +68,23 @@ export const DirectiveItemStyles = styled.div`
       }
       @media only screen and (max-width: 768px) {
     
-      max-width: 150px;
-      min-width: 150px;
+    max-width: 150px;
+    min-width: 150px;
+    
+    .profileImage {
+      width: 100%;
+      height: 150px;
+      aspect-ratio: 1;
+    }
+    .role {
       
-      .profileImage {
-        width: 80px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-      }
-      .title {
-        font-size: 18px;
-      }
-  .role {
-    font-size: 12px;
-  }
-  }
+    top: -60px;
+    }
+    .title {
+      font-size: 18px;
+    }
+.role {
+  font-size: 12px;
+}
+}
 `;

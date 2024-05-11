@@ -4,26 +4,19 @@ import { PodcastsStyles } from '../../styles/homePage/PodcastsStyle';
 import ParagraphText from '../typography/ParagraphText';
 import { PiApplePodcastsLogoLight } from "react-icons/pi";
 import { FaSpotify } from 'react-icons/fa';
+import { graphql, useStaticQuery } from 'gatsby';
 
 function Podcasts() {
-    // window.onSpotifyIframeApiReady = (IFrameAPI) => {
-    //   const element = document.getElementById('embed-iframe');
-    //   const options = {
-    //     width: '100%',
-    //     height: '160',
-    //     uri: 'spotify:episode:7makk4oTQel546B0PZlDM5'
-    //   };
-    //   const callback = (EmbedController) => {
-    //     document.querySelectorAll('.episode').forEach(
-    //       episode => {
-    //         episode.addEventListener('click', () => {
-    //           EmbedController.loadUri(episode.dataset.spotifyId)
-    //         });
-    //       })
-    //   };
-    //   IFrameAPI.createController(element, options, callback);
-    // };
-  
+  const data = useStaticQuery(graphql`{
+    allSanityPodcasts(limit: 3) {
+      nodes{
+        url
+      }
+    }
+  }
+`);
+
+  const urls = data.allSanityPodcasts.nodes;
 
   return (
     <PodcastsStyles>
@@ -43,9 +36,11 @@ function Podcasts() {
       Introducing Nerd Out@Spotify
     </button>
   </div> */}
-
-      <iframe style={{borderRadius: "12px"}} src="https://open.spotify.com/embed/show/3ZkpSwIWEOzsc3Q1eetSpn?utm_source=generator" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  
+      {
+        urls.map(item => {
+          return <div dangerouslySetInnerHTML={{__html: item.url}}></div>
+        })
+      }  
     </PodcastsStyles>
   );
 }

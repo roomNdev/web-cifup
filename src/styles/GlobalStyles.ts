@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   }
   :root{
     --bg-main: #FFFBFC;
+    --cobalt-blue: #0B4CAD;
     --text-primary: #081F5C;
     --jet-stream: #B7D5D4;
 
@@ -19,11 +20,11 @@ const GlobalStyles = createGlobalStyle`
     --black-1: #0D121F;
     --black-2: #121826;
     --text-1: #002244;
-    --white-1: #F1F1F1;
+    --white-1: #FFFBFC;
     --light-gray: #BBBBBB;
     --gray: #2B2B2B;
     --grey: var(--gray);
-    --white: white;
+    --white: #FFFBFC;
     --black: black;
   }
   html{
@@ -35,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     line-height: 1.5;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     font-family: 'Poppins';
     background-color: var(--bg-main);
     color: var(--white);
@@ -48,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   img, svg{
     height: 100%;

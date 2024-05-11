@@ -6,19 +6,18 @@ import HeaderStyles from '../styles/HeaderStyles';
 import Logo from './Logo';
 import ActionButton from './buttons/ActionButton';
 import { menu } from '../constants/menu';
-import { SearchModalContext } from '../contexts/searchModalContext';
 import { useLocation } from '@reach/router';
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const { openSearchModal } = useContext(SearchModalContext);
 
   // const params = new URLSearchParams(location.search);
   // console.log(params);
   
   const location = useLocation();
+  const params = location.pathname === "/" ? ['', ''] : location.pathname.split('/')
   console.log(location)  
-
+  console.log(params)  
   useEffect(() => {
     if (isNavOpen) {
       document.body.style.overflow = 'hidden';
@@ -27,9 +26,6 @@ function Header() {
     }
   }, [isNavOpen]);
 
-  const handleSearchModalOpen = () => {
-    openSearchModal();
-  };
 
   const handleNavItemClick = () => {
     if (isNavOpen) {
@@ -40,7 +36,14 @@ function Header() {
   return (
     <HeaderStyles>
       {/* <div className="container"> */}
-        <div className={`header__container ${(location.pathname.includes('unete') || location.pathname.includes('contacto')) && 'bg-color'}`} >
+        <div 
+        className={`
+        header__container 
+        ${(params[1] === 'unete' ||
+        params[1] === 'contacto' ||
+        (params[1] === "blog" && params[3] !== undefined )
+      ) && 'bg-color'}`
+        } >
           <div className="logo">
             <Logo />
           </div>
@@ -74,17 +77,12 @@ function Header() {
               </ActionButton>
               <ul>
                 {menu.map((item) => (
-                  <li key={item.path}>
+                  <li key={item.path} className={`${item.path === `/${params[1]}` ? 'active' : ''}`}>
                     <Link to={item.path} onClick={handleNavItemClick}>
                       {item.title}
                     </Link>
                   </li>
                 ))}<Link to={'/unete'} onClick={handleNavItemClick} className='join'
-                // className="searchIcon__wrapper"
-                // onClick={handleSearchModalOpen}
-                // onKeyDown={handleSearchModalOpen}
-                // tabIndex={0}
-                // role="button"
               >
                 Únete
               </Link>

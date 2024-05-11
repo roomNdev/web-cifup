@@ -11,7 +11,7 @@ import { SingleBlogStyles } from '../styles/blog/SingleBlogStyles.ts';
 import MyPortableText from '../components/MyPortableText.tsx';
 import Seo from '../components/seo.tsx';
 import Button from '../components/buttons/Button.tsx'
-
+import JustFeatured from '../components/homePage/JustFeatured.tsx'
 
 export const postQuery = graphql`
   query SingleBlogQuery($id: String!) {
@@ -19,8 +19,6 @@ export const postQuery = graphql`
       title
       publishedAt
       _rawBody
-      points
-      bookAuthor
       bookAuthorBio
       coverImage {
         asset {
@@ -50,9 +48,8 @@ function SingleBlog({ data }) {
   const stars = Array.from(Array(points).keys())
 
 
-  console.log(stars);
-  return (
-    <SingleBlogStyles>
+return (<>
+<SingleBlogStyles>
       <Seo title={blog.title} />
       <PageSpace top={80} bottom={100}>
         <div className="container">
@@ -68,28 +65,8 @@ function SingleBlog({ data }) {
               <FiCalendar />
               {format(new Date(blog.publishedAt), 'p, MMMM dd, yyyy')}
             </ParagraphText>
-            <ParagraphText className="categoriesText">
-              <BiCategory />
-              
-            </ParagraphText>
             
-            {
-              blog.bookAuthor && 
-            <ParagraphText className="bookAuthor">
-              <FiUser />
-              {blog.bookAuthor} 
-              {blog.bookAuthorBio && 
-                <a href={blog.bookAuthorBio} target='_blank' rel="noreferer">(Biografia)</a>
-              }
-            </ParagraphText>
-            }
             
-            {
-              blog.points && 
-              <ParagraphText className="points">
-              Puntaje: {stars.map((star) =>( <FiStar key={star} color='var(--text-1)'/>))} ({blog.points})
-            </ParagraphText>
-            }
             <ParagraphText className="author">
             <GatsbyImage
               image={blog.author.profileImage.asset.gatsbyImageData}
@@ -117,7 +94,8 @@ function SingleBlog({ data }) {
         </div>
       </PageSpace>
     </SingleBlogStyles>
-  );
+      <JustFeatured></JustFeatured>
+</>)
 }
 
 export default SingleBlog;

@@ -1,0 +1,83 @@
+
+import * as React from "react"
+import { graphql, useStaticQuery, type HeadFC, type PageProps } from "gatsby"
+
+import HeroSection from '../components/homePage/HeroSection';
+import Seo from '../components/seo';
+import JoinStyles from "../styles/JoinStyles";
+import Header from "../components/Header";
+import PageSpace from "../components/PageSpace";
+import ContactStyles from "../styles/contactStyles";
+import { Title } from "../components/typography/Title";
+import { StaticImage } from "gatsby-plugin-image";
+import ParagraphText from "../components/typography/ParagraphText";
+// import { PodcastsStyles } from "../../styles/homePage/PodcastsStyle";
+
+const IndexPage: React.FC<PageProps>  = () => {
+    const [role, setRole] = React.useState("miembro");
+
+  return (
+      <JoinStyles>
+    <Seo title={"Inicio"} description={"Página de inicio de Lee UP, una organización estudiantil de la Universidad del Pacífico"}/>
+    {/* <HeroSection /> */}
+    <div className="container">
+      <h1>Únete</h1>
+      <section className="unirme_como">
+        <h2>Quiero unirme como...</h2>
+        <div className="button-container">
+        <button onClick={() => setRole('miembro')}>Miembro</button>
+        <button onClick={() => setRole('honorario')}>Miembro Honorario</button>
+        </div>
+      </section>
+        {
+            role === 'miembro' 
+            ? <>
+                <h1>Miembro</h1>
+                <p>As a Community member of the Finance Club you stay up to date and receive insights on the hot topics in the world of finance. Our Newsletter regularly informs you on upcoming events and vacant job positions from leading firms from the finance industry. After completing the registration form below you become a Community member. </p>
+                <p>Important: There are no costs related to the Community membership. </p>
+                <p>Become a Community member by subscribing to our newsletter here:</p>
+            </>
+            : <>
+            <h1>Sé un miembro honorario</h1>
+            <p>As Ambassador of the Finance Club you are an essential part of the team. You play an active role at our events and can help develop and execute new ideas. You also benefit from priority treatment for certain events.</p>
+            <p>Furthermore, we offer you the opportunity to sharpen your social and networking skills and you will gather insights in IT- and event-management. You will also deepen your finance knowledge and enlarge your network ranging from representatives from the university to practitioners from the finance industry.</p>
+            <p>Each semester we accept applications from students enlisted at the UZH or ETH. Selected applicants will be invited to a casual interview and will be handed a contract upon success.</p>
+        </>
+        }
+      <form className="form">
+        <div>
+            <label className="label" htmlFor="">Nombre</label>
+            <input type="text" name="" id="" />
+        </div>
+        <div>
+            <label htmlFor="">Nombre</label>
+            <input type="text" name="" id="" />
+        </div>
+        <div>
+            <label htmlFor="">Nombre</label>
+            <input type="text" name="" id="" />
+        </div>
+        <div>
+            <label htmlFor="">Nombre</label>
+            <select name="" id=""></select>
+        </div>
+        <div>
+            <label htmlFor="">Nombre</label>
+            <select name="" id=""></select>
+        </div>
+        <div>
+            <label htmlFor="">Nombre</label>
+            <select name="" id=""></select>
+        </div>
+        <div>
+
+            <label htmlFor="">Nombre</label>
+            <textarea name="" id="" cols={96} rows={16}></textarea>
+        </div>
+      </form>
+
+    </div>
+      </JoinStyles>
+)}
+
+export default IndexPage

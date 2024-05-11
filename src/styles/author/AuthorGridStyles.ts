@@ -9,19 +9,26 @@ export const AuthorGridStyles = styled.div`
   grid-template-columns: repeat(auto-fit, 280px); */
   display: flex;
   margin-top: 3.5rem;
-  gap: 30px;
-  justify-content: start;
+  /* gap: 30px; */
+  /* margin-inline: 8%; */
+  align-items: center;
   .items {
-    margin-inline: auto;
-    gap: 8px;
-    width: 1200px;
+    /* margin-inline: auto; */
+    gap: 6px;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
   }
-  flex-wrap: wrap;
   .no__members {
     text-align: center;
   }
   @media only screen and (max-width: 768px) {
+    .items {
+      
+      justify-content: center;
+    }
     gap: 2rem;
+
   }
+  
 `;

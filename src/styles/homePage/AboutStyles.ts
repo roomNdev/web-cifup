@@ -30,10 +30,10 @@ export const AboutSectionStyles = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 250px;
+            height: 250px;
             img {
                 border-radius: 100%;
-                width: 250px;
-                height: 250px;
             }
         }
     }
@@ -120,6 +120,25 @@ export const AboutSectionStyles = styled.div`
                     font-size: 1rem;
                     text-align: center;
                 }
+            }
+        }
+    }
+    @media (max-width: 760px) {
+        .first_row {
+            .about_image {
+                img {}
+            }
+        }
+        .second_row {
+            flex-direction: column;
+            gap: 4rem;
+            align-items: center;
+            .numbers_container {
+                width: 100%;
+                
+            }
+            .cards_container {
+                width: 80%;
             }
         }
     }

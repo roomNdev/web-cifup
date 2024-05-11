@@ -5,7 +5,14 @@ export const InstagramSectionStyles = styled.div`
     flex-direction: column;
     margin-block: 6rem;
         overflow: hidden;
-        padding-inline: 4rem;
+        .carousel {
+            width: 100%;
+            background-color: var(--cobalt-blue);
+        /* min-height: auto; */
+        min-height: 400px;
+        max-height: 400px;
+        }
+        /* padding-inline: 4rem ; */
     h1 {
         color: var(--text-primary);
         font-size: 3.5rem;
@@ -16,9 +23,11 @@ export const InstagramSectionStyles = styled.div`
         max-width: 300px;
     } */
     .demo-slide {
-        max-width: 300px;
-        min-width: 300px;
-        min-height: 100px;
+        max-width: 400px;
+        min-width: 400px;
+        /* min-height: auto; */
+        min-height: 400px;
+        max-height: 400px;
         
     }
     .event {
@@ -28,10 +37,11 @@ export const InstagramSectionStyles = styled.div`
             /* width: 300px; */
             /* min-width: 300px; */
             background-color: var(--text-primary);
-            padding-bottom: 2rem;
+            /* padding-bottom: 2rem; */
+            overflow: hidden;
             img {
                 object-fit: cover;
-                height: 250px;
+                height: auto;
                 transition: scale .6s;
             }
             &:hover {
