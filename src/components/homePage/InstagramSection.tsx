@@ -51,7 +51,7 @@ const InstagramSection: React.FC<{}> = () => {
             <h1>Eventos</h1>
             <SimpleSlider>
                 {
-                    feed && filteredFeed.filter(i => i.caption.includes(filterWord)).map((item) => {
+                    filteredFeed && filteredFeed.filter(i => i.caption.includes(filterWord)).map((item) => {
                         return <article className="event demo-slide">
                             {/* <StaticImage alt='' src='../../images/bank-of-america-new-logo.jpg'></StaticImage> */}
                             <img src={item.media_url} alt="" />
