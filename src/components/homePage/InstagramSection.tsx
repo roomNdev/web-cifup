@@ -15,7 +15,7 @@ import SimpleSlider from '../Slider';
   
 
 const InstagramSection: React.FC<{}> = () => {
-    const token = 'IGQWRQOTdQR2cyUzJ5UHd1NVZATOUJzRjdUbVh0WXF5MHFOVUxWMjVyTW1QdkF3N3ZA4ZAzVVb0Q2b05BQk9sOW9abzBsbjRsS1ZADbWhEUS1aQXBxZAkNnVjlhSnhTeXJETGlDdldjUE9oSTRGRjF1RXNUaHpMU3FRb1EZD'
+    const token = 'IGQWRPWWxfelJJM3Fxc1FaLVg1NFRtNjczeW1JSENNa3htYW45TWs1ZAUZAzZAlRJaGNSRFd2X0x4ZAHZAGNFh0N2Q0YU15WmVxbTIwX2VFeVdFeTR4QkIyTnotbjYzWFJJZAV92ZAFhtT0M2elgxSEVXWUEtUVU3ekk1M1kZD'
     const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${token}`
     const [feed, setFeed] = useState<any>()
     useEffect(() => {
@@ -52,7 +52,7 @@ const InstagramSection: React.FC<{}> = () => {
             <SimpleSlider>
                 {
                     filteredFeed && filteredFeed.filter(i => i.caption.includes(filterWord)).map((item) => {
-                        return <article className="event demo-slide">
+                        return <article className="event demo-slide" key={item.permalink}>
                             {/* <StaticImage alt='' src='../../images/bank-of-america-new-logo.jpg'></StaticImage> */}
                             <img src={item.media_url} alt="" />
                             {/* <h2>Evento junto con Bank of America</h2> */}
