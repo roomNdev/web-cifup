@@ -65,7 +65,7 @@ function BlogGrid({ blogs, numberOfPages, currentPage }) {
               publishedAt={blog.publishedAt}
             />
           ))
-          : 'Oops! todavia no hay noticias'
+          : <p style={{color: "var(--text-primary)"}}>Oops! todavia no hay noticias</p>
       //     : filteredFeed.filter(i => i.caption.includes(filterWord)).map((item) => {
       //           return <article className="ig-new">
       //               {/* <StaticImage alt='' src='../../images/bank-of-america-new-logo.jpg'></StaticImage> */}
