@@ -48,7 +48,7 @@ function SingleBlog({ data }) {
 
   const likes = data.sanityBlog.likes
 
-
+  console.log(blog);
 return (<>
 <SingleBlogStyles>
       <Seo title={blog.title} />
@@ -66,18 +66,21 @@ return (<>
               <FiCalendar />
               {format(new Date(blog.publishedAt), 'p, MMMM dd, yyyy')}
             </ParagraphText>
-            
-            
-            <ParagraphText className="author">
+            {blog.author.map(auth => {
+              return (
+<ParagraphText className="author">
             <GatsbyImage
-              image={blog.author.profileImage.asset.gatsbyImageData}
-              alt={`Foto de perfil de ${blog.author.name}`}
+              image={auth.profileImage.asset.gatsbyImageData}
+              alt={`Foto de perfil de ${auth.name}`}
               className="author__img"
             />
-              <Link to={`/miembros/${blog.author.slug.current}`}>
-                {blog.author.name}
+              <Link to={`/miembros/${auth.slug.current}`}>
+                {auth.name}
               </Link>
             </ParagraphText>
+
+              )
+            })}
             {
               likes !== null && (
             <ParagraphText className="likes">
