@@ -3,10 +3,11 @@ import ParagraphText from '../typography/ParagraphText'
 import { AboutSectionStyles } from '../../styles/homePage/AboutStyles'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import ImageTexture from '../../constants/imageTexture'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Button from '../buttons/Button'
 import { IoBarChartSharp } from "react-icons/io5";
-import { FaBalanceScale, FaMoneyCheck } from 'react-icons/fa'
+import { GiTwoCoins } from "react-icons/gi";
+import { FaBalanceScale, FaChartBar, FaChevronRight, FaMoneyCheck } from 'react-icons/fa'
 
 const About: React.FC<{}> = () => {
     const data = useStaticQuery(graphql`{
@@ -25,7 +26,7 @@ const About: React.FC<{}> = () => {
 
     return (
         <AboutSectionStyles>
-          <section className='first_row'>
+          {/* <section className='first_row'>
             <div className='about_text'>
               <h2>
                 Conócenos
@@ -41,9 +42,9 @@ const About: React.FC<{}> = () => {
             <StaticImage src='../../images/Profesor-Cesare.jpg' alt='' >
             </StaticImage>
             </div>
-          </section>
-          <section className='second_row'>
-              <div className='numbers_container'>
+          </section> */}
+          <section className='first_row'>
+              {/* <div className='numbers_container'>
                 <div className='numbers_text'>
                   <h2>Por qué elegirnos</h2>
                   <p>
@@ -64,10 +65,15 @@ const About: React.FC<{}> = () => {
                     <span className='label'>Colaboraciones</span>
                   </article>
                 </div>
-              </div>
+              </div> */}
               <div className='cards_container'>
                 <article className='card'>
                   <FaMoneyCheck className='card_icon'></FaMoneyCheck>
+                  <h2>Texto de ejemplo</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ea porro quos deleniti!</p>
+                </article>
+                <article className='card'>
+                  <GiTwoCoins className='card_icon'></GiTwoCoins >
                   <h2>Texto de ejemplo</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ea porro quos deleniti!</p>
                 </article>
@@ -77,9 +83,44 @@ const About: React.FC<{}> = () => {
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ea porro quos deleniti!</p>
                 </article>
                 <article className='card'>
-                <IoBarChartSharp></IoBarChartSharp>
+                <FaChartBar className='card_icon'></FaChartBar>
                   <h2>Texto de ejemplo</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ea porro quos deleniti!</p>
+                </article>
+              </div>
+          </section>
+          <section className="second_row">
+            <h1 className='main-title'>Acerca del CIFUP</h1>
+          <div className='cards_container'>
+                <article className='card'>
+                  {/* <GatsbyImage image={''} ></GatsbyImage> */}
+                  <StaticImage className='card-image' src='../../images/Profesor-Cesare.jpg' alt='Imagen de portade de esta seccion'></StaticImage>
+                  <div className='absolute-over-image'>
+                  <Link to='/eventos' >
+                  <h2 className='title'>Eventos y talleres</h2>
+                  <p>Descúbrelos <FaChevronRight className='icon'/></p>
+                  </Link>
+                  </div>
+                </article>
+                <article className='card'>
+                  {/* <GatsbyImage image={''} ></GatsbyImage> */}
+                  <StaticImage className='card-image' src='../../images/Profesor-Cesare.jpg' alt='Imagen de portade de esta seccion'></StaticImage>
+                  <div className='absolute-over-image'>
+                  <Link to='/miembros' >
+                  <h2 className='title'>Nuestro equipo</h2>
+                  <p>
+                  Meet the team <FaChevronRight className='icon'/>
+                  </p></Link>
+                  </div>
+                </article>
+                <article className='card'>
+                  {/* <GatsbyImage image={''} ></GatsbyImage> */}
+                  <StaticImage className='card-image' src='../../images/Profesor-Cesare.jpg' alt='Imagen de portade de esta seccion'></StaticImage>
+                  <div className='absolute-over-image'>
+                  <Link to='/blog' >
+                  <h2 className='title'>Finance Blog</h2>
+                  <p>Conoce más <FaChevronRight className='icon'/></p></Link>
+                  </div>
                 </article>
               </div>
           </section>

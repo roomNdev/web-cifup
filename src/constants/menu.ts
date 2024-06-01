@@ -4,7 +4,7 @@ export const menu = [
     path: '/',
   },
   {
-    title: 'Eventos',
+    title: 'Eventos y Talleres',
     path: '/eventos',
   },
   {

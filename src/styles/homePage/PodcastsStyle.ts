@@ -29,15 +29,43 @@ export const PodcastsStyles = styled.div`
       }
     } */
 
-    padding-inline: 4rem;
+    /* padding-inline: 4rem; */
     margin-block: 4rem;
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    max-width: 1200px;
+    margin-inline: auto;
     h1 {
         color: var(--text-primary);
         font-size: 3.5rem;
-        text-align: center;
+        text-align: left;
         margin-block: 4rem;
+    }
+    .editable_item {
+      width: 100%;
+      height: 352px;
+      background-color: var(--cobalt-blue);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+      gap: 2rem;
+      .image {
+        min-width: 272px;
+        width: 272px;
+        height: 272px;
+        border-radius: 12px;
+      }
+      .data { 
+        width: 100%;
+        .title { 
+          font-size: 2.3rem;
+        }
+        .description {
+          font-size: 1.5rem;
+        }
+      }
     }
 `;

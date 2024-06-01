@@ -52,16 +52,16 @@ function FeaturedPosts() {
                 image=
                 className='post_image'
               /> */}
-                    <StaticImage
-       alt=''
-       src='../../images/bg-image.jpg'
-       class='post_image'
-      ></StaticImage>
-        <div>
-          <h2 className='post_title'>Este item es editable!</h2>
-          <p className='post_abstract'>A customizable first item</p>
-        </div>
-            </article>
+        <StaticImage
+          alt=''
+          src='../../images/bg-image.jpg'
+          class='post_image'
+          ></StaticImage>
+          <div>
+            <h2 className='post_title'>Este item es editable!</h2>
+            <p className='post_abstract'>A customizable first item</p>
+          </div>
+      </article>
       {
         featuredPosts.map((item) => { 
           return (
@@ -72,7 +72,7 @@ function FeaturedPosts() {
               />
               <div>
                 <h2 className='post_title'>{item.title}</h2>
-                <p className='post_abstract'>{item.excerpt._rawChildren}</p>
+                <p className='post_abstract'>{item.excerpt[0]._rawChildren?.at(0).text.slice(0, 60)} ...</p>
               </div>
             </article>
           )

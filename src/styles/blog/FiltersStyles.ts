@@ -27,7 +27,7 @@ export const FiltersStyles = styled.div`
         display: flex;
         padding: 16px;
         align-items: center;
-        padding-inline: 24px;
+        padding-inline: 64px;
         border: none;
         background: transparent;
         font-size: 16px;

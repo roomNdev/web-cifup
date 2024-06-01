@@ -47,19 +47,20 @@ const InstagramSection: React.FC<{}> = () => {
     //     console.log(filteredFeed);
 
     return (
+        <>
+        
         <InstagramSectionStyles>
-            {/* <h1>Eventos</h1>
-            <SimpleSlider>
-                {
-                    filteredFeed && filteredFeed.filter(i => i.caption.includes(filterWord)).map((item) => {
-                        return <article className="event demo-slide" key={item.permalink}>
-                            <img src={item.media_url} alt="" />
-                        </article>
-                    })
-                }
-
-            </SimpleSlider>             */}
+  {/* LightWidget WIDGET */}
+  <h1>Eventos y talleres</h1>
         </InstagramSectionStyles>
+  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+            <iframe
+                src="https://cdn.lightwidget.com/widgets/b2df72a36a2f516486504a435dbdba54.html"
+                scrolling="no"
+                allowTransparency={true}
+                className="lightwidget-widget"
+                style={{ width: "100%", border: 0, overflow: "hidden", height: "800px" }}
+            /></>
     )
 }
 

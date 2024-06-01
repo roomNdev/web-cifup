@@ -8,7 +8,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 function Podcasts() {
   const data = useStaticQuery(graphql`{
-    allSanityPodcasts(limit: 3) {
+    allSanityPodcasts(limit: 2) {
       nodes{
         url
       }
@@ -36,6 +36,14 @@ function Podcasts() {
       Introducing Nerd Out@Spotify
     </button>
   </div> */}
+  
+      <div className='editable_item'>
+            <StaticImage src='../../images/Profesor-Cesare.jpg' alt='' className='image'></StaticImage>
+            <div className='data'>
+              <h2 className='title'>Conoce nuestro Podcast!</h2>
+              <p className='description'>(esto es editable btw) Aqui hablamos de ciertos temas que nos conciernen de la actualidad, finanzas y sociedad, descubre nuestro contenido</p>
+            </div>
+      </div>
       {
         urls.map(item => {
           return <div dangerouslySetInnerHTML={{__html: item.url}}></div>

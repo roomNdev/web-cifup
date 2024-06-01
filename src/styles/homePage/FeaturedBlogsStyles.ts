@@ -10,7 +10,7 @@ export const FeaturedBlogsStyles = styled.div`
     h1 {
         font-size: 3.5rem;
         color: var(--text-primary);
-        text-align: center;
+        text-align: left;
         margin-bottom: 4rem;
     }
     .post_container {
@@ -40,7 +40,8 @@ export const FeaturedBlogsStyles = styled.div`
             user-select: none;
         }
         .post_title {
-            font-size: 1.8rem;
+            font-size: 2.4rem;
+            line-height: 150%;
             padding: 2rem;
         }
     }

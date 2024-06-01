@@ -9,6 +9,7 @@ import SimpleSlider from "../../components/Slider";
 import { StaticImage } from "gatsby-plugin-image";
 import { SliderStyles } from "../../styles/SliderStyles";
 import { Carousel } from "nuka-carousel";
+import StudyCaseSection from "../../components/events/StudyCaseSection";
 
 const IndexPage: React.FC<PageProps>  = () => {
   return (
@@ -18,6 +19,7 @@ const IndexPage: React.FC<PageProps>  = () => {
     {/* <div className="container"> */}
       <MainEvents/>
       <InstagramSection/>
+      <StudyCaseSection/>
       <SliderStyles >
       <Carousel className='carousel' showArrows={true} autoplay scrollDistance={'slide'} autoplayInterval={15000} wrapMode='nowrap'>
       <div className="image-container">

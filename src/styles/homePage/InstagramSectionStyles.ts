@@ -3,25 +3,15 @@ import styled from 'styled-components';
 export const InstagramSectionStyles = styled.div`
     display: flex;
     flex-direction: column;
-    margin-block: 6rem;
+    margin-top: 6rem;
         overflow: hidden;
-        .carousel {
-            width: 100%;
-            background-color: var(--cobalt-blue);
-        /* min-height: auto; */
-        min-height: 400px;
-        max-height: 400px;
-        }
-        /* padding-inline: 4rem ; */
+        padding-inline: 4rem;
     h1 {
         color: var(--text-primary);
         font-size: 3.5rem;
         margin-bottom: 4rem;
-        text-align: center;
+        text-align: left;
     }
-    /* .event {
-        max-width: 300px;
-    } */
     .demo-slide {
         max-width: 400px;
         min-width: 400px;

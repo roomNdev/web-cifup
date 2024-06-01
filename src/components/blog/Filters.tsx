@@ -60,14 +60,14 @@ function Filters({ handleChangeFilters, current }) {
         </div>
         
       <div
-                    className="searchIcon__wrapper"
-                    onClick={handleSearchModalOpen}
-                    onKeyDown={handleSearchModalOpen}
-                    tabIndex={0}
-                    role="button"
-                  >
-                    <MdSearch color=''/>
-                  </div>
+          className="searchIcon__wrapper"
+          onClick={handleSearchModalOpen}
+          onKeyDown={handleSearchModalOpen}
+          tabIndex={0}
+          role="button"
+        >
+          <MdSearch color=''/>
+        </div>
       </div> 
     </FiltersStyles>
   );
