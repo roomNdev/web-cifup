@@ -45,6 +45,10 @@ export const BlogItemStyles = styled.div`
     flex-direction: column;
     /* align-items: center; */
     width: 80%;
+    p {
+      display: inline;
+      width: fit-content;
+    }
     .author__name {
       /* background-color: var(--text-1); */
       color: var(--white-1);
@@ -58,7 +62,7 @@ export const BlogItemStyles = styled.div`
   }
   
   .title {
-    color: var(--white-1);
+    color: var(--white-1)!important;
     /* padding-top: 25px; */
     font-size: 22px;
     font-weight: 700;
@@ -124,7 +128,7 @@ export const BlogItemStyles = styled.div`
       }
     }
     .author__img{
-      top: 195px;
+      top: 0px;
       width: 40px;
       height: 40px;
     }

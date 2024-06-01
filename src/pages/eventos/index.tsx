@@ -19,8 +19,12 @@ const IndexPage: React.FC<PageProps>  = () => {
     {/* <div className="container"> */}
       <MainEvents/>
       <InstagramSection/>
+      <SliderStyles >
+        <h1>Casos de estudio</h1>
+      </SliderStyles>
       <StudyCaseSection/>
       <SliderStyles >
+        <h1>Gallery</h1>
       <Carousel className='carousel' showArrows={true} autoplay scrollDistance={'slide'} autoplayInterval={15000} wrapMode='nowrap'>
       <div className="image-container">
   <StaticImage

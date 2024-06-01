@@ -78,9 +78,9 @@ function Search() {
   return (
     <SearchModalStyles>
       <div className="modal__container">
-        <ActionButton className="close" onClick={() => closeSearchModal()}>
+        {/* <ActionButton className="close" onClick={() => closeSearchModal()}>
           <MdClose />
-        </ActionButton>
+        </ActionButton> */}
         <SearchField
           value={searchQuery}
           setValue={setSearchQuery}
@@ -88,15 +88,13 @@ function Search() {
         />
         {searchQuery &&
           blogsIndexStore &&
-          categoriesIndexStore &&
           authorsIndexStore &&
-          poemsIndexStore &&
           (
             <div className="search__result">
               <SearchResult
                 searchQuery={searchQuery}
                 blogsIndexStore={blogsIndexStore}
-                authorsIndexStore={authorsIndexStore}
+                // authorsIndexStore={authorsIndexStore}
               />
             </div>
           )}

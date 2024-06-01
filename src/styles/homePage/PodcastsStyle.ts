@@ -40,8 +40,13 @@ export const PodcastsStyles = styled.div`
         color: var(--text-primary);
         font-size: 3.5rem;
         text-align: left;
-        margin-block: 4rem;
+        margin-block: 1rem;
     }
+            p {
+                font-size: 17px;
+                font-weight: 400;
+                color: var(--text-primary);
+            }
     .editable_item {
       width: 100%;
       height: 352px;

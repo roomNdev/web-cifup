@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BlogGridStyles } from '../../styles/blog/BlogGridStyles';
 import BlogItem from './BlogItem';
 import Filters from './Filters';
 import Pagination from '../Pagination';
 import InstagramSection from '../homePage/InstagramSection';
+import IframeResizer from '@iframe-resizer/react';
+import Search from '../search/SearchModal';
 
 function BlogGrid({ blogs, numberOfPages, currentPage }) {
   const [filteredBlogs, setFilteredBlogs] = useState("articulos");
@@ -11,6 +13,7 @@ function BlogGrid({ blogs, numberOfPages, currentPage }) {
   const handleChangeFilters = (posts) => {
     setFilteredBlogs(posts)
   } 
+  const iframe = useRef()
 
   // const token = 'IGQWRQOTdQR2cyUzJ5UHd1NVZATOUJzRjdUbVh0WXF5MHFOVUxWMjVyTW1QdkF3N3ZA4ZAzVVb0Q2b05BQk9sOW9abzBsbjRsS1ZADbWhEUS1aQXBxZAkNnVjlhSnhTeXJETGlDdldjUE9oSTRGRjF1RXNUaHpMU3FRb1EZD'
   //   const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${token}`
@@ -41,8 +44,11 @@ function BlogGrid({ blogs, numberOfPages, currentPage }) {
     // //     console.log(profile);
     //     const filterWord = ""
     //     const filteredFeed = feed?.data.filter(i => i.media_type !== "VIDEO")
-    //     console.log(filteredFeed);
-
+    //     console.log(filteredFeed);¿
+  // function resizeIframe(obj) {
+  //   console.log(obj.current.contentWindow.);
+  //   obj.current.style.height = obj.current.contentWindow.document.documentElement.scrollHeight + 'px';
+  // }
   return (
     <BlogGridStyles>
       <Filters handleChangeFilters={handleChangeFilters} current={filteredBlogs}/>
@@ -65,7 +71,21 @@ function BlogGrid({ blogs, numberOfPages, currentPage }) {
               publishedAt={blog.publishedAt}
             />
           ))
-          : <p style={{color: "var(--text-primary)"}}>Oops! todavia no hay noticias</p>
+          :<section className='widget-container'>
+          {/* LightWidget WIDGET */}
+          <IframeResizer
+            license='GPLv3' 
+            forwardRef={iframe}
+            src="https://cdn.lightwidget.com/widgets/d00c62dd77a3507a8f257a4eb0fba83b.html"
+            allowTransparency={true}
+            className="lightwidget-widget"
+            style={{ width: "100%", border: 0, height: "100vh"  }}
+          >
+
+          </IframeResizer>
+        </section>
+        
+          //  <p style={{color: "var(--text-primary)"}}>Oops! todavia no hay noticias</p>
       //     : filteredFeed.filter(i => i.caption.includes(filterWord)).map((item) => {
       //           return <article className="ig-new">
       //               {/* <StaticImage alt='' src='../../images/bank-of-america-new-logo.jpg'></StaticImage> */}

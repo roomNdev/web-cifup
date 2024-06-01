@@ -41,6 +41,7 @@ function Header() {
         header__container 
         ${(params[1] === 'unete' ||
         params[1] === 'contacto' ||
+        (params[1] === 'miembros' && params.length > 3) ||
         (params[1] === "blog" && params[3] !== undefined )
       ) && 'bg-color'}`
         } >

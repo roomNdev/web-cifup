@@ -10,13 +10,20 @@ export const DirectiveItemStyles = styled.div`
   align-items: center;
   max-width: 240px;
   min-width: 240px;
+  border-radius: 6px;
   .image__wrapper {
     display: flex;
+  border-radius: 6px;
     width: 100%;
     align-items: center;
     justify-content: center;
   }
   .profileImage {
+  border-radius: 6px;
+
+  border-bottom-right-radius:0px;
+  border-bottom-left-radius: 0px;
+
     height: 250px;
   }
   .data {
@@ -25,7 +32,6 @@ export const DirectiveItemStyles = styled.div`
     align-items: start;
     margin-top: 20px;
     padding-inline: 8px;
-    height: 150px;
     position: relative;
   }
   .title {
@@ -34,16 +40,18 @@ export const DirectiveItemStyles = styled.div`
     text-align: center;
     margin-top: 4px;
   }
+  .actual-job{ 
+    color: var(--jet-stream);
+    font-size: 16px;
+    text-align: center;
+  }
   .role {
     text-align: center;
-    font-size: 20px;
-    position: absolute;
-    top: -100px;
-    right: 0px;
-    padding-inline: 8px;
-    background-color: var(--jet-stream);
+    font-size: 16px;
+    /* padding-inline: 8px; */
+    /* background-color: var(--jet-stream); */
     z-index: 10;
-    color: var(--text-white);
+    color: var(--jet-stream);
   }
   .date {
     color: var(--text-white);
@@ -52,14 +60,19 @@ export const DirectiveItemStyles = styled.div`
   .author_socialList {
     margin-top: 1.5rem;
     display: flex;
+    border-top: 1px solid #fff;
     flex-direction: row;
     width: 100%;
-    justify-content: end;
-    align-items: end;
+    justify-content: start;
+    align-items: center;
     gap: 8px;
-      a {
+    a {
+        margin-block: 8px;
+        border: 1px solid #fff;
+        border-radius: 100%;
         padding: 10px;
-        display: inline-block;
+        aspect-ratio: 1;
+        display: flex;
         transition: color .3s;
       }
         a:hover {
@@ -75,10 +88,6 @@ export const DirectiveItemStyles = styled.div`
       width: 100%;
       height: 150px;
       aspect-ratio: 1;
-    }
-    .role {
-      
-    top: -60px;
     }
     .title {
       font-size: 18px;

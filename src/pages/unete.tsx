@@ -29,21 +29,23 @@ const IndexPage: React.FC<PageProps>  = () => {
         <button onClick={() => setRole('honorario')}>Miembro Honorario</button>
         </div>
       </section>
+      <section className="description">
         {
             role === 'miembro' 
             ? <>
-                <h1>Miembro</h1>
+                <h1>Sé un miembro </h1>
                 <p>As a Community member of the Finance Club you stay up to date and receive insights on the hot topics in the world of finance. Our Newsletter regularly informs you on upcoming events and vacant job positions from leading firms from the finance industry. After completing the registration form below you become a Community member. </p>
                 <p>Important: There are no costs related to the Community membership. </p>
                 <p>Become a Community member by subscribing to our newsletter here:</p>
             </>
             : <>
-            <h1>Sé un miembro honorario</h1>
+            <h1>Sé un miembro <span className="color-cobalt">honorario</span></h1>
             <p>As Ambassador of the Finance Club you are an essential part of the team. You play an active role at our events and can help develop and execute new ideas. You also benefit from priority treatment for certain events.</p>
             <p>Furthermore, we offer you the opportunity to sharpen your social and networking skills and you will gather insights in IT- and event-management. You will also deepen your finance knowledge and enlarge your network ranging from representatives from the university to practitioners from the finance industry.</p>
             <p>Each semester we accept applications from students enlisted at the UZH or ETH. Selected applicants will be invited to a casual interview and will be handed a contract upon success.</p>
         </>
         }
+      </section>
       <form className="form">
         <div>
             <label className="label" htmlFor="">Nombre</label>

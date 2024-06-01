@@ -33,6 +33,25 @@ export const SingleBlogStyles = styled.div`
     text-align: center;
     color: var(--text-1);
   }
+  .likes {
+    
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    svg {
+      height: 20px;
+      width: 20px;
+      color: red;
+    }
+    a {
+      color: var(--gray);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
   .publishedAt {
     margin-bottom: 0.5rem;
   }
@@ -62,6 +81,9 @@ export const SingleBlogStyles = styled.div`
     color: var(--gray);
   }
   .body {
+    * {
+      min-height: 15px;
+    }
     margin-top: 2rem;
     h1,
     h2,

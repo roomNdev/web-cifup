@@ -10,7 +10,6 @@ function Layout({ children }) {
   return (
     <SearchModalContextProvider>
       <GlobalStyles />
-      <Search />
       <Header />
       <main>{children}</main>
       <Footer />

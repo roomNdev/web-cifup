@@ -22,7 +22,7 @@ export const FiltersStyles = styled.div`
         background-color: var(--text-primary);
         display: flex;
     }
-    button {
+    a, button {
         color: var(--white);
         display: flex;
         padding: 16px;
@@ -45,7 +45,7 @@ export const FiltersStyles = styled.div`
     }
     @media (max-width: 400px) {
         .filters {
-            button {
+            a {
                 font-size: 12px;
                 padding: 12px;
             }

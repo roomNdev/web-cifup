@@ -8,6 +8,7 @@ import { Title } from '../typography/Title';
 import Button from '../buttons/Button';
 
 function BlogItem({ path, excerpt, author, title, image, categories, publishedAt }) {
+  console.log(author);
   return (
     <BlogItemStyles>
       <Link to={`/blog/${path}`}>
@@ -17,14 +18,18 @@ function BlogItem({ path, excerpt, author, title, image, categories, publishedAt
           className="img"
         />
       </Link>
-      <Link to={`/miembros/${author.slug.current}`} className='author'>
+      <Link to={`/miembros/${author[0].slug.current}`} className='author'>
         <GatsbyImage
-          image={author.profileImage.asset.gatsbyImageData}
-          alt={`Foto de perfil de ${author.name}`}
+          image={author[0].profileImage.asset.gatsbyImageData}
+          alt={`Foto de perfil de ${author[0].name}`}
           className="author__img"
         />
         <div className='author-text'>
-        <ParagraphText className="author__name">{author.name}</ParagraphText>
+        <ParagraphText className="author__name">{author[0].name} {author.length > 1 && (
+          <span className='authors__number'> + {author.length - 1}</span>
+        )}
+        </ParagraphText>
+        
         {publishedAt && (
         <ParagraphText className="publishedAt">
           {format(new Date(publishedAt), 'p, MMMM dd, yyyy')}

@@ -12,7 +12,7 @@ import { getSanityImageData } from '../utils/getSanityImageData';
 const myPortableTextComponents = {
   block: {
     normal: ({ children }) => <ParagraphText>{children}</ParagraphText>,
-    h1: ({ children }) => <Title>{children}</Title>,
+    h1: ({ children }) => <Title tag={'h1'}>{children}</Title>,
   },
   marks: {
     code: ({ children }) => (

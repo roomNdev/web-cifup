@@ -4,12 +4,20 @@ import Button from '../buttons/Button';
 // import BlogItem from './BlogItem';
 import { SearchModalContext } from '../../contexts/searchModalContext';
 import { MdSearch } from 'react-icons/md';
+import Search from '../search/SearchModal';
 
 function Filters({ handleChangeFilters, current }) {
-  const { openSearchModal } = useContext(SearchModalContext);
+  const { openSearchModal,isSearchModalOpen, closeSearchModal  } = useContext(SearchModalContext);
 
   const handleSearchModalOpen = () => {
-    openSearchModal();
+    if (isSearchModalOpen) {
+      closeSearchModal()
+    }
+    else {
+      openSearchModal();
+
+    }
+    
   };
     // const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQWRQekk2RGhWV1NBNTRXY202a0R4Ykw2cnJOSkJOT3RHT241Smk1LWxiWEd3Skt4dDV3RnFJWXQyV2lpaERwcWVpemFhczExSlJGVkRDa0ExcGFwMHFBS3Jsdk94TVo2QnFLS2l2THg5T3VCNElkU0JpWjJfUm8ZD`
     // const [feed, setFeed] = useState()
@@ -59,7 +67,8 @@ function Filters({ handleChangeFilters, current }) {
         }}>Noticias</button>
         </div>
         
-      <div
+        <Search />
+      {/* <div
           className="searchIcon__wrapper"
           onClick={handleSearchModalOpen}
           onKeyDown={handleSearchModalOpen}
@@ -67,7 +76,7 @@ function Filters({ handleChangeFilters, current }) {
           role="button"
         >
           <MdSearch color=''/>
-        </div>
+        </div> */}
       </div> 
     </FiltersStyles>
   );

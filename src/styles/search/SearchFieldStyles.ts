@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SearchFieldStyles = styled.label`
   position: relative;
   width: 100%;
+  height: 100%;
   input {
     width: 100%;
     font-size: 1.8rem;

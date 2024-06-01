@@ -18,30 +18,29 @@ function SearchResult({
     JSON.stringify(blogsIndexStore.index),
     blogsIndexStore.store
   );
-  const authorsResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(authorsIndexStore.index),
-    authorsIndexStore.store
-  );
+  // const authorsResult = useFlexSearch(
+  //   searchQuery,
+  //   JSON.stringify(authorsIndexStore.index),
+  //   authorsIndexStore.store
+  // );
 
   if (
-    blogsResult.length === 0 &&
-    authorsResult.length === 0
+    blogsResult.length === 0
+    // authorsResult.length === 0
   ) {
-    return <ParagraphText>No Result Found.</ParagraphText>;
+    return <ParagraphText>No se han encontrado resultados</ParagraphText>;
   }
 
   return (
     <>
       {blogsResult.length > 0 && (
         <>
-          <ParagraphText>Blogs</ParagraphText>
           {blogsResult.map((result) => (
             <BlogSearchResultItem key={result.id} blog={result} />
           ))}
         </>
       )}
-      
+{/*       
       {authorsResult.length > 0 && (
         <>
           <ParagraphText>Authors</ParagraphText>
@@ -50,7 +49,7 @@ function SearchResult({
           ))}
         </>
       )}
-      
+       */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import BlogGrid from '../components/blog/BlogGrid.tsx';
+import JustPostGrid from '../components/blog/JustPostGrid.tsx';
 import MyPortableText from '../components/MyPortableText.tsx';
 import PageSpace from '../components/PageSpace.tsx';
 import Seo from '../components/seo.tsx';
@@ -27,7 +27,7 @@ export const authorQuery = graphql`
         }
       }
     }
-    allSanityBlog(filter: { author: { id: { eq: $id } } }) {
+    allSanityBlog(filter: { author: { elemMatch: { id: { eq: $id } } } }) {
       nodes {
         id
         title
@@ -57,83 +57,54 @@ export const authorQuery = graphql`
         }
       }
     }
-    allSanityPoem(filter: { author: { id: { eq: $id } } }) {
-      nodes {
-        id
-        title
-        publishedAt
-        slug {
-          current
-        }
-        genre {
-          title
-        }
-        author {
-          role
-          name
-          slug {
-            current
-          }
-          profileImage {
-            asset {
-              gatsbyImageData
-            }
-          }
-        }
-        categories {
-          title
-          slug {
-            current
-          }
-        }
-        coverImage {
-          alt
-          asset {
-            gatsbyImageData
-          }
-        }
-      }
-    }
+    
   }
 `;
 
 function SingleAuthor({ data }) {
   const author = data.sanityAuthor;
   const blogs = data.allSanityBlog.nodes;
+  console.log(blogs);
   return (
-    <PageSpace top={80} bottom={100}>
+    <PageSpace top={0} bottom={100}>
       <Seo title={author.name} />
-      <div className="container">
-        <SingleAuthorStyles>
+      
+      <SingleAuthorStyles>
           <div className="author-header">
             <GatsbyImage
               image={author.profileImage.asset.gatsbyImageData}
               alt={author.name}
               className="profileImage"
             />
-            <Title className="name">{author.name}</Title>
-          <ParagraphText className="bio">
-            {author.bio}
-          </ParagraphText>
+            <div className='data'>
+                
+              <Title className="name">{author.name}</Title>
+            <ParagraphText className="bio">
+              {author.bio}
+            </ParagraphText>
+            </div>
           </div>
-          {author.member
-            ? <Title className="poems__title">{author.role} {`- ${author.area[0].name}`}</Title> 
-            : <Title className="poems__title">Miembro del taller de escritura creativa</Title>}
+        </SingleAuthorStyles>
+        <SingleAuthorStyles>
+      <div className="container">
           <div className="author__socialList">
             {author.facebook && <a href={`https://www.${author.facebook.trim()}`} target='_blank'  rel='noreferrer'><FaFacebook/></a>}
             {author.instagram && <a href={`https://www.instagram.com/${author.instagram.trim()}`} target='_blank'rel='noreferrer'><FaInstagram/></a>}
             {author.linkedin &&  <a href={`https://www.${author.linkedin.trim()}`} target='_blank'  rel='noreferrer'><FaLinkedin/></a>}
         </div>
           {blogs[0] 
-            ?  <BlogGrid blogs={blogs} />  
-            :   <>
+            ?  <>
             <Title className="poems__title">Reseñas</Title>
+            <JustPostGrid blogs={blogs} />  
+            </>
+            :   <>
             <hr className="hr" />
+            <Title className="poems__title">Reseñas</Title>
             <ParagraphText className="no__post">No hay reseñas todavia</ParagraphText>
             </>
           }
-        </SingleAuthorStyles>
       </div>
+        </SingleAuthorStyles>
     </PageSpace>
   );
 }

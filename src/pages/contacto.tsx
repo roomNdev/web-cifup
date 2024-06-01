@@ -98,7 +98,6 @@ const IndexPage: React.FC<PageProps>  = () => {
             <ParagraphText className="label"> ¿Quieres colaborar o ser parte de nosotros? Contáctanos</ParagraphText>
             <input type="submit" value="Enviar" id='submit'/>
           </form>
-          </div>
           <div className='maps'>
           <Title className="title">
             Encuentranos en
@@ -122,6 +121,7 @@ const IndexPage: React.FC<PageProps>  = () => {
           </div>
         </div>
         </div>
+          </div>
         </ContactStyles>
       </PageSpace>
       );

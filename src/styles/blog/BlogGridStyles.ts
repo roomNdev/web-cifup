@@ -10,6 +10,11 @@ export const BlogGridStyles = styled.div`
     grid-template-columns: repeat(auto-fill, 250px);
     gap: 3rem;
   } */
+  .widget-container {
+    width: 100%;
+    height: auto;
+    /* aspect-ratio: calc(1); */
+  }
   .filters-container {
     margin-inline: 8%;
   }

@@ -6,7 +6,7 @@ import { Title } from '../typography/Title';
 import ParagraphText from '../typography/ParagraphText';
 import { socialLinks } from '../../constants/socialLinks';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { FaLinkedin, FaMailBulk } from 'react-icons/fa';
+import { FaChevronDown, FaLinkedin, FaMailBulk } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { format } from 'date-fns';
 
@@ -34,13 +34,15 @@ function MembersItem({members}) {
     <section className='areas'>
         {
             areas.filter(i => result.includes(i.slug.current)).map((item) => {
-                return <section className='area'>
-                        <h2 className='title'>{item.name}</h2>
+                return <details className='area'>
+                        <summary><h2 className='title'>{item.name}<FaChevronDown className='icon '></FaChevronDown></h2></summary>
                         <section className='members'>
                         {
                                 members
                                 .filter((member) => member.area.slug.current === item.slug.current)
                                 .map(member => {
+                                    const splittedName = member.name.split(' ')
+
                                     return  <AuthorItemStyles className="author-item" >
                                     {/* <Link to={`/miembros/${member.slug.current}`}> */}
                                     <section className='image__wrapper'>
@@ -53,15 +55,23 @@ function MembersItem({members}) {
                                     <section className='data'>
                                     <Link to={`/miembros/${member.slug.current}`} 
                                         className="title">
-                                        {member.name}
+                                    {
+                                        splittedName.map(i => (
+                                          <Title 
+                                            tag={'h2'}
+                                            className="title">
+                                              {i}
+                                            </Title>
+                        
+                                        ))
+                                      }
                                         </Link>
-                                        {/* <ParagraphText className="role">
-                                        
+                                        <ParagraphText className="role">
                                         {member.role}
-                                        </ParagraphText> */}
+                                        </ParagraphText>
+                                    </section>
                                         <div className='author_socialList'>
                                         { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={20}></FaLinkedin></a> : <></>}                                        </div>
-                                    </section>
                                     {/* </Link> */}
                         
                                 </AuthorItemStyles>
@@ -70,6 +80,8 @@ function MembersItem({members}) {
                                 members
                                 .filter((member) => member.area.slug.current === item.slug.current)
                                 .map(member => {
+                                    const splittedName = member.name.split(' ')
+
                                     return  <AuthorItemStyles className="author-item" >
                                     {/* <Link to={`/miembros/${member.slug.current}`}> */}
                                     <section className='image__wrapper'>
@@ -82,15 +94,23 @@ function MembersItem({members}) {
                                     <section className='data'>
                                     <Link to={`/miembros/${member.slug.current}`} 
                                         className="title">
-                                        {member.name}
+                                    {
+                                        splittedName.map(i => (
+                                          <Title 
+                                            tag={'h2'}
+                                            className="title">
+                                              {i}
+                                            </Title>
+                        
+                                        ))
+                                      }
                                         </Link>
-                                        {/* <ParagraphText className="role">
-                                        
+                                        <ParagraphText className="role">
                                         {member.role}
-                                        </ParagraphText> */}
+                                        </ParagraphText>
+                                    </section>
                                         <div className='author_socialList'>
                                         { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={20}></FaLinkedin></a> : <></>}                                        </div>
-                                    </section>
                                     {/* </Link> */}
                         
                                 </AuthorItemStyles>
@@ -99,6 +119,8 @@ function MembersItem({members}) {
                                 members
                                 .filter((member) => member.area.slug.current === item.slug.current)
                                 .map(member => {
+                                    const splittedName = member.name.split(' ')
+
                                     return  <AuthorItemStyles className="author-item" >
                                     {/* <Link to={`/miembros/${member.slug.current}`}> */}
                                     <section className='image__wrapper'>
@@ -111,22 +133,30 @@ function MembersItem({members}) {
                                     <section className='data'>
                                     <Link to={`/miembros/${member.slug.current}`} 
                                         className="title">
-                                        {member.name}
+                                    {
+                                        splittedName.map(i => (
+                                          <Title 
+                                            tag={'h2'}
+                                            className="title">
+                                              {i}
+                                            </Title>
+                        
+                                        ))
+                                      }
                                         </Link>
-                                        {/* <ParagraphText className="role">
-                                        
+                                        <ParagraphText className="role">
                                         {member.role}
-                                        </ParagraphText> */}
+                                        </ParagraphText>
+                                    </section>
                                         <div className='author_socialList'>
                                         { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={20}></FaLinkedin></a> : <></>}                                        </div>
-                                    </section>
                                     {/* </Link> */}
                         
                                 </AuthorItemStyles>
                                 })
                             }
                         </section>
-                </section>
+                </details>
             })
         }
     </section>

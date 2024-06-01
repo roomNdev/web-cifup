@@ -3,7 +3,7 @@ import React, { createContext, useMemo, useState } from 'react';
 const SearchModalContext = createContext({});
 
 const SearchModalContextProvider = ({ children }) => {
-  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(true);
   const initialValue = useMemo(
     () => ({
       isSearchModalOpen,

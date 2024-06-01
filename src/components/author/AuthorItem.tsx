@@ -11,12 +11,12 @@ import { MdEmail } from 'react-icons/md';
 import { format } from 'date-fns';
 import { ExMemberItemStyles } from '../../styles/author/ExMemberItemStyles';
 
-function AuthorItem({ name, role, linkedIn, slug, profileImage, type, email, date, dateEnd}) {
-
+function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileImage, type, email, date, dateEnd}) {
+   const splittedName = name.split(' ')
   return (
     <>
     {
-      type === 'directiva' ? 
+      type === 'Directiva' ? 
           <DirectiveItemStyles className="author-item" >
           <Link to={`/miembros/${slug.current}`}>
             <section className='image__wrapper'>
@@ -28,27 +28,35 @@ function AuthorItem({ name, role, linkedIn, slug, profileImage, type, email, dat
               />
             </section>
             <section className='data'>
-              <Title 
-              tag={'h2'}
-              className="title">
-                {name}
-              </Title>
+              {
+                splittedName.map(i => (
+                  <Title 
+                    tag={'h2'}
+                    className="title">
+                      {i}
+                    </Title>
+
+                ))
+              }
+              <section className=''>
+                {`${date ? format(new Date(date), 'MMMM dd, yyyy') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
+              </section>
               <ParagraphText className="role">
                 {role}
               </ParagraphText>  
-            <section className=''>
-                {`${date ? format(new Date(date), 'MMMM dd, yyyy') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
-              </section>
+              {
+                (linkedIn || email ) && 
               <section className='author_socialList'>
                   { linkedIn ? <a href={`${linkedIn}`}><FaLinkedin className='icon' size={32}></FaLinkedin></a> : <></>}
                   { email ? <a href={`mailto:${email}`}><MdEmail size={32} className='icon'></MdEmail></a> : <></> }
               </section>
+              }
             </section>
           </Link>
           
         </DirectiveItemStyles>
         
-        : type === 'honorarios' 
+        : type === 'Honorarios' 
         ? <DirectiveItemStyles className="author-item" >
         <Link to={`/miembros/${slug.current}`}>
           <section className='image__wrapper'>
@@ -68,6 +76,11 @@ function AuthorItem({ name, role, linkedIn, slug, profileImage, type, email, dat
             <section className=''>
                 {`${date ? format(new Date(date), 'MMMM dd, yyyy') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
             </section>
+            <Title 
+            tag={'h3'}
+            className="actual-job">
+              {actual}
+            </Title>
             <section className='author_socialList'>
                 { linkedIn ? <a href={`${linkedIn}`}><FaLinkedin className='icon' size={32}></FaLinkedin></a> : <></>}
                 { email ? <a href={`mailto:${email}`}><MdEmail size={32} className='icon'></MdEmail></a> : <></> }
@@ -76,7 +89,7 @@ function AuthorItem({ name, role, linkedIn, slug, profileImage, type, email, dat
         </Link>
         
       </DirectiveItemStyles>
-        : type === 'exmiembros' 
+        : type === 'ExMiembros' 
         ? <ExMemberItemStyles className="author-item" >
           {/* <section className='image__wrapper'>
             <GatsbyImage
@@ -87,7 +100,6 @@ function AuthorItem({ name, role, linkedIn, slug, profileImage, type, email, dat
             />
           </section> */}
           <section className='data'>
-            
         <Link to={`/miembros/${slug.current}`}>
             <Title 
             tag={'h2'}
@@ -98,11 +110,16 @@ function AuthorItem({ name, role, linkedIn, slug, profileImage, type, email, dat
             <section className=''>
                 {`${date ? format(new Date(date), 'MMMM dd, yyyy') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
             </section>
+            <Title 
+            tag={'h2'}
+            className={`exrole ${wasDirective ? 'directive': ''}`}>
+              {role}
+            </Title>
+          </section>
             <section className='author_socialList'>
                 { linkedIn ? <a href={`${linkedIn}`}><FaLinkedin className='icon' size={32}></FaLinkedin></a> : <></>}
                 { email ? <a href={`mailto:${email}`}><MdEmail size={32} className='icon'></MdEmail></a> : <></> }
             </section>
-          </section>
         
       </ExMemberItemStyles> 
       :

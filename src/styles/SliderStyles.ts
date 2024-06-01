@@ -2,6 +2,15 @@ import styled from 'styled-components';
 
 export const SliderStyles = styled.div`
 margin-block: 2rem;
+
+h1 {    
+        max-width: 1200px;
+        margin-inline: auto;
+        font-size: 3rem;
+        color: var(--text-primary);
+        font-weight: 600;
+        margin-block: 1rem;
+    }
 .carousel {
     .nuka-wrapper {
         gap: 1rem;

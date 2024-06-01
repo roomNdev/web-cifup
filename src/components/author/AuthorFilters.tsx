@@ -3,7 +3,7 @@ import { FiltersStyles } from '../../styles/blog/FiltersStyles';
 // import Button from './buttons/Button';
 // import BlogItem from './BlogItem';
 
-function AuthorFilters({ handleChangeFilters, current }) {
+function AuthorFilters({ handleChangeSections, current }) {
 
     // const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQWRQekk2RGhWV1NBNTRXY202a0R4Ykw2cnJOSkJOT3RHT241Smk1LWxiWEd3Skt4dDV3RnFJWXQyV2lpaERwcWVpemFhczExSlJGVkRDa0ExcGFwMHFBS3Jsdk94TVo2QnFLS2l2THg5T3VCNElkU0JpWjJfUm8ZD`
     // const [feed, setFeed] = useState()
@@ -31,19 +31,19 @@ function AuthorFilters({ handleChangeFilters, current }) {
   return (
     <FiltersStyles>
       <div className='filters'>
-        <button className={`${current === "directiva" ? 'active' : ''}`} onClick={() => {
-          handleChangeFilters("directiva")
-        }}>Directiva</button>
-        <button className={`${current === "areas" ? 'active' : ''}`} onClick={() => {
-          handleChangeFilters("areas")
-        }}>Areas</button>
+        <a className={`${current === "directiva" ? 'active' : ''}`} href='#Directiva' onClick={() => {
+          handleChangeSections("directiva")
+        }}>Directiva</a>
+        <a className={`${current === "areas" ? 'active' : ''}`} href='#Miembro' onClick={() => {
+          handleChangeSections("areas")
+        }}>Areas</a>
         
-        <button className={`${current === "exmiembros" ? 'active' : ''}`} onClick={() => {
-          handleChangeFilters("exmiembros")
-        }}>Ex miembros</button>
-        <button className={`${current === "honorarios" ? 'active' : ''}`} onClick={() => {
-          handleChangeFilters("honorarios")
-        }}>Miembros honorarios</button>
+        <a className={`${current === "honorarios" ? 'active' : ''}`} href='#Honorarios' onClick={() => {
+          handleChangeSections("honorarios")
+        }}>Miembros honorarios</a>
+        <a className={`${current === "exmiembros" ? 'active' : ''}`} href='#ExMiembros' onClick={() => {
+          handleChangeSections("exmiembros")
+        }}>Ex miembros</a>
         
       </div>
     </FiltersStyles>

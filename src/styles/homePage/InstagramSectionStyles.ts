@@ -5,8 +5,8 @@ export const InstagramSectionStyles = styled.div`
     flex-direction: column;
     margin-top: 6rem;
         overflow: hidden;
+        h1 {
         padding-inline: 4rem;
-    h1 {
         color: var(--text-primary);
         font-size: 3.5rem;
         margin-bottom: 4rem;
@@ -43,6 +43,62 @@ export const InstagramSectionStyles = styled.div`
                 padding-inline: 2rem;
             }
         }
+    .container {
+        margin-top: 20px;
+        width: 100%;
+        /* height: 700px; */
+        aspect-ratio: 6/2;
+        max-width: none;
+            iframe {
+                height: 100%;
+            }
+            /* flex-wrap: wrap;
+            text-align: center;
+            gap: 24px;
+            position: relative; */
+    }
+    /* @media (max-width: 1450px) {
+        .container {
+            height: 650px !important;
+        }
+    }
+    @media (max-width: 1250px) {
+        .container {
+            height: 600px !important;
+        }
+    }
+    @media (max-width: 1100px ) {
+        .container {
+            height: 550px !important;
+        }
+    }
+    @media (max-width: 900px ) {
+        .container {
+            height: 500px !important;
+        }
+    }
+    @media (max-width: 800px ) {
+        .container {
+            height: 450px !important;
+        }
+    }
+    @media (max-width: 700px ) {
+        .container {
+            height: 400px !important;
+        }
+    }
+    
+    @media (max-width: 600px ) {
+        .container {
+            height: 350px !important;
+        }
+    }
+    
+    @media (max-width: 445px ) {
+        .container {
+            height: 300px !important;
+        }
+    } */
     /* .event_container {
         display: flex;
         gap: 2rem;

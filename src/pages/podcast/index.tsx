@@ -26,6 +26,12 @@ const IndexPage: React.FC<PageProps>  = () => {
     <HeroSection />
     <div className="container">
       <PodcastsStyles>
+        <div>
+          <h1>Podcasts</h1>
+          <p>CIFUP realiza distintos eventos para promover la cultura e información del mundo financiero. 
+              Aquí podrás obtener mas información acerca de fechas, horarios y ubicacion.
+          </p>
+        </div>
       {
         urls.map(item => {
           return <div dangerouslySetInnerHTML={{__html: item.url}}></div>

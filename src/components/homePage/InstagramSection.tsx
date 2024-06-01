@@ -52,15 +52,18 @@ const InstagramSection: React.FC<{}> = () => {
         <InstagramSectionStyles>
   {/* LightWidget WIDGET */}
   <h1>Eventos y talleres</h1>
-        </InstagramSectionStyles>
-  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+        <section className="container">
+            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
             <iframe
                 src="https://cdn.lightwidget.com/widgets/b2df72a36a2f516486504a435dbdba54.html"
                 scrolling="no"
                 allowTransparency={true}
                 className="lightwidget-widget"
-                style={{ width: "100%", border: 0, overflow: "hidden", height: "800px" }}
-            /></>
+                style={{ width: "100%", border: 0, overflow: "hidden", height: "100%" }}
+            />
+            </section>    
+        </InstagramSectionStyles>
+        </>
     )
 }
 

@@ -8,65 +8,78 @@ import HonoraryItem from './HonoraryItem';
 import PersonsGrid from './PersonsGrid';
 
 function Persons() {
-    const data = useStaticQuery(graphql`
-    {
-        allSanityAuthor(filter: {}) {
-            nodes {
-              id
+    const data = useStaticQuery(graphql`{
+      allSanityAuthor(filter: {}) {
+  group(field: {types: {title : SELECT}}) {
+    totalCount
+    fieldValue
+    nodes {
+            id
+            name
+            role
+            area {
               name
-              role
-              area {
-                name
-                slug {
-                  _key
-                  _type
-                  current
-                  source
-                }
-              }
               slug {
+                _key
+                _type
                 current
+                source
               }
-              isAuthor
-              linkedin
-              email
-              date
-              dateEnd
-              types {
-                _id
-                slug {
-                  _key
-                  _type
-                  current
-                  source
-                }
+            }
+            slug {
+              current
+            }
+            isAuthor
+            linkedin
+            email
+            actual
+            wasDirective
+            date
+            dateEnd
+            types {
+              _id
+              slug {
+                _key
+                _type
+                current
+                source
               }
-              profileImage {
-                asset {
-                  gatsbyImageData
-                }
+            }
+            profileImage {
+              asset {
+                gatsbyImageData
               }
             }
           }
-    }
+        }
+      }    
+  }
   `);
 
-  const authors = data.allSanityAuthor.nodes
-    const [filter, setfilter] = useState('directiva');
+  const areas = data.allSanityAuthor.group
+    const [section, setsection] = useState('directiva');
 
-    const handleChangeFilters = (filtered) => {
-        setfilter(filtered)
+    const handleChangeSections = (section) => {
+      setsection(section)
     }
+  console.log(areas);
+  const order = ['Directiva', 'Miembro', 'Honorarios', 'ExMiembros'];
 
+  const rearrangedAreas = areas.sort((a, b) => {
+    return order.indexOf(a.fieldValue) - order.indexOf(b.fieldValue);
+  });
+  
+  // const rearrangedAreas = areas.
   return (
     <>
-        <AuthorFilters current={filter} handleChangeFilters={handleChangeFilters}/>
-        {/* <AuthorGridStyles> */}
+        <AuthorFilters current={section} handleChangeSections={handleChangeSections}/>
+        <AuthorGridStyles>
+          
             <PersonsGrid
-                      type={filter}
-                      authors={authors.filter(i => (i.types && i.types.slug.current === filter))}
+                      // type={filter}
+                      areas={rearrangedAreas}
                       />
-        {/* </AuthorGridStyles> */}
+        </AuthorGridStyles>
     </>
   );
 }

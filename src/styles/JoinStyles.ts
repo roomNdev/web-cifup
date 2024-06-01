@@ -15,13 +15,41 @@ margin-block: 4rem;
   }
   .unirme_como {
     
-    margin-left: 15%;
+    /* margin-left: 15%; */
     h2  {
       text-align: left;
       font-size: 20px;
       font-weight: 400;
       color: var(--text-1);
-      margin-top: 60px;
+      /* margin-top: 60px; */
+      margin-block: 30px;
+    }
+    button {
+      padding: 2rem !important;
+      font-size: 12px;
+    }
+  }
+  .description {
+    margin-bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: start;
+  h1 {
+    text-align: left;
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--text-1);
+    margin-top: 60px;
+  }
+  .color-cobalt {
+    color: var(--cobalt-blue)
+  }
+    p {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
     }
   }
   .button-container {

@@ -44,7 +44,7 @@ export default styled.div`
         font-size: 20px;
         border: 0;
         border-radius: 4px;
-        background-color: var(--jet-stream);
+        background-color: var(--light-gray);
     }
     input[type="submit"] {
         width: 100%;
@@ -85,14 +85,15 @@ export default styled.div`
         text-align: right;
         width: 100%;
         height: 100%;
-        max-width: 600px;
-        max-height: 600px;
+        max-width: 900px;
+        max-height: 900px;
         aspect-ratio: 1;
+        padding-inline: 2%;
         /* height: 100%; */
     }
     #gmap_canvas{
-        max-width: 600px;
-        max-height: 600px;
+        max-width: 900px;
+        max-height: 900px;
     }
     .gmap_canvas{
         overflow: hidden;

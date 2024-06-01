@@ -6,35 +6,34 @@ export const ExMemberItemStyles = styled.div`
   /* border-radius: 8px; */
   gap: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  max-width: 260px;
-  min-width: 260px;
+  padding: 2rem;
+  max-width: 350px;
+  min-width: 350px;
+  border-radius: 6px;
   .data {
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-top: 20px;
     padding-inline: 8px;
-    height: 150px;
     position: relative;
+  }
+  .exrole {
+    color: var(--white);
+    font-size: 12px;
+    text-align: center;
+    margin-top: 4px;
+    &.directive {
+      
+    color: var(--jet-stream);
+    }
   }
   .title {
     color: var(--text-white);
     font-size: 24px;
     text-align: center;
     margin-top: 4px;
-  }
-  .role {
-    text-align: center;
-    font-size: 20px;
-    position: absolute;
-    top: -100px;
-    right: 0px;
-    padding-inline: 8px;
-    background-color: var(--jet-stream);
-    z-index: 1000000000;
-    color: var(--text-white);
   }
   .date {
     color: var(--text-white);
@@ -44,7 +43,7 @@ export const ExMemberItemStyles = styled.div`
     margin-top: 1.5rem;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    /* width: 100%; */
     justify-content: end;
     align-items: end;
     /* gap: 8px; */

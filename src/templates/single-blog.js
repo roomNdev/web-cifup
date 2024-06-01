@@ -2,7 +2,7 @@ import { graphql, Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { format } from 'date-fns';
-import { BiCategory } from 'react-icons/bi';
+import { BiCategory, BiHeart } from 'react-icons/bi';
 import { FiCalendar, FiStar, FiUser } from 'react-icons/fi';
 import PageSpace from '../components/PageSpace.tsx';
 import ParagraphText from '../components/typography/ParagraphText.tsx';
@@ -11,12 +11,13 @@ import { SingleBlogStyles } from '../styles/blog/SingleBlogStyles.ts';
 import MyPortableText from '../components/MyPortableText.tsx';
 import Seo from '../components/seo.tsx';
 import Button from '../components/buttons/Button.tsx'
-import JustFeatured from '../components/homePage/JustFeatured.tsx'
+import FeaturedPosts from '../components/homePage/FeaturedPosts.tsx'
 
 export const postQuery = graphql`
   query SingleBlogQuery($id: String!) {
     sanityBlog(id: { eq: $id }) {
       title
+      likes
       publishedAt
       _rawBody
       bookAuthorBio
@@ -45,7 +46,7 @@ function SingleBlog({ data }) {
   const blog = data.sanityBlog;
   const points = Math.round(blog.points || 1) 
 
-  const stars = Array.from(Array(points).keys())
+  const likes = data.sanityBlog.likes
 
 
 return (<>
@@ -77,6 +78,15 @@ return (<>
                 {blog.author.name}
               </Link>
             </ParagraphText>
+            {
+              likes !== null && (
+            <ParagraphText className="likes">
+              <BiHeart />
+              {likes}
+            </ParagraphText>
+
+              )
+            }
           </div>
           
           <Title className="title">{blog.title}</Title>
@@ -94,7 +104,8 @@ return (<>
         </div>
       </PageSpace>
     </SingleBlogStyles>
-      <JustFeatured></JustFeatured>
+          <FeaturedPosts></FeaturedPosts>
+      {/* <JustFeatured></JustFeatured> */}
 </>)
 }
 

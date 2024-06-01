@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const AuthorItemStyles = styled.div`
   background-color: var(--text-primary);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 2.5rem;
   gap: 1rem;
   display: flex;
   flex-direction: row;
@@ -37,7 +37,7 @@ export const AuthorItemStyles = styled.div`
     font-size: 12px;
     width: 100%;
     text-align: left;
-    margin-top: 4px;
+    display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -46,12 +46,12 @@ export const AuthorItemStyles = styled.div`
     text-align: left;
     width: 100%;
     font-size: 10px;
-    color: var(--text-white);
+    color: var(--jet-stream);
   }
   .author_socialList {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
     width: 100%;
       a {
