@@ -82,16 +82,16 @@ function SingleAuthor({ data }) {
             <ParagraphText className="bio">
               {author.bio}
             </ParagraphText>
+            <div className="author__socialList">
+              {author.facebook && <a href={`https://www.${author.facebook.trim()}`} target='_blank'  rel='noreferrer'><FaFacebook/></a>}
+              {author.instagram && <a href={`https://www.instagram.com/${author.instagram.trim()}`} target='_blank'rel='noreferrer'><FaInstagram/></a>}
+              {author.linkedin &&  <a href={`https://www.${author.linkedin.trim()}`} target='_blank'  rel='noreferrer'><FaLinkedin/></a>}
+          </div>
             </div>
           </div>
         </SingleAuthorStyles>
         <SingleAuthorStyles>
       <div className="container">
-          <div className="author__socialList">
-            {author.facebook && <a href={`https://www.${author.facebook.trim()}`} target='_blank'  rel='noreferrer'><FaFacebook/></a>}
-            {author.instagram && <a href={`https://www.instagram.com/${author.instagram.trim()}`} target='_blank'rel='noreferrer'><FaInstagram/></a>}
-            {author.linkedin &&  <a href={`https://www.${author.linkedin.trim()}`} target='_blank'  rel='noreferrer'><FaLinkedin/></a>}
-        </div>
           {blogs[0] 
             ?  <>
             <Title className="poems__title">Reseñas</Title>

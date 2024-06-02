@@ -44,12 +44,13 @@ export const SingleAuthorStyles = styled.div`
   .container {
     max-width: none;
   padding-inline: 20%;
+  min-height: 60vh;
   }
   .author__socialList {
     margin-top: 1.5rem;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 8px;
       a {
