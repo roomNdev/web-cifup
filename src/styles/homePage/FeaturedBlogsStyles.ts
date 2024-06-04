@@ -33,6 +33,13 @@ export const FeaturedBlogsStyles = styled.div`
                 font-size: 13px;
             }
         }
+        .post_abstract {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         .post_image {
             width: 100%;
             height: 140px;

@@ -15,7 +15,7 @@ function PersonsGrid({areas}) {
              return <>
              <div className='area-container'>
              <h1 className='area' id={`${area.fieldValue}`}>{area.fieldValue}</h1>
-             <p className='area-desc'>Portable text of areas description that must be added to sanity</p>
+             <p className='area-desc'>{area.fieldDesc || 'Portable text of areas description that must be added to sanity'}</p>
 
              </div>
              {

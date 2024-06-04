@@ -53,10 +53,18 @@ function Persons() {
           }
         }
       }    
+      sanityPageContent(_id: {eq: "76023209-46fb-40af-af68-a8035213ac20"}) {
+        members_directiva
+        members_miembros
+        members_honorarios
+        members_exmiembros
+      }
+    
   }
   `);
 
   const areas = data.allSanityAuthor.group
+  const authorsData = data.sanityPageContent
     const [section, setsection] = useState('directiva');
 
     const handleChangeSections = (section) => {
@@ -65,10 +73,14 @@ function Persons() {
   console.log(areas);
   const order = ['Directiva', 'Miembro', 'Honorarios', 'ExMiembros'];
 
-  const rearrangedAreas = areas.sort((a, b) => {
+  let rearrangedAreas = areas.sort((a, b) => {
     return order.indexOf(a.fieldValue) - order.indexOf(b.fieldValue);
   });
   
+  rearrangedAreas[0].fieldDesc = authorsData.members_directiva
+  rearrangedAreas[1].fieldDesc = authorsData.members_miembros
+  rearrangedAreas[2].fieldDesc = authorsData.members_honorarios
+  rearrangedAreas[3].fieldDesc = authorsData.members_exmiembros
   // const rearrangedAreas = areas.
   return (
     <>

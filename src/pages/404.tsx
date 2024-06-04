@@ -38,7 +38,7 @@ const NotFoundPage: React.FC<PageProps> = () => {
     <main style={pageStyles}>
       <h1 style={headingStyles}>Page not found</h1>
       <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
+        Ups! Parece que no existe la página que estas buscando 😔.
         <br />
         {process.env.NODE_ENV === "development" ? (
           <>

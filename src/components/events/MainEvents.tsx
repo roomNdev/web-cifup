@@ -19,16 +19,20 @@ const MainEvents: React.FC<{}> = () => {
               }
           }
         }
+
+        sanityPageContent(_id: {eq: "76023209-46fb-40af-af68-a8035213ac20"}) {
+          events_desc
+        }
       }`
     )
 
     const image = data.sanityPrincipalPhoto
+    const eventsData = data.sanityPageContent
 
     return (
         <MainEventsStyles>
           <h1>Nosotros</h1>
-          <p>CIFUP realiza distintos eventos para promover la cultura e información del mundo financiero. 
-            Aquí podrás obtener mas información acerca de fechas, horarios y ubicacion.
+          <p>{eventsData.events_desc || 'CIFUP realiza distintos eventos para promover la cultura e información del mundo financiero. Aquí podrás obtener mas información acerca de fechas, horarios y ubicacion.'}
           </p>
         </MainEventsStyles>
     )

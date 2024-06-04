@@ -8,6 +8,7 @@ import ParagraphText from './typography/ParagraphText';
 import { Title } from './typography/Title';
 import sanityConfig from '../../sanity-config';
 import { getSanityImageData } from '../utils/getSanityImageData';
+import PortableTextStyles from '../styles/PortableTextStyles';
 
 const myPortableTextComponents = {
   block: {
@@ -57,8 +58,8 @@ const myPortableTextComponents = {
   },
 };
 
-function MyPortableText({ value }) {
-  return <PortableText value={value} components={myPortableTextComponents} />;
+function MyPortableText({ value, ...rest}) {
+  return <PortableTextStyles><PortableText value={value} components={myPortableTextComponents} /></PortableTextStyles>;
 }
 
 export default MyPortableText;

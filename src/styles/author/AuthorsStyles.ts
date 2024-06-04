@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const AuthorsStyles = styled.div`
         margin-inline: 15%;
+        margin-block: 6rem;
         .description {
             display: grid;
             grid-template-columns: 1fr 1fr;

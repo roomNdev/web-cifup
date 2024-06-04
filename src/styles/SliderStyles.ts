@@ -15,6 +15,9 @@ h1 {
     .nuka-wrapper {
         gap: 1rem;
     }
+    .nuka-nav-button {
+        z-index: 10;
+    }
 }
     .image-container {
         max-width: 800px;
@@ -41,7 +44,7 @@ h1 {
             z-index: 1;
             opacity: 0;
             transition: opacity .4s;
-            cursor: pointer;
+            /* cursor: pointer; */
             background-color: var(--jet-stream);}
         &:hover {
             .image-text {

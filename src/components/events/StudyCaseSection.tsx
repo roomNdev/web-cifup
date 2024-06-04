@@ -20,10 +20,30 @@ const StudyCaseSection: React.FC<{}> = () => {
               }
           }
         }
+        sanityPageContent(_id: {eq: "76023209-46fb-40af-af68-a8035213ac20"}) {
+            study_case_desc2
+            study_case_subtitle2
+            study_case_desc1
+            study_case_subtitle1
+            study_case_title
+            study_case_bg_image {
+                asset {
+                    gatsbyImageData
+                }
+                alt
+            }
+          }
       }`
     )
 
     const image = data.sanityPrincipalPhoto
+    const eventsData = data.sanityPageContent
+    const {study_case_desc2,
+        study_case_subtitle2,
+        study_case_desc1,
+        study_case_subtitle1,
+        study_case_title,
+        study_case_bg_image} = eventsData
 
     return (
         <StudyCaseSectionStyles>
@@ -31,14 +51,12 @@ const StudyCaseSection: React.FC<{}> = () => {
             <div className='content'>
                 {/* <GatsbyImage ></GatsbyImage> */}
                 <div className='main'>
-                    <h1>Titulo</h1>
-                    <h2>Subtitulo 1</h2>
-                    <p>CIFUP realiza distintos eventos para promover la cultura e información del mundo financiero. 
-                        Aquí podrás obtener mas información acerca de fechas, horarios y ubicacion.
+                    <h1>{study_case_title ||'Titulo'}</h1>
+                    <h2>{study_case_subtitle1 ||'Subtitulo 1'}</h2>
+                    <p>{study_case_desc1 || 'CIFUP realiza distintos eventos para promover la cultura e información del mundo financiero. Aquí podrás obtener mas información acerca de fechas, horarios y ubicacion.'}
                     </p>
-                    <h2>Subtitulo 2</h2>
-                    <p>CIFUP realiza distintos eventos para promover la cultura e información del mundo financiero. 
-                        Aquí podrás obtener mas información acerca de fechas, horarios y ubicacion.
+                    <h2>{study_case_subtitle2 ||'Subtitulo 2'}</h2>
+                    <p>{study_case_desc2 || 'CIFUP realiza distintos eventos para promover la cultura e información del mundo financiero. Aquí podrás obtener mas información acerca de fechas, horarios y ubicacion.'}
                     </p>
                 </div>
                 <div className='video'>
