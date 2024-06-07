@@ -15,11 +15,15 @@ export const AuthorGridStyles = styled.div`
     align-items: center;
     .area{
       text-align: left;
+        color: var(--text-primary);
+        font-size: 3.5rem;
+        text-align: left;
+        margin: 0;
     }
     .area-desc{ 
       color: var(--text-primary);
       font-size: 16px;
-      max-width: 40ch;
+      max-width: 54ch;
     }
   }
   display: flex;
@@ -30,7 +34,7 @@ export const AuthorGridStyles = styled.div`
   align-items: center;
   .items {
     /* margin-inline: auto; */
-    gap: 6px;
+    gap: 1rem;
     margin-bottom: 4rem;
     width: 100%;
     display: flex;
@@ -42,10 +46,12 @@ export const AuthorGridStyles = styled.div`
   @media only screen and (max-width: 768px) {
     .items {
       
-      justify-content: center;
+    }
+    .area-container {
+      align-items: start;
+      flex-direction: column;
     }
     gap: 2rem;
 
   }
-  
 `;

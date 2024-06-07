@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const MainEventsStyles = styled.div`
     padding: 4rem;    
-    max-width: 1200px;
+    
+    max-width: 1300px;
     margin: 0 auto;
     h1 {
         font-size: 4rem;

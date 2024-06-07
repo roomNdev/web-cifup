@@ -1,10 +1,8 @@
 exports.createPages = async ({ graphql, actions }) => {
   const postsPerPage = Number(process.env.GATSBY_POST_PER_PAGE) || 12;
   // templates path
-  const singlePoemTemplate = require.resolve('./src/templates/single-poem.js');
   const singleBlogTemplate = require.resolve('./src/templates/single-blog.js');
 
-  const poemListTemplate = require.resolve('./src/templates/poem-list.js');
   const blogListTemplate = require.resolve('./src/templates/blog-list.js');
 
   const singleAuthorTemplate = require.resolve(
@@ -25,14 +23,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     {
       allSanityBlog {
-        nodes {
-          id
-          slug {
-            current
-          }
-        }
-      }
-      allSanityPoem {
         nodes {
           id
           slug {

@@ -2,19 +2,30 @@ import styled from 'styled-components';
 
 export const FeaturedBlogsStyles = styled.div`
     display: flex;
-    max-width: 1200px;
-    margin: 2rem auto;
+    margin-block: 2rem ;
     flex-direction: column;
-    justify-content: center;
     /* margin-inline: 4rem; */
+    .mas {
+        margin-inline: auto;
+        margin-block: 2rem;
+        max-width: 200px;
+    }
     h1 {
+        max-width: 1300px;
+        margin-inline: auto;
+        width: 100%;
+        text-align: left;
         font-size: 3.5rem;
         color: var(--text-primary);
         text-align: left;
         margin-bottom: 4rem;
+        
+        padding-inline: 4rem;
     }
     .post_container {
         display: flex;
+        max-width: 1300px;
+        margin-inline: auto;
         gap: 1rem;
         align-items: center;
         justify-content: center;
@@ -26,7 +37,7 @@ export const FeaturedBlogsStyles = styled.div`
         .post {
             background-color: var(--text-primary);
             width: 300px;
-            height: 350px;
+            height: 400px;
             border-radius: 4px;
             p {
                 padding-inline: 2rem;
@@ -35,28 +46,29 @@ export const FeaturedBlogsStyles = styled.div`
         }
         .post_abstract {
             display: -webkit-box;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         .post_image {
             width: 100%;
-            height: 140px;
+            height: 220px;
             border-radius: 4px 4px 0 0;
             user-select: none;
         }
         .post_title {
-            font-size: 2.4rem;
+            font-size: 2rem;
             line-height: 150%;
             padding: 2rem;
+            padding-bottom: 0;
         }
     }
     @media (max-width: 1300px) {
         .post_container {
             .post {
                 width: 250px;
-                height: 350px;
+                height: 400px;
             }
         }
     }
@@ -64,7 +76,7 @@ export const FeaturedBlogsStyles = styled.div`
         .post_container {
             .post {
                 width: 200px;
-                height: 350px;
+                height: 400px;
             }
         }
     }
@@ -76,16 +88,33 @@ export const FeaturedBlogsStyles = styled.div`
                 display: flex;
                 width: 80%;
                 height: 180px;
-                padding-inline: 20px;
+                padding-right: 20px;
                 padding-block: auto;
                 flex-direction: row;
             }
             .post_image {
+                max-width: 40%;
                 width: auto;
-                max-width: 250px;
+                /* width: 100%; */
+                min-width: 40%;
                 border-radius: 4px;
                 height: 100%;
             }
+        }
+    }
+    @media (max-width: 530px) {
+        h1 {
+            
+            font-size: 2rem;
+        }
+        p {
+            
+            font-size: 1.6rem;
+        }
+    }
+    @media (max-width: 360px) {
+        h2.post_title {
+            font-size: 1.8rem !important;
         }
     }
 `;  

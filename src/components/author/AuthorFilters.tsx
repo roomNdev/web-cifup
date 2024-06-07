@@ -30,7 +30,7 @@ function AuthorFilters({ handleChangeSections, current }) {
 
   return (
     <FiltersStyles>
-      <div className='filters'>
+      <div className='filters-author'>
         <a className={`${current === "directiva" ? 'active' : ''}`} href='#Directiva' onClick={() => {
           handleChangeSections("directiva")
         }}>Directiva</a>

@@ -10,13 +10,12 @@ export const BlogGridStyles = styled.div`
     grid-template-columns: repeat(auto-fill, 250px);
     gap: 3rem;
   } */
+    padding: 4rem;
+    width: 100%;
   .widget-container {
     width: 100%;
     height: auto;
     /* aspect-ratio: calc(1); */
-  }
-  .filters-container {
-    margin-inline: 8%;
   }
   .ig-new{ 
     width: 325px;
@@ -32,7 +31,7 @@ export const BlogGridStyles = styled.div`
     margin: 0 auto;
     margin-top: 3.5rem;
     gap: 10px;
-    justify-content: center;
+    /* justify-content: center; */
     flex-wrap: wrap;
     /* max-width: 1000px; */
   }

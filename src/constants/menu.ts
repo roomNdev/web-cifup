@@ -19,6 +19,10 @@ export const menu = [
     title: 'Miembros',
     path: '/miembros',
   },
+  {
+    title: 'Contacto',
+    path: '/contacto',
+  },
   // {
   //   title: 'Contacto',
   //   path: '/contacto',

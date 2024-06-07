@@ -2,15 +2,15 @@ import { graphql, Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { format } from 'date-fns';
-import { BiCategory, BiHeart } from 'react-icons/bi';
-import { FiCalendar, FiStar, FiUser } from 'react-icons/fi';
+import { BiHeart } from 'react-icons/bi';
+import { FiCalendar} from 'react-icons/fi';
 import PageSpace from '../components/PageSpace.tsx';
 import ParagraphText from '../components/typography/ParagraphText.tsx';
 import { Title } from '../components/typography/Title.tsx';
 import { SingleBlogStyles } from '../styles/blog/SingleBlogStyles.ts';
 import MyPortableText from '../components/MyPortableText.tsx';
 import Seo from '../components/seo.tsx';
-import Button from '../components/buttons/Button.tsx'
+import ScrollToTop from '../constants/ScrollTop';
 import FeaturedPosts from '../components/homePage/FeaturedPosts.tsx'
 
 export const postQuery = graphql`
@@ -44,12 +44,12 @@ export const postQuery = graphql`
 
 function SingleBlog({ data }) {
   const blog = data.sanityBlog;
-  const points = Math.round(blog.points || 1) 
 
   const likes = data.sanityBlog.likes
 
   console.log(blog);
 return (<>
+      <ScrollToTop></ScrollToTop>
 <SingleBlogStyles>
       <Seo title={blog.title} />
       <PageSpace top={80} bottom={100}>

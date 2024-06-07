@@ -6,10 +6,14 @@ export const MembersStyles = styled.div`
     /* margin-inline: 8%; */
     width: 100%;
     gap: 2rem;
-    @keyframes details-show {
+@keyframes details-show {
   from {
     opacity:0;
-    transform: var(--details-translate, translateY(-0.5em));
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity:100;
+    transform: translateY(0);
   }
 }
 
@@ -17,15 +21,19 @@ details[open] > summary > h2 .icon {
     rotate: 180deg;
 }
 details[open] > *:not(summary) {
-  animation: details-show 150ms ease-in-out;
+  animation: details-show 150ms ease-in-out both;
 }
 
 summary {
+    h2:hover {
+        background-color: var(--text-primary);
+        color: white;
+    }
     display: flex;
     width: 220px;
     /* width: max-content; */
     h2 {
-        
+    transition: background .4s, color .4s;
     border: var(--jet-stream) 1px solid;
     padding: 8px;
     border-radius: 6px;

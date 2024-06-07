@@ -12,14 +12,6 @@ import { StudyCaseSectionStyles } from '../../styles/events/StudyCaseSectionStyl
 
 const StudyCaseSection: React.FC<{}> = () => {
     const data = useStaticQuery(graphql`{
-        sanityPrincipalPhoto(title: {eq: "Foto Principal"}) {
-            title
-            principalPhoto {
-              asset {
-                gatsbyImageData
-              }
-          }
-        }
         sanityPageContent(_id: {eq: "76023209-46fb-40af-af68-a8035213ac20"}) {
             study_case_desc2
             study_case_subtitle2
@@ -36,7 +28,6 @@ const StudyCaseSection: React.FC<{}> = () => {
       }`
     )
 
-    const image = data.sanityPrincipalPhoto
     const eventsData = data.sanityPageContent
     const {study_case_desc2,
         study_case_subtitle2,

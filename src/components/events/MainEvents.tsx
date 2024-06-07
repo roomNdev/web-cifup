@@ -11,22 +11,12 @@ import { MainEventsStyles } from '../../styles/events/MainEventsStyles'
 
 const MainEvents: React.FC<{}> = () => {
     const data = useStaticQuery(graphql`{
-        sanityPrincipalPhoto(title: {eq: "Foto Principal"}) {
-            title
-            principalPhoto {
-              asset {
-                gatsbyImageData
-              }
-          }
-        }
-
         sanityPageContent(_id: {eq: "76023209-46fb-40af-af68-a8035213ac20"}) {
           events_desc
         }
       }`
     )
 
-    const image = data.sanityPrincipalPhoto
     const eventsData = data.sanityPageContent
 
     return (

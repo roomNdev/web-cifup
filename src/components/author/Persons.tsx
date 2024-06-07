@@ -56,6 +56,12 @@ function Persons() {
       sanityPageContent(_id: {eq: "76023209-46fb-40af-af68-a8035213ac20"}) {
         members_directiva
         members_miembros
+        members_miembros_img {
+          asset {
+            gatsbyImageData
+          }
+            alt
+        }
         members_honorarios
         members_exmiembros
       }
@@ -89,6 +95,7 @@ function Persons() {
           
             <PersonsGrid
                       // type={filter}
+                      img={authorsData.members_miembros_img}
                       areas={rearrangedAreas}
                       />
         </AuthorGridStyles>

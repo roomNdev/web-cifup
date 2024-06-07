@@ -2,11 +2,11 @@ import React from 'react';
 import { AuthorGridStyles } from '../../styles/author/AuthorGridStyles';
 import AuthorItem from './AuthorItem';
 import { graphql, useStaticQuery } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import MembersItem from './MembersItem';
 import { MembersStyles } from '../../styles/author/MembersStyles';
 
-function PersonsGrid({areas}) {
+function PersonsGrid({areas, img}) {
   return (
     <>
         <AuthorGridStyles>
@@ -22,7 +22,12 @@ function PersonsGrid({areas}) {
               area.fieldValue === 'Miembro' ? 
               <MembersStyles>
                   <MembersItem members={area.nodes}/>
+                  {
+                  img ? <GatsbyImage image={img.asset.gatsbyImageData} alt={img.alt} 
+                  class='bg-image'></GatsbyImage>
+                  :
                   <StaticImage src='../../images/icon.png' alt='' className='img'></StaticImage>
+                }
               </MembersStyles>
               : 
               

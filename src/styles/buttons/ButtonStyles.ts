@@ -13,7 +13,7 @@ export const ButtonStyles = styled(Link)`
   font-size: 1.6rem;
   background: ${({ variant }) =>
     variant === buttonTypes.primary
-      ? 'linear-gradient(135deg, var(--secondary), var(--primary))'
+      ? 'var(--cobalt-blue)'
       : variant === buttonTypes.secondary
       ? 'var(--white-1)'
       : variant === buttonTypes.more

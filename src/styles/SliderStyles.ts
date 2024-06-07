@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const SliderStyles = styled.div`
-margin-block: 2rem;
+margin-block: 4rem;
 
-h1 {    
-        max-width: 1200px;
+h1 {        padding-inline: 4rem;    
+
+        max-width: 1300px;
         margin-inline: auto;
         font-size: 3rem;
+        width: 100%;
         color: var(--text-primary);
         font-weight: 600;
         margin-block: 1rem;
@@ -63,9 +65,9 @@ h1 {
     }
     @media (max-width: 800px) {
         .image-container {
-            
-            max-width: 100%;
-            min-width: 100%;
+            aspect-ratio: 2/1;
+            max-width: 90%;
+            min-width: 90%;
             /* min-height: auto; */
             min-height: auto;
             max-height: auto;
@@ -74,12 +76,22 @@ h1 {
             }
             img {
 
+                aspect-ratio: 2/1;
                 max-width: 100%;
             min-width: 100%;
             /* min-height: auto; */
             min-height: auto;
             max-height: auto;
             }
+        }
+    }
+    
+    @media (max-width: 500px) {
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.5rem;
         }
     }
 `

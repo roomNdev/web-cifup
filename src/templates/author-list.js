@@ -1,6 +1,4 @@
 import React from 'react';
-import PageHeader from '../components/PageHeader.tsx';
-import PageSpace from '../components/PageSpace.tsx';
 // import Pagination from '../components/Pagination.tsx';
 import Seo from '../components/seo.tsx';
 import { AuthorsStyles } from '../styles/author/AuthorsStyles.ts';
@@ -88,14 +86,17 @@ function AuthorList({ dataNotUsed, pageContext }) {
                 ></StaticImage>
                 }     
           {/* <StaticImage className='description-image' src='../images/hero-creativa.jpeg'></StaticImage> */}
-          <MyPortableText value={authorData._rawMembersDesc || `
+          <p>
+            
+            <MyPortableText value={authorData._rawMembersDesc || `
           Our Ambassadors support us in reaching an ever-broader audience
           on-campus as well as on social media. Our diligent Ambassadors are
           responsible for carrying out various tasks that keep operations
           running smoothly. In addition, they support us in reaching an
           ever-broader audience to help grow the Finance Club community.`}></MyPortableText>
+            </p>
         </div>
-        <h1>Equipo CIFUP</h1>
+        <h1 className='title'>Equipo CIFUP</h1>
         <p className="desc">
         <MyPortableText value={authorData._rawMembersTeamDesc || `
           Our Ambassadors support us in reaching an ever-broader audience

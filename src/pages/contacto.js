@@ -1,19 +1,20 @@
 import * as React from "react"
-import { graphql, useStaticQuery, type HeadFC, type PageProps } from "gatsby"
 
-import HeroSection from '../components/homePage/HeroSection';
 import Seo from '../components/seo';
-import JoinStyles from "../styles/JoinStyles";
-import Header from "../components/Header";
 import PageSpace from "../components/PageSpace";
 import ContactStyles from "../styles/contactStyles";
 import { Title } from "../components/typography/Title";
-import { StaticImage } from "gatsby-plugin-image";
 import ParagraphText from "../components/typography/ParagraphText";
+import emailjs from '@emailjs/browser'
 // import { PodcastsStyles } from "../../styles/homePage/PodcastsStyle";
 
-const IndexPage: React.FC<PageProps>  = () => {
+const IndexPage = () => {
     const form = React.useRef();
+    const serviceId = process.env.GATSBY_MAIL_SERVICE_ID
+    const templateId = process.env.GATSBY_MAIL_TEMPLATE_ID
+    const publicKey = process.env.GATSBY_MAIL_PUBLIC_KEY
+
+    console.log(process.env.GATSBY_POST_PER_PAGE);
       const [isTooltipShowing, setIsTooltipShowing] = React.useState({display: false, status: ""})
       const displayTooltip = (value) => {
         setIsTooltipShowing({display: true, status: value})
@@ -22,26 +23,26 @@ const IndexPage: React.FC<PageProps>  = () => {
         }, 3000)
       }
     
-    //   const sendEmail = (e) => {
-    //     e.preventDefault();
-    
-    //     emailjs
-    //     .sendForm('service_8nr81rx', 'template_nnka0ra', form.current, {
-    //       publicKey: 'EUegBhPVzc5CFFQka',
-    //     })
-    //       .then(
-    //         () => {
-    //           form.current[0].value = ""
-    //           form.current[1].value = ""
-    //           form.current[2].value = ""
-    //           form.current[3].value = ""
-    //           displayTooltip("Mensaje enviado")
-    //         },
-    //         (error) => {
-    //           displayTooltip("Error al enviar mensaje")
-    //         },
-    //       );
-    //   };
+      const sendEmail = (e) => {
+        e.preventDefault();
+        
+        emailjs.sendForm(serviceId, templateId, form.current, {
+          publicKey: publicKey,
+        })
+          .then(
+            () => {
+              form.current[0].value = ""
+              form.current[1].value = ""
+              form.current[2].value = ""
+              form.current[3].value = ""
+              displayTooltip("Mensaje enviado")
+            },
+            (error) => {
+              console.log(error);
+              displayTooltip("Error al enviar mensaje")
+            },
+          );
+      };
     
       return (  
       <PageSpace top={80} bottom={100}>
@@ -75,7 +76,7 @@ const IndexPage: React.FC<PageProps>  = () => {
                 </div>
                 
              </section> */}
-          <form ref={form} className='form'>
+          <form onSubmit={sendEmail} ref={form} className='form'>
             {/* <section className='info'> */}
             <label className="label" htmlFor="name">Nombre*</label>
               <input type="text" name="user_name" id='name'
@@ -88,7 +89,7 @@ const IndexPage: React.FC<PageProps>  = () => {
               required
               />
               <label className="label" htmlFor="subject">Asunto*</label>
-              <input type="email" name="user_subject" id='subject' 
+              <input type="text" name="user_subject" id='subject' 
               required
               />
               <label className="label" htmlFor="message">Mensaje*</label>
@@ -129,7 +130,7 @@ const IndexPage: React.FC<PageProps>  = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>CIFUP</title>
+export const Head = () => <title>CIFUP</title>
 //     const [role, setRole] = React.useState("miembro");
 
 //   return (

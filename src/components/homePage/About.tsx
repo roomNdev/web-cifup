@@ -8,6 +8,7 @@ import Button from '../buttons/Button'
 import { IoBarChartSharp } from "react-icons/io5";
 import { GiTwoCoins } from "react-icons/gi";
 import { FaBalanceScale, FaChartBar, FaChevronRight, FaMoneyCheck } from 'react-icons/fa'
+import MyPortableText from '../MyPortableText'
 
 const About: React.FC<{}> = () => {
     const data = useStaticQuery(graphql`{
@@ -20,6 +21,9 @@ const About: React.FC<{}> = () => {
         home_item_desc3
         home_item4
         home_item_desc4
+        home_about_desc {
+          _rawChildren
+        }
         home_image_about1 {
           asset {
             gatsbyImageData
@@ -118,7 +122,18 @@ const About: React.FC<{}> = () => {
               </div>
           </section>
           <section className="second_row">
+            <div className='description'>
             <h1 className='main-title'>Acerca del CIFUP</h1>
+            <p className="desc">
+        <MyPortableText value={homeData._rawChildren || `
+          Our Ambassadors support us in reaching an ever-broader audience
+          on-campus as well as on social media. Our diligent Ambassadors are
+          responsible for carrying out various tasks that keep operations
+          running smoothly. In addition, they support us in reaching an
+          ever-broader audience to help grow the Finance Club community.`}>
+          </MyPortableText>
+        </p>
+            </div>
           <div className='cards_container'>
                 <article className='card'>
                   <Link to='/eventos' >

@@ -85,7 +85,7 @@ function FeaturedPosts() {
       {
         featuredPosts.map((item) => { 
           return (
-            <article className='post'>
+            <Link to={`/blog/${item.slug.current}`}  className='post'>
               <GatsbyImage 
                 image={item.coverImage.asset.gatsbyImageData}
                 alt={item.coverImage.alt}
@@ -95,11 +95,13 @@ function FeaturedPosts() {
                 <h2 className='post_title'>{item.title}</h2>
                 <p className='post_abstract'>{item.excerpt[0]._rawChildren?.at(0).text} ...</p>
               </div>
-            </article>
+            </Link >
           )
         })
       }
       </section>
+      <Button tag={'div'} variant='primary' className="mas">
+        <Link to='/blog'>Ver más</Link></Button>
     </FeaturedBlogsStyles>
   );
 }

@@ -2,7 +2,6 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import JustPostGrid from '../components/blog/JustPostGrid.tsx';
-import MyPortableText from '../components/MyPortableText.tsx';
 import PageSpace from '../components/PageSpace.tsx';
 import Seo from '../components/seo.tsx';
 import { Title } from '../components/typography/Title.tsx';

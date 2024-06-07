@@ -35,7 +35,7 @@ const IndexPage: React.FC<PageProps>  = () => {
   <>
     <Seo title={"Inicio"} description={"Página de inicio de Lee UP, una organización estudiantil de la Universidad del Pacífico"}/>
     <HeroSection alt={podcastData?.podcast_image?.alt} img={podcastData?.podcast_image?.asset?.gatsbyImageData} title={podcastData?.podcast_hero}/>
-    <div className="container">
+    {/* <div className="container"> */}
       <PodcastsStyles>
         <div>
           <h1>Podcasts</h1>
@@ -43,13 +43,28 @@ const IndexPage: React.FC<PageProps>  = () => {
               Aquí podrás obtener mas información acerca de fechas, horarios y ubicacion.`}
           </p>
         </div>
+        <div className="content">
+          <div className="episodes">
       {
         urls.map(item => {
           return <div dangerouslySetInnerHTML={{__html: item.url}}></div>
         })
       }
+
+{
+        urls.map(item => {
+          return <div dangerouslySetInnerHTML={{__html: item.url}}></div>
+        })
+      }
+      {
+        urls.map(item => {
+          return <div dangerouslySetInnerHTML={{__html: item.url}}></div>
+        })
+      }
+          </div>
+        </div>
       </PodcastsStyles>
-    </div>
+    {/* </div> */}
   </>
 )};
 

@@ -28,7 +28,7 @@ export default styled.header`
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
   }
   .join {
@@ -100,7 +100,7 @@ export default styled.header`
   .mobileMenuBtn {
     display: none;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 998px) {
     height: 80px;
     .mobileMenuCloseBtn,
     .mobileNavBg,

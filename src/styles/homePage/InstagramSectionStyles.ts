@@ -11,43 +11,19 @@ export const InstagramSectionStyles = styled.div`
         font-size: 3.5rem;
         margin-bottom: 4rem;
         text-align: left;
+        max-width: 1300px;
+        margin-inline: auto;
+        width: 100%;
+        text-align: left;
     }
-    .demo-slide {
-        max-width: 400px;
-        min-width: 400px;
-        /* min-height: auto; */
-        min-height: 400px;
-        max-height: 400px;
-        
-    }
-    .event {
-            gap: 1rem;
-            display: flex;
-            flex-direction: column;
-            /* width: 300px; */
-            /* min-width: 300px; */
-            background-color: var(--text-primary);
-            /* padding-bottom: 2rem; */
-            overflow: hidden;
-            img {
-                object-fit: cover;
-                height: auto;
-                transition: scale .6s;
-            }
-            &:hover {
-                img {
-                    scale: 1.05;
-                }
-            }
-            h2, p {
-                padding-inline: 2rem;
-            }
-        }
     .container {
         margin-top: 20px;
         width: 100%;
+        margin-inline: auto;
+        max-width: 1300px !important;
+        padding-left: 4rem;
         /* height: 700px; */
-        aspect-ratio: 6/2;
+        aspect-ratio: 1.57/2;
         max-width: none;
             iframe {
                 height: 100%;
@@ -56,6 +32,18 @@ export const InstagramSectionStyles = styled.div`
             text-align: center;
             gap: 24px;
             position: relative; */
+    }
+    @media (max-width: 900px ) {
+        .container {
+            aspect-ratio: 1.5/2;
+            /* height: 500px !important; */
+        }
+    }
+    @media (max-width: 600px ) {
+        .container {
+            aspect-ratio: 1.3/2;
+            /* height: 350px !important; */
+        }
     }
     /* @media (max-width: 1450px) {
         .container {
@@ -72,11 +60,6 @@ export const InstagramSectionStyles = styled.div`
             height: 550px !important;
         }
     }
-    @media (max-width: 900px ) {
-        .container {
-            height: 500px !important;
-        }
-    }
     @media (max-width: 800px ) {
         .container {
             height: 450px !important;
@@ -88,27 +71,36 @@ export const InstagramSectionStyles = styled.div`
         }
     }
     
-    @media (max-width: 600px ) {
-        .container {
-            height: 350px !important;
-        }
-    }
     
-    @media (max-width: 445px ) {
-        .container {
-            height: 300px !important;
-        }
-    } */
     /* .event_container {
         display: flex;
         gap: 2rem;
         overflow-x: auto;
         .
-    } */
-    @media (max-width: 500px) {
+        } */
+        @media (max-width: 440px ) {
+            .container {
+                aspect-ratio: 1.9/2;
+            }
+        } 
+        @media (max-width: 360px ) {
+            .container {
+                /* aspect-ratio: 1.9/2; */
+
+                padding-left: 2rem;
+            }
+        } 
+    @media (max-width: 530px) {
         h1 {
-            font-size: 3rem;
+            
+            font-size: 2rem;
         }
+        p {
+            
+            font-size: 1.6rem;
+        }
+    }
+    @media (max-width: 500px) {
         .event_container {
             .event {
                 p {

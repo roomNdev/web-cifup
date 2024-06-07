@@ -1,46 +1,39 @@
 import styled from 'styled-components';
 
 export const PodcastsStyles = styled.div`
-    /* .episodes {
-      display: flex;
-      flex-direction: column;
-    }
 
-    .episode {
-      min-width: max-content;
-      margin-bottom: .8rem;
-      padding: .8rem 1rem;
-      border-radius: 10px;
-      border: 0;
-      background: #191414;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .episode:hover {
-      background: #1Db954;
-    }
-
-    @media screen and (min-width: 860px) {
-      body {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-      }
-    } */
-
-    /* padding-inline: 4rem; */
-    margin-block: 4rem;
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    max-width: 1200px;
+    padding: 4rem;
+    max-width: 1300px;
+    width: 100%;
     margin-inline: auto;
-    h1 {
+    .mas {
+        margin-inline: auto;
+        margin-block: 2rem;
+        max-width: 200px;
+    }
+    .content {
+      width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+      .episodes {
+        display: flex;
+        gap: 4rem;
+        flex-wrap: wrap;
+        div {
+          flex-grow: .5;
+        }
+      }
+    }
+    h1 {max-width: 1300px;
+        margin-inline: auto;
+        width: 100%;
         color: var(--text-primary);
-        font-size: 3.5rem;
+        font-size: 4rem;
         text-align: left;
-        margin-block: 1rem;
     }
             p {
                 font-size: 17px;
@@ -69,7 +62,45 @@ export const PodcastsStyles = styled.div`
           font-size: 2.3rem;
         }
         .description {
+          color: white;
           font-size: 1.5rem;
+        }
+      }
+    }
+    @media (max-width: 530px) {
+        h1 {
+            
+            font-size: 2rem;
+        }
+        p {
+            
+            font-size: 1.6rem;
+        }
+    }
+    
+    @media (max-width: 680px) {
+      .content {
+        .episodes {
+          div {
+            width: 100%;
+          }
+        }
+      }
+    }
+    @media (max-width: 509px) {
+      .editable_item {
+        flex-direction: column;
+        height: auto;
+        .data {
+          .title {
+            
+          }
+        }
+        .image {
+          aspect-ratio: 1;
+        min-width: 137px;
+    width: 137px;
+    height: 137px;
         }
       }
     }

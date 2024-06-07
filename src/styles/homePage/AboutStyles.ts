@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const AboutSectionStyles = styled.div`
     display: flex;
     width: 100%;    
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     flex-direction: column;
     margin-top: 6rem;
@@ -39,7 +39,6 @@ export const AboutSectionStyles = styled.div`
     } */
     .first_row {
         display: flex;
-        gap: 20%;
         /* .numbers_container {
         display: flex;
         flex-wrap: wrap;
@@ -87,10 +86,11 @@ export const AboutSectionStyles = styled.div`
         .cards_container {
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+            /* gap: aut; */
             flex-direction: row;
+        gap: 1rem;
             /* flex-wrap: wrap; */
             /* height: 400px; */
             .card {
@@ -98,9 +98,10 @@ export const AboutSectionStyles = styled.div`
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                gap: 1rem;
                 /* width: 50%; */
-                max-width: 250px;
-                height: 180px;
+                max-width: 280px;
+                height: 220px;
                 /* border: 1px solid #bbb; */
                 border-radius: 1.5rem;
                 padding: 1rem;
@@ -114,20 +115,29 @@ export const AboutSectionStyles = styled.div`
                     height: 4rem;
                 }
                 h2 {
-                    font-size: 2rem;
+                    font-size: 2.2rem;
                     text-align: center;
                 }
                 p {
-                    font-size: 1rem;
+                    font-size: 1.4rem;
                     text-align: center;
                 }
             }
         }
     }
     .second_row {
+        .description {
+            margin-block: 4rem;
+        }
         .main-title {
             color: var(--text-primary);
         font-size: 3.5rem;
+        margin: 0;
+        }
+        p.desc {
+            color: var(--text-primary);
+        font-size: 2rem;
+        max-width: 600px;
         }
         .cards_container {
             width: 100%;
@@ -173,6 +183,24 @@ export const AboutSectionStyles = styled.div`
             }
         }
     }
+    @media (max-width: 1200px) {
+        .first_row {
+            .cards_container {
+                .card {
+                    
+                max-width: 220px;
+                height: 200px;
+                p {
+                    font-size: 1.2rem;
+                }
+                h2  {
+                    font-size: 1.6rem;
+                }
+                }
+
+            }
+        }
+    }
     @media (max-width: 991px) {
         .second_row {
             .cards_container {
@@ -182,18 +210,17 @@ export const AboutSectionStyles = styled.div`
         }
         }
     }
-    @media (max-width: 760px) {
+    @media (max-width: 755px) {
         /* .first_row {
             .about_image {
                 img {}
             }
         } */
         .first_row {
-            flex-direction: column;
-            gap: 4rem;
-            align-items: center;
             .cards_container {
                 flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-evenly;
             }
         }
     }
@@ -206,14 +233,14 @@ export const AboutSectionStyles = styled.div`
                 width: auto;
             } */
             .cards_container {
-                /* .card {
-                    max-width: 140px;  */
+                .card {
+                    min-width: 220px; 
                     p {
                         display: none;
                     }
                     /* width: 80%; */
                 }
-            /* } */
+            }
         }
 
         /* gap: 8rem; */
@@ -232,7 +259,7 @@ export const AboutSectionStyles = styled.div`
             }
         }
     }
-    @media (max-width: 535px) {
+    @media (max-width: 530px) {
         
         .first_row {
             /* flex-direction: column;
@@ -242,12 +269,21 @@ export const AboutSectionStyles = styled.div`
             } */
             .cards_container {
                 .card {
-                    max-width: 140px; 
+                    min-width: 145px; 
+                    max-width: 145px; 
                     p {
                         display: none;
                     }
                     /* width: 80%; */
                 }
+            }
+        }
+        .second_row {
+            .main-title{
+                font-size: 2rem;
+            }
+            p.desc {
+                font-size: 1.6rem;
             }
         }
     }    
@@ -260,8 +296,12 @@ export const AboutSectionStyles = styled.div`
                 width: auto;
             } */
             .cards_container {
+                gap: 2rem;
                 .card {
-                    max-width: 100px; 
+                    max-width: 110px; 
+                    min-width: 110px; 
+                    /* max-width: 100px;  */
+                    height: 160px;
                     p {
                         display: none;
                     }
@@ -274,11 +314,11 @@ export const AboutSectionStyles = styled.div`
         }
         .second_row {
             .main-title {
-                font-size: 16px;
+                font-size: 2rem;
             }
         }
     }
-    @media (max-width: 300px) {
+    @media (max-width: 320px) {
         padding:0;
         .first_row {
             /* flex-direction: column;

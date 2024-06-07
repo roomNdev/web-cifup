@@ -9,6 +9,11 @@ export const FooterStyles = styled.footer`
   align-items: center;
   justify-content: center;
   background-color: var(--text-primary);
+  .collaborator {
+    aspect-ratio: 1;
+    width: 150px;
+    height: 150px;
+  }
   .join-container {
     display: flex;
     flex-direction: column;

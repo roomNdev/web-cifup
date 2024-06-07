@@ -28,22 +28,22 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
               />
             </section>
             <section className='data'>
+              <div>
               {
                 splittedName.map(i => (
                   <Title 
                     tag={'h2'}
-                    className="title">
-                      {i}
+                    className="title">{i}
                     </Title>
-
                 ))
               }
-              <section className=''>
-                {`${date ? format(new Date(date), 'MMMM dd, yyyy') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
-              </section>
+              </div>
               <ParagraphText className="role">
                 {role}
               </ParagraphText>  
+              <section className='date'>
+                {`${date ? format(new Date(date), 'MMMM dd, yyyy') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
+              </section>
               {
                 (linkedIn || email ) && 
               <section className='author_socialList'>

@@ -1,5 +1,8 @@
 import type { GatsbyConfig } from "gatsby";
 // import sanitiyConfig from "./sanity-config"
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -93,7 +96,7 @@ const config: GatsbyConfig = {
     resolve: 'gatsby-source-sanity',
     options: {
       "projectId": "ihd1obi1",
-      "dataset": "production",
+      "dataset": "testing",
     }
   },{
     resolve: `gatsby-plugin-manifest`,

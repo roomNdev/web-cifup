@@ -11,7 +11,8 @@ function BlogItem({ path, excerpt, author, title, image, categories, publishedAt
   console.log(author);
   return (
     <BlogItemStyles>
-      <Link to={`/blog/${path}`}>
+      <Link to={`/blog/${path}`} 
+          className="img">
         <GatsbyImage
           image={image.imageData}
           alt={title}

@@ -22,6 +22,33 @@ export const FiltersStyles = styled.div`
         background-color: var(--text-primary);
         display: flex;
     }
+    .filters-author {
+        flex-wrap: wrap;
+        display: flex;
+        gap: 2rem;
+        a, button {
+        background-color: var(--text-primary); 
+        color: var(--white);
+        display: flex;
+        padding: 16px;
+        align-items: center;
+        padding-inline: 32px;
+        border: none;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        &:hover {
+            color: var(--jet-stream);
+        }
+        &.active {
+            background-color: var(--jet-stream);
+            color: var(--text-primary);
+            &:hover {
+                color: var(--text-primary);
+            }
+        }   
+        }
+    }
     a, button {
         color: var(--white);
         display: flex;
