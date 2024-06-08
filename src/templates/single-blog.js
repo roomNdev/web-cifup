@@ -1,5 +1,5 @@
 import { graphql, Link } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { format } from 'date-fns';
 import { BiHeart } from 'react-icons/bi';
@@ -12,6 +12,7 @@ import MyPortableText from '../components/MyPortableText.tsx';
 import Seo from '../components/seo.tsx';
 import ScrollToTop from '../constants/ScrollTop';
 import FeaturedPosts from '../components/homePage/FeaturedPosts.tsx'
+import { urlFor } from '../utils/sanityClient';
 
 export const postQuery = graphql`
   query SingleBlogQuery($id: String!) {
@@ -20,21 +21,10 @@ export const postQuery = graphql`
       likes
       publishedAt
       _rawBody
-      coverImage {
-        asset {
-          gatsbyImageData
-        }
-        alt
-      }
       author {
         name
         slug {
           current
-        }
-        profileImage {
-          asset {
-            gatsbyImageData
-          }
         }
       }
     }
@@ -45,9 +35,12 @@ function SingleBlog({ data }) {
   const blog = data.sanityBlog;
 
   const likes = data.sanityBlog.likes
-
-  console.log(blog);
-return (<>
+  
+  // const coverImage = getImage(blog.coverImage.asset.gatsbyImageData);
+  // const imageUrl = urlFor(blog.coverImage.asset.gatsbyImageData);
+  // console.log(imageUrl);
+  // console.log(blog);
+  return (<>
       <ScrollToTop></ScrollToTop>
 <SingleBlogStyles>
       <Seo title={blog.title} />
@@ -55,24 +48,25 @@ return (<>
         <div className="container">
           <div className="blog-header">
             <div className='image__container'>
-              <GatsbyImage
-                image={blog.coverImage.asset.gatsbyImageData}
+              {/* <GatsbyImage
+                image={coverImage}
                 alt={blog.coverImage.alt}
                 className="blog-cover-image"
-              />
+                /> */}
             </div>
             <ParagraphText className="publishedAt">
               <FiCalendar />
               {format(new Date(blog.publishedAt), 'p, MMMM dd, yyyy')}
             </ParagraphText>
             {blog.author.map(auth => {
+                // const imgAuthor = urlFor(auth.profileImage.asset.gatsbyImageData)
               return (
 <ParagraphText className="author">
-            <GatsbyImage
-              image={auth.profileImage.asset.gatsbyImageData}
+            {/* <GatsbyImage
+              image={imgAuthor}
               alt={`Foto de perfil de ${auth.name}`}
               className="author__img"
-            />
+            /> */}
               <Link to={`/miembros/${auth.slug.current}`}>
                 {auth.name}
               </Link>
@@ -106,7 +100,7 @@ return (<>
         </div>
       </PageSpace>
     </SingleBlogStyles>
-          <FeaturedPosts></FeaturedPosts>
+          {/* <FeaturedPosts></FeaturedPosts> */}
       {/* <JustFeatured></JustFeatured> */}
 </>)
 }

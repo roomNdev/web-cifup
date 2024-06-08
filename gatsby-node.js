@@ -57,13 +57,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // single blogs pages
 
-  blogs.forEach((blog) => {
-    actions.createPage({
-      path: `/blog/${blog.slug.current}`,
-      component: singleBlogTemplate,
-      context: { id: blog.id },
-    });
-  });
+  // blogs.forEach((blog) => {
+  //   actions.createPage({
+  //     path: `/blog/${blog.slug.current}`,
+  //     component: singleBlogTemplate,
+  //     context: { id: blog.id },
+  //   });
+  // });
 
   // single category pages
   // categories.forEach((category) => {
