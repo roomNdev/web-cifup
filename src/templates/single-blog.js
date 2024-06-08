@@ -20,7 +20,6 @@ export const postQuery = graphql`
       likes
       publishedAt
       _rawBody
-      bookAuthorBio
       coverImage {
         asset {
           gatsbyImageData

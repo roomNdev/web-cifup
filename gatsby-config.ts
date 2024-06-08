@@ -96,7 +96,7 @@ const config: GatsbyConfig = {
     resolve: 'gatsby-source-sanity',
     options: {
       "projectId": "ihd1obi1",
-      "dataset": "testing",
+      "dataset": "production",
     }
   },{
     resolve: `gatsby-plugin-manifest`,
