@@ -13,6 +13,9 @@ export const FooterStyles = styled.footer`
     aspect-ratio: 1;
     width: 150px;
     height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .join-container {
     display: flex;
