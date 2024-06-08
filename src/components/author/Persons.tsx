@@ -69,19 +69,32 @@ function Persons() {
   }
   `);
 
-  const areas = data.allSanityAuthor.group
   const authorsData = data.sanityPageContent
     const [section, setsection] = useState('directiva');
 
     const handleChangeSections = (section) => {
       setsection(section)
     }
-  console.log(areas);
+
   const order = ['Directiva', 'Miembro', 'Honorarios', 'ExMiembros'];
 
-  let rearrangedAreas = areas.sort((a, b) => {
-    return order.indexOf(a.fieldValue) - order.indexOf(b.fieldValue);
+  const areas = data.allSanityAuthor.group; // Suponiendo que este es el array inicial
+  
+  // Crear un objeto auxiliar para encontrar elementos por fieldValue
+  let areasMap = {};
+  areas.forEach(area => {
+    areasMap[area.fieldValue] = area;
   });
+  
+  // Crear un nuevo array asegurando que tenga las 4 posiciones necesarias
+  let rearrangedAreas = order.map(fieldValue => {
+    return areasMap[fieldValue] || { totalCount: 0, fieldValue, nodes: [] };
+  });
+  
+  console.log(rearrangedAreas);
+  // let rearrangedAreas = areas.sort((a, b) => {
+  //   return order.indexOf(a.fieldValue) - order.indexOf(b.fieldValue);
+  // });
   
   rearrangedAreas[0].fieldDesc = authorsData.members_directiva
   rearrangedAreas[1].fieldDesc = authorsData.members_miembros

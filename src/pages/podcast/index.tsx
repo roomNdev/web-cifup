@@ -50,17 +50,6 @@ const IndexPage: React.FC<PageProps>  = () => {
           return <div dangerouslySetInnerHTML={{__html: item.url}}></div>
         })
       }
-
-{
-        urls.map(item => {
-          return <div dangerouslySetInnerHTML={{__html: item.url}}></div>
-        })
-      }
-      {
-        urls.map(item => {
-          return <div dangerouslySetInnerHTML={{__html: item.url}}></div>
-        })
-      }
           </div>
         </div>
       </PodcastsStyles>

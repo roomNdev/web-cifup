@@ -1,4 +1,4 @@
 export default {
-  "projectID": process.env.GATSBY_SANITY_PROJECT_ID,
-  "dataset": process.env.GATSBY_SANITY_DATASET,
+  "projectID": "ihd1obi1",
+  "dataset": "production",
 };
