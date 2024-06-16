@@ -57,7 +57,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     user-select: none;
   }
-  li, ul{
+  li{
     list-style: none;
   }
 `;

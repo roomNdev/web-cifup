@@ -22,6 +22,10 @@ const myPortableTextComponents = {
       </SyntaxHighlighter>
     ),
   },
+  // [
+  //   { title: 'Bullet', value: 'bullet' },
+  //   { title: 'Number', value: 'number' },
+  // ],
   types: {
     customCode: ({ value }) => (
       <SyntaxHighlighter
@@ -59,6 +63,7 @@ const myPortableTextComponents = {
 };
 
 function MyPortableText({ value, ...rest}) {
+  console.log(value);
   return <PortableTextStyles><PortableText value={value} components={myPortableTextComponents} /></PortableTextStyles>;
 }
 

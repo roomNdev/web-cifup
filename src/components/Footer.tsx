@@ -82,7 +82,7 @@ function Footer() {
 
                   
         <ParagraphText className="copyright">
-          LEE UP {new Date().getFullYear()} © Todos los derechos reservados.
+          CIFUP {new Date().getFullYear()} © Todos los derechos reservados.
         </ParagraphText> 
     </FooterStyles>
   );

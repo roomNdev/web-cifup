@@ -14,7 +14,7 @@ const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
   maxWidth: 800,
-  color: "#FFF",
+  color: "var(--primary-blue)",
   fontSize: "48px",
   width: "100%",
   textAlign: "center"
@@ -23,7 +23,7 @@ const headingStyles = {
 const paragraphStyles = {
   marginBottom: 48,
   fontSize: "24px",
-  color: "#FFF"
+  color: "var(--cobalt-blue)"
 }
 const codeStyles = {
   color: "#8A6534",
