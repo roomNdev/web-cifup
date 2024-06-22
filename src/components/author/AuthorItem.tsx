@@ -52,7 +52,7 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
               {
                 (linkedIn || email ) && 
               <section className='author_socialList'>
-                  { linkedIn ? <a href={`${linkedIn}`}><FaLinkedin className='icon' size={32}></FaLinkedin></a> : <></>}
+                  { linkedIn ? <a href={`https://${linkedIn}`} target='_blank'><FaLinkedin className='icon' size={32}></FaLinkedin></a> : <></>}
                   { email ? <a href={`mailto:${email}`}><MdEmail size={32} className='icon'></MdEmail></a> : <></> }
               </section>
               }
@@ -86,7 +86,7 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
               {actual}
             </Title>
             <section className='author_socialList'>
-                { linkedIn ? <a href={`${linkedIn}`}><FaLinkedin className='icon' size={32}></FaLinkedin></a> : <></>}
+                { linkedIn ? <a href={`https://${linkedIn}`} target='_blank'><FaLinkedin className='icon' size={32}></FaLinkedin></a> : <></>}
                 { email ? <a href={`mailto:${email}`}><MdEmail size={32} className='icon'></MdEmail></a> : <></> }
             </section>
           </section>
@@ -121,7 +121,7 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
             </Title>
           </section>
             <section className='author_socialList'>
-                { linkedIn ? <a href={`${linkedIn}`}><FaLinkedin className='icon' size={32}></FaLinkedin></a> : <></>}
+                { linkedIn ? <a href={`https://${linkedIn}`} target='_blank'><FaLinkedin className='icon' size={32}></FaLinkedin></a> : <></>}
                 { email ? <a href={`mailto:${email}`}><MdEmail size={32} className='icon'></MdEmail></a> : <></> }
             </section>
         

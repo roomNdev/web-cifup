@@ -71,7 +71,7 @@ function MembersItem({members}) {
                                         </ParagraphText>
                                     </section>
                                         <div className='author_socialList'>
-                                        { member.linkedin ? <a href={`${member.linkedin}`}><FaLinkedin className='icon' size={20}></FaLinkedin></a> : <></>}                                        </div>
+                                        { member.linkedin ? <a href={`https://${member.linkedin}`} target='_blank'><FaLinkedin className='icon' size={20}></FaLinkedin></a> : <></>}                                        </div>
                                     {/* </Link> */}
                         
                                 </AuthorItemStyles>
