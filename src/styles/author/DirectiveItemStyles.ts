@@ -25,9 +25,9 @@ export const DirectiveItemStyles = styled.div`
     justify-content: center;
   }
   .profileImage {
-  border-radius: 6px;
-  border-bottom-right-radius:0px;
-  border-bottom-left-radius: 0px;
+    border-radius: 6px;
+    border-bottom-right-radius:0px;
+    border-bottom-left-radius: 0px;
     height: 250px;
     width: 100%;
     }
@@ -51,6 +51,7 @@ export const DirectiveItemStyles = styled.div`
     color: var(--jet-stream);
     font-size: 16px;
     text-align: center;
+    flex-grow: 1;
   }
   .role {
     font-size: 22px;

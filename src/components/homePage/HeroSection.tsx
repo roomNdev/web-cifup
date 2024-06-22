@@ -9,9 +9,10 @@ function HeroSection({img, alt, title}) {
     <HeroSectionStyles>
       {
         img ? <GatsbyImage image={img} alt={alt} 
-        class='bg-image'></GatsbyImage>
+        class='bg-image' placeholder='blurred'></GatsbyImage>
         :
       <StaticImage
+      placeholder='blurred'
        alt=''
        src='../../images/bg-image.jpg'
        class='bg-image'

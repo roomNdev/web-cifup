@@ -78,7 +78,7 @@ function Header() {
               </ActionButton>
               <ul>
                 {menu.map((item) => (
-                  <li key={item.path} className={`${item.path === `/${params[1]}` ? 'active' : ''}`}>
+                  <li key={item.path} className={`${item.path === `/${params[1]}` ? 'active' : ''} link`}>
                     <Link to={item.path} onClick={handleNavItemClick}>
                       {item.title}
                     </Link>
@@ -87,7 +87,7 @@ function Header() {
               </ul> 
               <ul>
                 {menu2.map((item) => (
-                  <li key={item.path} className={`${item.path === `/${params[1]}` ? 'active' : ''}`}>
+                  <li key={item.path} className={`${item.path === `/${params[1]}` ? 'active' : ''} link `}>
                     <Link to={item.path} onClick={handleNavItemClick}>
                       {item.title}
                     </Link>

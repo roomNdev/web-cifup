@@ -116,7 +116,15 @@ const config: GatsbyConfig = {
       // crossOrigin: `use-credentials`,
     },
   },
-   "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components"]
+  {
+ resolve:"gatsby-plugin-sharp",
+ options: {
+  defaults: {
+    placeholder: 'blurred'
+  }
+ }
+  },
+   "gatsby-plugin-image", "gatsby-transformer-sharp", "gatsby-plugin-styled-components"]
 };
 
 export default config;

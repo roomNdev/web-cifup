@@ -38,10 +38,10 @@ function AuthorFilters({ handleChangeSections, current }) {
           handleChangeSections("areas")
         }}>Areas</a>
         
-        <a className={`${current === "honorarios" ? 'active' : ''}`} href='#Honorarios' onClick={() => {
+        <a className={`${current === "honorarios" ? 'active' : ''}`} href='#Miembro Honorario' onClick={() => {
           handleChangeSections("honorarios")
         }}>Miembros honorarios</a>
-        <a className={`${current === "exmiembros" ? 'active' : ''}`} href='#ExMiembros' onClick={() => {
+        <a className={`${current === "exmiembros" ? 'active' : ''}`} href='#Ex miembro' onClick={() => {
           handleChangeSections("exmiembros")
         }}>Ex miembros</a>
         

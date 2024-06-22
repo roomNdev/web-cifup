@@ -14,6 +14,25 @@ export default styled.header`
   }
   .bg-color {
     background-color: var(--text-primary) !important;
+    .link a, .join {
+      color: var(--bg-main) !important;
+    }
+    .join {
+      border-color: var(--bg-main);
+      &:hover {
+        color: var(--text-primary) !important;
+        border-color: var(--text-primary);
+        background-color: var(--bg-main);
+        }
+      
+    }
+    .logo svg {
+      color: var(--bg-main) !important;
+    }
+    .active a{
+      color: var(--text-primary) !important;
+      background-color:  var(--bg-main) !important;
+    }
   }
   overflow: hidden;
   display: flex;
@@ -29,6 +48,7 @@ export default styled.header`
   }
   .header__container {
   /* margin: 1rem 0; */
+    transition: background-color 0.3s ease-in-out;
     width: 100%;
     padding-inline: 4rem;
     height: 100px;
