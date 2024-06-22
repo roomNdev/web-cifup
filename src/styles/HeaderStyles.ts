@@ -134,6 +134,12 @@ export default styled.header`
   }
   @media only screen and (max-width: 998px) {
     height: 80px;
+    .bg-color {
+      .mobileMenuBtn, .mobileIcon {
+        border-color: var(--bg-main) !important;
+        color: var(--bg-main) !important;
+      }
+    }
     .header__container {
       
     justify-content: space-between};
