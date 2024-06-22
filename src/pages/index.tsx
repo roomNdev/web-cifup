@@ -30,7 +30,7 @@ const IndexPage: React.FC<PageProps>  = () => {
     <HeroSection img={homeData.home_image.asset.gatsbyImageData} alt={homeData.home_image.alt} title={homeData.home_hero}/>
     {/* <div className="container"> */}
       <About/>
-      <InstagramSection/>
+      <InstagramSection titulo={true}/>
       <FeaturedPosts/>
       <Podcasts/>
     {/* </div> */}

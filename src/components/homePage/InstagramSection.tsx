@@ -14,7 +14,7 @@ import SimpleSlider from '../Slider';
 //   }
   
 
-const InstagramSection: React.FC<{}> = () => {
+const InstagramSection: React.FC<{titulo: boolean}> = ({titulo = false}) => {
     // const token = 'IGQWRPWWxfelJJM3Fxc1FaLVg1NFRtNjczeW1JSENNa3htYW45TWs1ZAUZAzZAlRJaGNSRFd2X0x4ZAHZAGNFh0N2Q0YU15WmVxbTIwX2VFeVdFeTR4QkIyTnotbjYzWFJJZAV92ZAFhtT0M2elgxSEVXWUEtUVU3ekk1M1kZD'
     // const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${token}`
     // const [feed, setFeed] = useState<any>()
@@ -51,7 +51,8 @@ const InstagramSection: React.FC<{}> = () => {
         
         <InstagramSectionStyles>
   {/* LightWidget WIDGET */}
-  <h1>Eventos y talleres</h1>
+  {titulo ? 
+  <h1>Eventos y talleres</h1> : <></>}
         <section className="container">
             <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
             <iframe

@@ -28,9 +28,10 @@ summary {
     h2:hover {
         background-color: var(--text-primary);
         color: white;
+        
     }
     display: flex;
-    width: 220px;
+    width: 280px;
     /* width: max-content; */
     h2 {
     transition: background .4s, color .4s;
@@ -38,8 +39,10 @@ summary {
     padding: 8px;
     border-radius: 6px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 4px;
+    width: 100%;
         .icon {
             transition: rotate .5s cubic-bezier(0.165, 0.84, 0.44, 1);
             width: 10px;
@@ -84,9 +87,6 @@ summary {
         margin-inline: 10px;
      .area {
         width: 100%;
-        .members {
-            justify-content: center;
-        }
      }   
     }
     @media (max-width: 1150px) {
@@ -95,9 +95,6 @@ summary {
 
             .area {
                width: 100%;
-               .members {
-                   justify-content: center;
-               }
             }   
         }
     }

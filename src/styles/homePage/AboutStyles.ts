@@ -134,11 +134,17 @@ export const AboutSectionStyles = styled.div`
         font-size: 3.5rem;
         margin: 0;
         }
-        p.desc {
-            color: var(--text-primary);
-        font-size: 2rem;
-        max-width: 600px;
-        }
+        .desc {
+            width: 100%;
+            max-width: 600px;
+            margin: 5rem auto;
+            p {
+                color: var(--text-primary);
+            font-size: 2rem;
+            /* width: 100%; */
+            }
+
+        } 
         .cards_container {
             width: 100%;
                 grid-column-gap: 44px;

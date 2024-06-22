@@ -5,7 +5,7 @@ import { MdClose, MdMenu, MdSearch } from 'react-icons/md';
 import HeaderStyles from '../styles/HeaderStyles';
 import Logo from './Logo';
 import ActionButton from './buttons/ActionButton';
-import { menu } from '../constants/menu';
+import { menu, menu2 } from '../constants/menu';
 import { useLocation } from '@reach/router';
 
 function Header() {
@@ -68,7 +68,7 @@ function Header() {
                 onClick={() => setIsNavOpen(false)}
               />
             )}
-            <nav>
+            <nav className='navigation'>
               <ActionButton
                 className="mobileMenuCloseBtn"
                 onClick={() => setIsNavOpen(false)}
@@ -83,10 +83,20 @@ function Header() {
                       {item.title}
                     </Link>
                   </li>
-                ))}<Link to={'/unete'} onClick={handleNavItemClick} className='join'
-              >
-                Únete
-              </Link>
+                ))}
+              </ul> 
+              <ul>
+                {menu2.map((item) => (
+                  <li key={item.path} className={`${item.path === `/${params[1]}` ? 'active' : ''}`}>
+                    <Link to={item.path} onClick={handleNavItemClick}>
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+                  <Link to={'/unete'} onClick={handleNavItemClick} className='join'
+                  >
+                    Únete
+                  </Link>
               </ul>
             </nav>
           </div>

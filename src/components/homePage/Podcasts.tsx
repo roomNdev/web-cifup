@@ -39,11 +39,13 @@ function Podcasts() {
     <PodcastsStyles>
       <h1>Podcast</h1>
   
+      <h2 className='title'>{podcast_featured_title || 'Conoce nuestro Podcast!'}</h2>
+      <p className='description'>{podcast_featured_desc || '(esto es editable btw) Aqui hablamos de ciertos temas que nos conciernen de la actualidad, finanzas y sociedad, descubre nuestro contenido'}</p>
     <div className='content'>
 
-      <div className='editable_item'>
+      {/* <div className='editable_item'> */}
         
-      {
+      {/* {
         podcast_featured_image?.asset?.gatsbyImageData ? <GatsbyImage image={podcast_featured_image.asset.gatsbyImageData} alt={podcast_featured_image.alt} 
         className='image'></GatsbyImage>
         :
@@ -54,18 +56,16 @@ function Podcasts() {
       ></StaticImage>
       }
             {/* <StaticImage src='../../images/Profesor-Cesare.jpg' alt='' className='image'></StaticImage> */}
-            <div className='data'>
-              <h2 className='title'>{podcast_featured_title || 'Conoce nuestro Podcast!'}</h2>
-              <p className='description'>{podcast_featured_desc || '(esto es editable btw) Aqui hablamos de ciertos temas que nos conciernen de la actualidad, finanzas y sociedad, descubre nuestro contenido'}</p>
-            </div>
-      </div>
-      <div className='episodes'>
+            {/* <div className='data'> */}
+            {/* </div> */}
+      {/* </div> */}
+      {/* <div className='episodes'>
       {
         urls.map(item => {
           return <div dangerouslySetInnerHTML={{__html: item.url}}></div>
         })
       }  
-      </div>
+      </div> */}
     </div>
       <Button tag={'div'} variant='primary' className="mas">
         <Link to='/podcast'>Ver más</Link>

@@ -24,7 +24,7 @@ export const FeaturedBlogsStyles = styled.div`
     }
     .post_container {
         display: flex;
-        max-width: 1300px;
+        max-width: 1400px;
         margin-inline: auto;
         gap: 1rem;
         align-items: center;
@@ -36,8 +36,8 @@ export const FeaturedBlogsStyles = styled.div`
         }
         .post {
             background-color: var(--text-primary);
-            width: 300px;
-            height: 400px;
+            width: 380px;
+            height: 480px;
             border-radius: 4px;
             p {
                 padding-inline: 2rem;

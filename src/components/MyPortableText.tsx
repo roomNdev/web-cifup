@@ -27,6 +27,9 @@ const myPortableTextComponents = {
   //   { title: 'Number', value: 'number' },
   // ],
   types: {
+    span: (props) => {
+      console.log(props);
+    return <ParagraphText>{props.value.text}</ParagraphText>},
     customCode: ({ value }) => (
       <SyntaxHighlighter
         // style={theme}

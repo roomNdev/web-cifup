@@ -12,13 +12,15 @@ import { format } from 'date-fns';
 import { ExMemberItemStyles } from '../../styles/author/ExMemberItemStyles';
 
 function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileImage, type, email, date, dateEnd}) {
-   const splittedName = name.split(' ')
+  const [first, ...rest] = name.split(' ');
+  const result = [first, rest.join(' ')];
+  
   return (
     <>
     {
       type === 'Directiva' ? 
           <DirectiveItemStyles className="author-item" >
-          <Link to={`/miembros/${slug.current}`}>
+          <Link to={`/miembros/${slug.current}`} className='link'>
             <section className='image__wrapper'>
               <GatsbyImage
                 objectPosition={'50% 50%'}
@@ -27,22 +29,25 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
                 className="profileImage"
               />
             </section>
+          </Link>
             <section className='data'>
               <div>
+            <Link to={`/miembros/${slug.current}`} className='link'>
               {
-                splittedName.map(i => (
+                result.map(i => (
                   <Title 
                     tag={'h2'}
                     className="title">{i}
                     </Title>
                 ))
               }
+              </Link>
               </div>
               <ParagraphText className="role">
                 {role}
               </ParagraphText>  
               <section className='date'>
-                {`${date ? format(new Date(date), 'MMMM dd, yyyy') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
+                {`${date ? format(new Date(date), 'yyyy, MM') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
               </section>
               {
                 (linkedIn || email ) && 
@@ -52,11 +57,10 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
               </section>
               }
             </section>
-          </Link>
           
         </DirectiveItemStyles>
         
-        : type === 'Honorarios' 
+        : type === 'Miembro Honorario' 
         ? <DirectiveItemStyles className="author-item" >
         <Link to={`/miembros/${slug.current}`}>
           <section className='image__wrapper'>
@@ -89,7 +93,7 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
         </Link>
         
       </DirectiveItemStyles>
-        : type === 'ExMiembros' 
+        : type === 'Ex miembro' 
         ? <ExMemberItemStyles className="author-item" >
           {/* <section className='image__wrapper'>
             <GatsbyImage

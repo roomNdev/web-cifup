@@ -21,7 +21,7 @@ const MainEvents: React.FC<{}> = () => {
 
     return (
         <MainEventsStyles>
-          <h1>Nosotros</h1>
+          <h1>Eventos y talleres</h1>
           <p>{eventsData.events_desc || 'CIFUP realiza distintos eventos para promover la cultura e información del mundo financiero. Aquí podrás obtener mas información acerca de fechas, horarios y ubicacion.'}
           </p>
         </MainEventsStyles>

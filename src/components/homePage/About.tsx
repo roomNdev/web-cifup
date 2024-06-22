@@ -48,6 +48,9 @@ const About: React.FC<{}> = () => {
 
     const homeData = data.sanityPageContent
     const {home_image_about1, home_image_about2, home_image_about3} = homeData
+
+    console.log(homeData);
+
     return (
         <AboutSectionStyles>
           {/* <section className='first_row'>
@@ -124,15 +127,6 @@ const About: React.FC<{}> = () => {
           <section className="second_row">
             <div className='description'>
             <h1 className='main-title'>Acerca del CIFUP</h1>
-            <p className="desc">
-        <MyPortableText value={homeData._rawChildren || `
-          Our Ambassadors support us in reaching an ever-broader audience
-          on-campus as well as on social media. Our diligent Ambassadors are
-          responsible for carrying out various tasks that keep operations
-          running smoothly. In addition, they support us in reaching an
-          ever-broader audience to help grow the Finance Club community.`}>
-          </MyPortableText>
-        </p>
             </div>
           <div className='cards_container'>
                 <article className='card'>
@@ -190,6 +184,10 @@ const About: React.FC<{}> = () => {
                   </Link>
                 </article>
               </div>
+            <p className="desc">
+                  <MyPortableText value={homeData.home_about_desc[0]._rawChildren}>
+                    </MyPortableText>
+        </p>
           </section>
         </AboutSectionStyles>
     )

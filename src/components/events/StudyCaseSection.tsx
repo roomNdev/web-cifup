@@ -38,7 +38,18 @@ const StudyCaseSection: React.FC<{}> = () => {
 
     return (
         <StudyCaseSectionStyles>
-            <StaticImage src='../../images/bg-image.jpg' className='bg-image'></StaticImage>
+            
+      {
+        study_case_bg_image ? <GatsbyImage image={study_case_bg_image.asset.gatsbyImageData} alt={study_case_bg_image.alt} 
+        class='bg-image'></GatsbyImage>
+        :
+      <StaticImage
+       alt=''
+       src='../../images/bg-image.jpg'
+       class='bg-image'
+      ></StaticImage>
+      }
+            {/* <StaticImage src='../../images/bg-image.jpg' className='bg-image'></StaticImage> */}
             <div className='content'>
                 {/* <GatsbyImage ></GatsbyImage> */}
                 <div className='main'>

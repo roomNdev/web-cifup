@@ -4,7 +4,6 @@ export const PodcastsStyles = styled.div`
 
     display: flex;
     flex-direction: column;
-    gap: 4rem;
     padding: 4rem;
     max-width: 1300px;
     width: 100%;
@@ -40,7 +39,7 @@ export const PodcastsStyles = styled.div`
                 font-weight: 400;
                 color: var(--text-primary);
             }
-    .editable_item {
+    /* .editable_item {
       width: 100%;
       height: 352px;
       background-color: var(--cobalt-blue);
@@ -55,18 +54,17 @@ export const PodcastsStyles = styled.div`
         width: 272px;
         height: 272px;
         border-radius: 12px;
-      }
-      .data { 
-        width: 100%;
+      } */
         .title { 
-          font-size: 2.3rem;
+          color: var(--cobalt-blue);
+          font-size: 2.7rem;
         }
         .description {
-          color: white;
-          font-size: 1.5rem;
+          color: var(--text-primary);
+          font-size: 2rem;
         }
-      }
-    }
+      
+    
     @media (max-width: 530px) {
         h1 {
             

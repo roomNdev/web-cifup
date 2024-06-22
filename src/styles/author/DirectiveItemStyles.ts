@@ -12,6 +12,10 @@ export const DirectiveItemStyles = styled.div`
   border-radius: 6px;
   /* flex-grow: .2; */
   flex-basis: 24%;
+  /* flex: 1; */
+  .link {
+    width: 100%;
+  }
   .image__wrapper {
     display: flex;
   border-radius: 6px;
@@ -25,8 +29,10 @@ export const DirectiveItemStyles = styled.div`
   border-bottom-right-radius:0px;
   border-bottom-left-radius: 0px;
     height: 250px;
+    width: 100%;
     }
     .data {
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -34,6 +40,7 @@ export const DirectiveItemStyles = styled.div`
       padding-inline: 16px;
       padding-bottom: 16px;
       position: relative;
+      height: 280px;
       }
       .title {
         color: var(--text-white);
@@ -46,10 +53,11 @@ export const DirectiveItemStyles = styled.div`
     text-align: center;
   }
   .role {
-    text-align: center;
     font-size: 22px;
     /* padding-inline: 8px; */
     /* background-color: var(--jet-stream); */
+    
+    flex-grow: 1;
     z-index: 10;
     margin-bottom: 16px;
     font-weight: 400;
@@ -85,9 +93,21 @@ export const DirectiveItemStyles = styled.div`
           color: var(--light-gray);
         }
       }
+      @media (max-width: 1000px) {
+        flex-basis: 30% !important;
+        width: 30%;
+        .data {
+          .title {
+            font-size: 18px;
+          }
+          .role {
+            font-size: 16px;
+          }
+        }
+      }
       @media only screen and (max-width: 768px) {
     
-    max-width: 150px;
+    /* max-width: 150px; */
     min-width: 150px;
     
     .profileImage {
@@ -121,5 +141,5 @@ export const DirectiveItemStyles = styled.div`
         padding: 4px;
       }
     }
-  }
+  } 
 `;

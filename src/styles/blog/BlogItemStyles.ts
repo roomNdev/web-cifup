@@ -7,8 +7,8 @@ export const BlogItemStyles = styled.div`
   border-radius: 10px;
   position: relative;
   /* max-width: 330px; */
-  flex-grow: .34;
   width: 30%;
+  /* height: 440px; */
   background-color: var(--text-primary);
   .img {
     max-width: 100%;
@@ -70,6 +70,7 @@ export const BlogItemStyles = styled.div`
     font-weight: 700;
     margin-bottom: 0.5rem;
     text-align: left;
+    padding-inline: 1.5rem;
   }
   .excerpt {
     font-size: 12px;

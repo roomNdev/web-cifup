@@ -39,9 +39,9 @@ const IndexPage: React.FC<PageProps>  = () => {
     <HeroSection img={eventsData.events_image.asset.gatsbyImageData} alt={eventsData.events_image.alt} title={eventsData.events_hero} />
     {/* <div className="container"> */}
       <MainEvents/>
-      <InstagramSection/>
+      <InstagramSection titulo={false}/>
       <SliderStyles >
-        <h1>Casos de estudio</h1>
+        <h1>Competencias</h1>
       </SliderStyles>
       <StudyCaseSection/>
       <SliderStyles >

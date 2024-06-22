@@ -76,7 +76,7 @@ function Persons() {
       setsection(section)
     }
 
-  const order = ['Directiva', 'Miembro', 'Honorarios', 'ExMiembros'];
+  const order = ['Directiva', 'Miembro', 'Miembro Honorario', 'Ex miembro'];
 
   const areas = data.allSanityAuthor.group; // Suponiendo que este es el array inicial
   

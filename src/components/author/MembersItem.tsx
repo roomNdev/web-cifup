@@ -13,7 +13,7 @@ import { format } from 'date-fns';
 function MembersItem({members}) {
     const data = useStaticQuery(graphql`
     {
-        allSanityAreas(filter: {}) {
+        allSanityAreas(sort: {_updatedAt: DESC}) {
           nodes {
             name
             slug {
@@ -34,7 +34,7 @@ function MembersItem({members}) {
     <section className='areas'>
         {
             areas.filter(i => result.includes(i.slug.current)).map((item) => {
-                return <details className='area'>
+                return <details className='area' open>
                         <summary><h2 className='title'>{item.name}<FaChevronDown className='icon '></FaChevronDown></h2></summary>
                         <section className='members'>
                         {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const InstagramSectionStyles = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 6rem;
+    margin-top: 0rem;
         overflow: hidden;
         h1 {
         padding-inline: 4rem;

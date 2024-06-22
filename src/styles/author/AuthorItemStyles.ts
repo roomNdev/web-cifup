@@ -4,13 +4,13 @@ import styled from 'styled-components';
 export const AuthorItemStyles = styled.div`
   background-color: var(--text-primary);
   border-radius: 8px;
-  padding: 2.5rem;
+  padding: 1.5rem;
   gap: 1rem;
   display: flex;
   flex-direction: row;
   /* align-items: ; */
-  max-width: 260px;
   min-width: 260px;
+  width: 33%;
   /* .icon {
 
   } */
@@ -20,9 +20,8 @@ export const AuthorItemStyles = styled.div`
     width: 100%;
   }
   .profileImage {
-    width: 50px;
+    width: 80px;
     aspect-ratio: 1;
-    border-radius: 50%;
   }
   .data {
     display: flex;
@@ -30,7 +29,7 @@ export const AuthorItemStyles = styled.div`
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding-inline: 16px;
+    padding-inline: 4px;
   }
   .title {
     color: var(--white);
@@ -54,6 +53,7 @@ export const AuthorItemStyles = styled.div`
     justify-content: end;
     align-items: center;
     width: 100%;
+    padding: 2.5rem;
       a {
         width: 20px;
         color: var(--primary-light-blue);
@@ -71,7 +71,6 @@ export const AuthorItemStyles = styled.div`
       .profileImage {
         width: 80px;
         aspect-ratio: 1;
-        border-radius: 50%;
       }
       /* .title {
         font-size: 18px;

@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const HeroSectionStyles = styled.div`
-height: calc(70vh - 100px);
+height: calc(80vh - 100px);
   .bg-image {
     width: 100%;
     position: absolute;
     top: 0;
     z-index: -10;
-    height: 70vh;
+    height: 80vh;
+    filter: brightness(90%);
   }
   .hero-text {
     height: 100%;
