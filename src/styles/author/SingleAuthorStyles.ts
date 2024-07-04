@@ -12,6 +12,8 @@ export const SingleAuthorStyles = styled.div`
     .profileImage {
       height: 150px;
       width: 150px;
+      min-height: 150px;
+      min-width: 150px;
       /* margin: 0 auto; */
       border-radius: 50%;
       margin-bottom: 2rem;
@@ -23,7 +25,9 @@ export const SingleAuthorStyles = styled.div`
     .name {
       color: var(--white);
       margin-bottom: 1rem;
+      display: inline;
       font-size: 32px;
+      width: auto;
     }
     .bio {
       color: var(--white);
@@ -70,5 +74,20 @@ export const SingleAuthorStyles = styled.div`
     .no__post {
       text-align: center;
       opacity: .6;
+    }
+    @media (max-width: 768px) {
+        .author-header {
+          padding: 4%;
+        }
+    }
+    @media (max-width: 410px) {
+      .author-header{
+        flex-wrap: wrap;
+
+      }
+        .profileImage {
+          width: 120px !important;
+          height: 120px !important;
+        }
     }
 `;
