@@ -5,8 +5,6 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Slider from '../Slider';
 import SimpleSlider from '../Slider';
-import IframeResizer from '@iframe-resizer/react';
-import '@iframe-resizer/child'
 // export const getStaticProps = async () => {
 
   

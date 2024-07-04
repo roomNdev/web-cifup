@@ -4,7 +4,6 @@ import BlogItem from './BlogItem';
 import Filters from './Filters';
 import Pagination from '../Pagination';
 import InstagramSection from '../homePage/InstagramSection';
-import IframeResizer from '@iframe-resizer/react';
 import Search from '../search/SearchModal';
 
 function JustPostGrid({ blogs, numberOfPages, currentPage }) {

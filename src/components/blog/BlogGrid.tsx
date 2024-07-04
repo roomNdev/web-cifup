@@ -4,7 +4,6 @@ import BlogItem from './BlogItem';
 import Filters from './Filters';
 import Pagination from '../Pagination';
 import InstagramSection from '../homePage/InstagramSection';
-import IframeResizer from '@iframe-resizer/react';
 import Search from '../search/SearchModal';
 
 function BlogGrid({ blogs, numberOfPages, currentPage }) {
@@ -13,7 +12,6 @@ function BlogGrid({ blogs, numberOfPages, currentPage }) {
   const handleChangeFilters = (posts) => {
     setFilteredBlogs(posts)
   } 
-  const iframe = useRef()
 
   // const token = 'IGQWRQOTdQR2cyUzJ5UHd1NVZATOUJzRjdUbVh0WXF5MHFOVUxWMjVyTW1QdkF3N3ZA4ZAzVVb0Q2b05BQk9sOW9abzBsbjRsS1ZADbWhEUS1aQXBxZAkNnVjlhSnhTeXJETGlDdldjUE9oSTRGRjF1RXNUaHpMU3FRb1EZD'
   //   const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${token}`
@@ -73,16 +71,14 @@ function BlogGrid({ blogs, numberOfPages, currentPage }) {
           ))
           :<section className='widget-container'>
           {/* LightWidget WIDGET */}
-          <IframeResizer
-            license='GPLv3' 
-            forwardRef={iframe}
+          <iframe
             src="https://cdn.lightwidget.com/widgets/d00c62dd77a3507a8f257a4eb0fba83b.html"
             allowTransparency={true}
             className="lightwidget-widget"
             style={{ width: "100%", border: 0, height: "100vh"  }}
           >
 
-          </IframeResizer>
+          </iframe>
         </section>
         
           //  <p style={{color: "var(--text-primary)"}}>Oops! todavia no hay noticias</p>
