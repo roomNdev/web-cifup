@@ -9,6 +9,7 @@ import { SingleAuthorStyles } from '../styles/author/SingleAuthorStyles.ts';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import ParagraphText from '../components/typography/ParagraphText.tsx';
 
+import ScrollToTop from '../constants/ScrollTop';
 
 export const authorQuery = graphql`
   query SingleAuthorQuery($id: String!) {
@@ -67,7 +68,7 @@ function SingleAuthor({ data }) {
   return (
     <PageSpace top={0} bottom={100}>
       <Seo title={author.name} />
-      
+      <ScrollToTop></ScrollToTop>
       <SingleAuthorStyles>
           <div className="author-header">
             <GatsbyImage
