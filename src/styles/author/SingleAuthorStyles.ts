@@ -80,7 +80,7 @@ export const SingleAuthorStyles = styled.div`
           padding: 4%;
         }
     }
-    @media (max-width: 410px) {
+    @media (max-width: 430px) {
       .author-header{
         flex-wrap: wrap;
 
