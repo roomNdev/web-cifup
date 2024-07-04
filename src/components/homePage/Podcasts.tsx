@@ -9,7 +9,7 @@ import Button from '../buttons/Button';
 
 function Podcasts() {
   const data = useStaticQuery(graphql`{
-    allSanityPodcasts(limit: 2) {
+    allSanityPodcasts(limit: 3) {
       nodes{
         url
       }
@@ -40,7 +40,7 @@ function Podcasts() {
       <h1>Podcast</h1>
   
       <h2 className='title'>{podcast_featured_title || 'Conoce nuestro Podcast!'}</h2>
-      <p className='description'>{podcast_featured_desc || '(esto es editable btw) Aqui hablamos de ciertos temas que nos conciernen de la actualidad, finanzas y sociedad, descubre nuestro contenido'}</p>
+      <p className='description'>{podcast_featured_desc || 'Aqui hablamos de ciertos temas que nos conciernen de la actualidad, finanzas y sociedad, descubre nuestro contenido'}</p>
     <div className='content'>
 
       {/* <div className='editable_item'> */}
@@ -59,13 +59,13 @@ function Podcasts() {
             {/* <div className='data'> */}
             {/* </div> */}
       {/* </div> */}
-      {/* <div className='episodes'>
+      <div className='episodes'>
       {
         urls.map(item => {
           return <div dangerouslySetInnerHTML={{__html: item.url}}></div>
         })
       }  
-      </div> */}
+      </div>
     </div>
       <Button tag={'div'} variant='primary' className="mas">
         <Link to='/podcast'>Ver más</Link>

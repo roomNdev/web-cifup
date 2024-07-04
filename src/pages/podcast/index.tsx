@@ -33,7 +33,7 @@ const IndexPage: React.FC<PageProps>  = () => {
   // });
   return (
   <>
-    <Seo title={"Inicio"} description={"Página de inicio de Lee UP, una organización estudiantil de la Universidad del Pacífico"}/>
+    <Seo title={"Inicio"} description={"Página de inicio de CIFUP, una organización estudiantil de la Universidad del Pacífico"}/>
     <HeroSection alt={podcastData?.podcast_image?.alt} img={podcastData?.podcast_image?.asset?.gatsbyImageData} title={podcastData?.podcast_hero}/>
     {/* <div className="container"> */}
       <PodcastsStyles>

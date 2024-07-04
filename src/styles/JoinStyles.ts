@@ -6,6 +6,21 @@ flex-direction: column;
 width: 80%;
 margin-inline: auto;
 margin-block: 4rem;
+.loading.form {
+  display: none;
+}
+.loaded.form {
+  display: block;
+}
+p.loading {
+  font-size: 20px;
+  color: var(--cobalt-blue);
+  text-align: center;
+}
+p.loaded {
+  display: none;
+}
+
   h1 {
     text-align: center;
     font-size: 40px;
@@ -65,48 +80,11 @@ margin-block: 4rem;
   
     }
   }
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-inline: auto;
-    gap: 4rem;
-    div {
-      display: flex;
-      flex-direction: column;
-    }
-    label {
-      color: var(--text-primary);
-      font-size: 16px;
-    }
-    input {
-      width: 320px;
-      border: 1px solid #ccc;
-      padding: 8px;
-    }
-    select {
-      width: 320px;
-      border: 1px solid #ccc;
-      padding: 8px;
-    }
-    textarea {
-      border: 1px solid #ccc;
-      padding: 8px;
-    }
-  }
   @media (max-width: 700px) {
     .unirme_como {
     
     margin-left: 0;
     h2  {
-    }
-  }
-  form {
-    width: 100%;
-    input, select, textarea {
-      width: 250px;
     }
   }
   }

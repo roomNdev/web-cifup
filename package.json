@@ -2,7 +2,7 @@
   "name": "lee-up",
   "version": "1.0.0",
   "private": true,
-  "description": "lee-up",
+  "description": "cifup-web",
   "author": "Roman",
   "keywords": [
     "gatsby"
@@ -19,6 +19,8 @@
     "@emailjs/browser": "^4.3.3",
     "@fontsource-variable/inter": "^5.0.17",
     "@fontsource/poppins": "^5.0.12",
+    "@formfacade/embed-react": "^1.0.4",
+    "@iframe-resizer/child": "^5.1.4",
     "@iframe-resizer/react": "^5.0.2",
     "@portabletext/react": "^3.1.0",
     "@sanity/asset-utils": "^1.3.0",

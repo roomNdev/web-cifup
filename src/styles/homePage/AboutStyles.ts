@@ -160,6 +160,12 @@ export const AboutSectionStyles = styled.div`
                 position: relative;
                 max-width: 100%;
                     border-radius: 12px;
+                    p {
+                        font-size: 1.6rem;
+                    }
+                    h2  {
+                        font-size: 2.2rem;
+                    }
                 .card-image {
                     aspect-ratio: 1.46818;
                     max-height: 240px;
@@ -197,10 +203,10 @@ export const AboutSectionStyles = styled.div`
                 max-width: 220px;
                 height: 200px;
                 p {
-                    font-size: 1.2rem;
+                    font-size: 1.4rem;
                 }
                 h2  {
-                    font-size: 1.6rem;
+                    font-size: 1.8rem;
                 }
                 }
 
@@ -213,6 +219,12 @@ export const AboutSectionStyles = styled.div`
             grid-column-gap: 20px;
             grid-row-gap: 20px;
             grid-template-columns: 1fr 1fr;
+        }
+        .desc {
+            
+        p {
+            font-size: 1.6rem;
+        }
         }
         }
     }

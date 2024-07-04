@@ -4,24 +4,22 @@ import styled from 'styled-components';
 export const AuthorItemStyles = styled.div`
   background-color: var(--text-primary);
   border-radius: 8px;
-  padding: 1.5rem;
-  gap: 1rem;
   display: flex;
   flex-direction: row;
   /* align-items: ; */
-  min-width: 260px;
+  min-width: 300px;
   width: 33%;
-  /* .icon {
-
-  } */
+  padding: 2rem;
+  gap: 1rem;
   a {
     
     display: flex;
     width: 100%;
   }
   .profileImage {
-    width: 80px;
+    width: 120px;
     aspect-ratio: 1;
+      border-radius: 8px;
   }
   .data {
     display: flex;
@@ -33,7 +31,7 @@ export const AuthorItemStyles = styled.div`
   }
   .title {
     color: var(--white);
-    font-size: 12px;
+    font-size: 18px;
     width: 100%;
     text-align: left;
     display: block;
@@ -44,16 +42,15 @@ export const AuthorItemStyles = styled.div`
   .role {
     text-align: left;
     width: 100%;
-    font-size: 10px;
+    font-size: 14px;
     color: var(--jet-stream);
   }
   .author_socialList {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 2.5rem;
       a {
         width: 20px;
         color: var(--primary-light-blue);
@@ -67,9 +64,15 @@ export const AuthorItemStyles = styled.div`
     
       /* max-width: 150px;
       min-width: 150px; */
-      
+  min-width: 260px;
+      .title {
+        font-size: 14px;
+      }
+      .role{ 
+        font-size: 10px;
+      }
       .profileImage {
-        width: 80px;
+        width: 100px;
         aspect-ratio: 1;
       }
       /* .title {
@@ -81,12 +84,12 @@ export const AuthorItemStyles = styled.div`
   }
   @media (max-width: 450px) {
         .profileImage {
-          width: 50px;
+          width: 80px;
         }
     }
     @media (max-width: 300px) {
-        max-width: 200px;
-        min-width: 200px;
+        max-width: 240px;
+        min-width: 240px;
         gap: 0;
     }
 `;

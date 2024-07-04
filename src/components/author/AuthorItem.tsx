@@ -47,7 +47,7 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
                 {role}
               </ParagraphText>  
               <section className='date'>
-                {`${date ? format(new Date(date), 'yyyy, MM') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
+                {`${date ? format(new Date(date), 'yyyy.MM') : ''} - ${dateEnd ? format(new Date(dateEnd), 'yyyy.MM') : ''}`}
               </section>
               {
                 (linkedIn || email ) && 
@@ -78,7 +78,7 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
               {name}
             </Title>
             <section className=''>
-                {`${date ? format(new Date(date), 'MMMM dd, yyyy') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
+                {`${date ? format(new Date(date), 'yyyy.MM') : ''} - ${dateEnd ? format(new Date(dateEnd), 'yyyy.MM') : ''}`}
             </section>
             <Title 
             tag={'h3'}
@@ -112,7 +112,7 @@ function AuthorItem({ name, role, linkedIn, wasDirective, actual, slug, profileI
             </Title>
               </Link>
             <section className=''>
-                {`${date ? format(new Date(date), 'MMMM dd, yyyy') : ''} - ${dateEnd ? format(new Date(dateEnd), 'MMMM dd, yyyy') : ''}`}
+                {`${date ? format(new Date(date), 'yyyy.MM') : ''} - ${dateEnd ? format(new Date(dateEnd), 'yyyy.MM') : ''}`}
             </section>
             <Title 
             tag={'h2'}

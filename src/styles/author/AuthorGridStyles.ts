@@ -54,10 +54,12 @@ export const AuthorGridStyles = styled.div`
     gap: 2rem;
 
   }
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 500px) {
     .items {
 
       justify-content: center;
     }
+  }
+  @media only screen and (max-width: 300px) {
   }
 `;

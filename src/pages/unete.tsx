@@ -12,6 +12,9 @@ import { Title } from "../components/typography/Title";
 import { StaticImage } from "gatsby-plugin-image";
 import ParagraphText from "../components/typography/ParagraphText";
 import MyPortableText from "../components/MyPortableText";
+import FormfacadeEmbed from "@formfacade/embed-react";
+
+
 // import { PodcastsStyles } from "../../styles/homePage/PodcastsStyle";
 
 const IndexPage: React.FC<PageProps>  = () => {
@@ -25,10 +28,11 @@ const IndexPage: React.FC<PageProps>  = () => {
 const joinData = data.sanityPageContent;
 
     const [role, setRole] = React.useState("miembro");
+    const [load, setLoad] = React.useState(false);
 
   return (
       <JoinStyles>
-    <Seo title={"Inicio"} description={"Página de inicio de Lee UP, una organización estudiantil de la Universidad del Pacífico"}/>
+    <Seo title={"Inicio"} description={"Página de inicio de CIFUP, una organización estudiantil de la Universidad del Pacífico"}/>
     {/* <HeroSection /> */}
     <div className="container">
       <h1>Únete</h1>
@@ -69,38 +73,22 @@ const joinData = data.sanityPageContent;
         </>
         }
       </section>
-      <form className="form">
-        <div>
-            <label className="label" htmlFor="">Nombre</label>
-            <input type="text" name="" id="" />
-        </div>
-        <div>
-            <label htmlFor="">Nombre</label>
-            <input type="text" name="" id="" />
-        </div>
-        <div>
-            <label htmlFor="">Nombre</label>
-            <input type="text" name="" id="" />
-        </div>
-        <div>
-            <label htmlFor="">Nombre</label>
-            <select name="" id=""></select>
-        </div>
-        <div>
-            <label htmlFor="">Nombre</label>
-            <select name="" id=""></select>
-        </div>
-        <div>
-            <label htmlFor="">Nombre</label>
-            <select name="" id=""></select>
-        </div>
-        <div>
+      {
+            role === 'miembro' ?
+            <>
+              <p className={`${ load === true ? 'loaded' : 'loading'}`}>Cargando...</p>
+              <div className={`${ load === true ? 'loaded' : 'loading'} form`}>
+              <FormfacadeEmbed
+                onFormLoad={()=> {setLoad(true)}}
+                
+                formFacadeURL="https://formfacade.com/include/107440999561169314154/form/1FAIpQLSf9oCT4TiguHlQhI7wUKy9yBds76mr1E_nGGls40WSbptQTLQ/classic.js/?div=ff-compose"
+                onSubmitForm={() => console.log('Form submitted')}
+                />
 
-            <label htmlFor="">Nombre</label>
-            <textarea name="" id="" cols={96} rows={16}></textarea>
-        </div>
-      </form>
-
+              </div>
+            </>
+            : <></>
+            }
     </div>
       </JoinStyles>
 )}

@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Title } from '../typography/Title'
 import { InstagramSectionStyles } from '../../styles/homePage/InstagramSectionStyles';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Slider from '../Slider';
 import SimpleSlider from '../Slider';
-
+import IframeResizer from '@iframe-resizer/react';
+import '@iframe-resizer/child'
 // export const getStaticProps = async () => {
 
   
@@ -14,37 +15,25 @@ import SimpleSlider from '../Slider';
 //   }
   
 
-const InstagramSection: React.FC<{titulo: boolean}> = ({titulo = false}) => {
-    // const token = 'IGQWRPWWxfelJJM3Fxc1FaLVg1NFRtNjczeW1JSENNa3htYW45TWs1ZAUZAzZAlRJaGNSRFd2X0x4ZAHZAGNFh0N2Q0YU15WmVxbTIwX2VFeVdFeTR4QkIyTnotbjYzWFJJZAV92ZAFhtT0M2elgxSEVXWUEtUVU3ekk1M1kZD'
-    // const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${token}`
-    // const [feed, setFeed] = useState<any>()
-    // useEffect(() => {
-    //     const getData = async () => {
-    //         const res = await fetch(url)
-    //         // console.log(await res.json());
-    //         setFeed(await res.json())
-    //         // console.log( res.json());
-    //     }
-    //     getData()
-    //     }, [])
-    //     const urlProfile = `https://graph.instagram.com/me?fields=id,username&access_token=IGQWRQekk2RGhWV1NBNTRXY202a0R4Ykw2cnJOSkJOT3RHT241Smk1LWxiWEd3Skt4dDV3RnFJWXQyV2lpaERwcWVpemFhczExSlJGVkRDa0ExcGFwMHFBS3Jsdk94TVo2QnFLS2l2THg5T3VCNElkU0JpWjJfUm8ZD`
-    //     const [profile, setProfile] = useState()
-    //     useEffect(() => {
-    //         const data = fetch(urlProfile)
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 setProfile(data)
-    //             }
-    //             )
-    //         }, [])
-    
+const InstagramSection: React.FC<{titulo: boolean, page: string}> = ({titulo = false, page}) => {
+    const frameRef = useRef()
+    const [h, setH] = useState();
+    // const container = useRef()
+    // window.iFrameResizer = {targetOrigin: "https://cdn.lightwidget.com"};
+    // const data = fetch('https://cdn.lightwidget.com/widgets/b2df72a36a2f516486504a435dbdba54.html').catch(e => console.log(e))
+    // data.then(res => console.log(res))
+    const resizeIFrameToFitContent =(iFrame ) => {
+        if (!frameRef.current) return
+        // const height =  iFrame.contentWindow.document.body
+        // // setH(height)
+        // console.log(height);
+    }
 
-        
-    //     console.log(feed);
-    // //     console.log(profile);
-    //     const filterWord = ""
-    //     const filteredFeed = feed?.data.filter(i => i.media_type !== "VIDEO")
-    //     console.log(filteredFeed);
+        useEffect(() => {
+            if(!frameRef.current) return
+            resizeIFrameToFitContent( frameRef.current );
+        }, [frameRef.current])
+
 
     return (
         <>
@@ -53,15 +42,28 @@ const InstagramSection: React.FC<{titulo: boolean}> = ({titulo = false}) => {
   {/* LightWidget WIDGET */}
   {titulo ? 
   <h1>Eventos y talleres</h1> : <></>}
-        <section className="container">
-            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-            <iframe
-                src="https://cdn.lightwidget.com/widgets/b2df72a36a2f516486504a435dbdba54.html"
-                scrolling="no"
-                allowTransparency={true}
-                className="lightwidget-widget"
-                style={{ width: "100%", border: 0, overflow: "hidden", height: "100%" }}
-            />
+        <section className={`${page === 'home' ? "home" : '' } container`}>
+            
+            {
+                page === 'home' ?
+                <iframe
+                    src="https://cdn.lightwidget.com/widgets/b2df72a36a2f516486504a435dbdba54.html"
+                    scrolling="no"
+                    allowTransparency={true}
+                    className="lightwidget-widget"
+                    style={{ width: "100%", border: 0, overflow: "hidden", height: "100%" }}
+                />
+                :
+                <iframe
+                  ref={frameRef}
+                  targetOrigin="https://cdn.lightwidget.com"
+                  src="https://cdn.lightwidget.com/widgets/b2df72a36a2f516486504a435dbdba54.html"
+                  allowTransparency={true}
+                  className="lightwidget-widget"
+                    scrolling="no"
+                  style={{ width: "100%", border: 0, height: h}}
+                  />
+            }
             </section>    
         </InstagramSectionStyles>
         </>

@@ -10,3 +10,11 @@ import Layout from './src/components/Layout';
 export const wrapPageElement = ({ element, props }) => (
   <Layout {...props}>{element}</Layout>
 );
+
+export const onInitialClientRender = () => {
+  const script = document.createElement('script');
+  script.src = "https://cdn.lightwidget.com/widgets/lightwidget.js";
+  script.async = true;
+  
+  document.body.appendChild(script);
+};

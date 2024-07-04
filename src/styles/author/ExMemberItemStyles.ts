@@ -10,8 +10,8 @@ export const ExMemberItemStyles = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 3rem;
-  max-width: 350px;
-  width: 350px;
+  max-width: 600px;
+  width: 32%;
   border-radius: 6px;
   .data {
     display: flex;
@@ -63,6 +63,7 @@ export const ExMemberItemStyles = styled.div`
       }
       @media only screen and (max-width: 768px) {
         flex-grow: 1;
+        width: 250px;
       .profileImage {
         width: 80px;
         aspect-ratio: 1;

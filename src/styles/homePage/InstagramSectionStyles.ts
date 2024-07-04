@@ -16,14 +16,14 @@ export const InstagramSectionStyles = styled.div`
         width: 100%;
         text-align: left;
     }
-    .container {
+    .container.home {
         margin-top: 20px;
         width: 100%;
         margin-inline: auto;
         max-width: 1300px !important;
         padding-left: 4rem;
         /* height: 700px; */
-        aspect-ratio: 1.57/2;
+            aspect-ratio: 3.15/1;
         max-width: none;
             iframe {
                 height: 100%;
@@ -33,63 +33,27 @@ export const InstagramSectionStyles = styled.div`
             gap: 24px;
             position: relative; */
     }
-    @media (max-width: 900px ) {
-        .container {
-            aspect-ratio: 1.5/2;
+    @media (max-width: 1300px ) {
+        .container.home {
+            height: calc(33vw);
             /* height: 500px !important; */
         }
-    }
-    @media (max-width: 600px ) {
         .container {
-            aspect-ratio: 1.3/2;
-            /* height: 350px !important; */
-        }
-    }
-    /* @media (max-width: 1450px) {
-        .container {
-            height: 650px !important;
-        }
-    }
-    @media (max-width: 1250px) {
-        .container {
-            height: 600px !important;
-        }
-    }
-    @media (max-width: 1100px ) {
-        .container {
-            height: 550px !important;
+            padding-left: 1rem;
         }
     }
     @media (max-width: 800px ) {
+        
         .container {
-            height: 450px !important;
+            padding-left: 1rem;
         }
     }
-    @media (max-width: 700px ) {
+    @media (max-width: 600px ) {
+        
         .container {
-            height: 400px !important;
+            padding-left: 1rem;
         }
     }
-    
-    
-    /* .event_container {
-        display: flex;
-        gap: 2rem;
-        overflow-x: auto;
-        .
-        } */
-        @media (max-width: 440px ) {
-            .container {
-                aspect-ratio: 1.9/2;
-            }
-        } 
-        @media (max-width: 360px ) {
-            .container {
-                /* aspect-ratio: 1.9/2; */
-
-                padding-left: 2rem;
-            }
-        } 
     @media (max-width: 530px) {
         h1 {
             
@@ -101,12 +65,20 @@ export const InstagramSectionStyles = styled.div`
         }
     }
     @media (max-width: 500px) {
+        
         .event_container {
             .event {
                 p {
                     font-size: 1.2rem;
                 }
             }
+        }
+    }
+    
+    @media (max-width: 470px ) {
+        
+        .container {
+            padding-left: 1rem;
         }
     }
 `

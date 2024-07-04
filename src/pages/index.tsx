@@ -26,11 +26,11 @@ const IndexPage: React.FC<PageProps>  = () => {
 
   return (
   <>
-    <Seo title={"Inicio"} description={"Página de inicio de Lee UP, una organización estudiantil de la Universidad del Pacífico"}/>
+    <Seo title={"Inicio"} description={"Página de inicio de CiFUP, una organización estudiantil de la Universidad del Pacífico"}/>
     <HeroSection img={homeData.home_image.asset.gatsbyImageData} alt={homeData.home_image.alt} title={homeData.home_hero}/>
     {/* <div className="container"> */}
       <About/>
-      <InstagramSection titulo={true}/>
+      <InstagramSection titulo={true} page="home"/>
       <FeaturedPosts/>
       <Podcasts/>
     {/* </div> */}

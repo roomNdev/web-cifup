@@ -8,10 +8,11 @@ export const DirectiveItemStyles = styled.div`
   flex-direction: column;
   align-items: center;
   /* max-width: 300px; */
-  /* min-width: 300px; */
+  min-width: 300px;
   border-radius: 6px;
   /* flex-grow: .2; */
   flex-basis: 24%;
+
   /* flex: 1; */
   .link {
     width: 100%;
@@ -26,10 +27,11 @@ export const DirectiveItemStyles = styled.div`
   }
   .profileImage {
     border-radius: 6px;
+    aspect-ratio: 1/1.2;
     border-bottom-right-radius:0px;
     border-bottom-left-radius: 0px;
-    height: 250px;
     width: 100%;
+    min-height: 350px;
     }
     .data {
       width: 100%;
@@ -39,8 +41,9 @@ export const DirectiveItemStyles = styled.div`
       margin-top: 20px;
       padding-inline: 16px;
       padding-bottom: 16px;
+      min-height: 280px;
+      height: auto;
       position: relative;
-      height: 280px;
       }
       .title {
         color: var(--text-white);
@@ -55,10 +58,7 @@ export const DirectiveItemStyles = styled.div`
   }
   .role {
     font-size: 22px;
-    /* padding-inline: 8px; */
-    /* background-color: var(--jet-stream); */
-    
-    flex-grow: 1;
+  flex-grow: 1;
     z-index: 10;
     margin-bottom: 16px;
     font-weight: 400;
@@ -110,17 +110,25 @@ export const DirectiveItemStyles = styled.div`
     
     /* max-width: 150px; */
     min-width: 150px;
-    
+    .data {
+      
+      height: 220px;
+    }
     .profileImage {
-      width: 100%;
-      height: 150px;
-      aspect-ratio: 1;
+      aspect-ratio: 1/2;
+      min-height: 0;
     }
     .title {
       font-size: 18px;
     }
 .role {
   font-size: 12px;
+  
+  flex-grow: 1;
+}
+.actual-job {
+  
+  flex-grow: 1;
 }
 .date {
   font-size: 12px;
@@ -128,13 +136,15 @@ export const DirectiveItemStyles = styled.div`
 }
       @media only screen and (max-width: 350px) {
     
-    max-width: 120px;
-    min-width: 120px;
-    
+    max-width: 130px;
+    min-width: 130px;
+    .data {
+      
+      padding-inline: 8px;
+    }
     .profileImage {
-      width: 100%;
-      height: 120px;
-      aspect-ratio: 1;
+      aspect-ratio: 1/2;
+      min-height: 0;
     }
     .author_socialList{
       a {

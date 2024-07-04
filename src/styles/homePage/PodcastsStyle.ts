@@ -20,7 +20,9 @@ export const PodcastsStyles = styled.div`
     gap: 4rem;
       .episodes {
         display: flex;
-        gap: 4rem;
+        gap: 2rem;
+        margin-block: 4rem;
+        flex-basis: 33%;
         flex-wrap: wrap;
         div {
           flex-grow: .5;

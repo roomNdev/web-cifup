@@ -16,11 +16,13 @@ const myPortableTextComponents = {
     h1: ({ children }) => <Title tag={'h1'}>{children}</Title>,
   },
   marks: {
+    color: ({ children }) => <span style={{color: '#0B4CAD'}}>{children}</span>,
     code: ({ children }) => (
       <SyntaxHighlighter className="bodyCode">
         {String(children).replace(/\n$/, '')}
       </SyntaxHighlighter>
     ),
+
   },
   // [
   //   { title: 'Bullet', value: 'bullet' },

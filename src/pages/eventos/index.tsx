@@ -35,7 +35,7 @@ const IndexPage: React.FC<PageProps>  = () => {
   const eventsData = data.sanityPageContent
   return (
   <>
-    <Seo title={"Inicio"} description={"Página de inicio de Lee UP, una organización estudiantil de la Universidad del Pacífico"}/>
+    <Seo title={"Inicio"} description={"Página de inicio de CIFUP, una organización estudiantil de la Universidad del Pacífico"}/>
     <HeroSection img={eventsData.events_image.asset.gatsbyImageData} alt={eventsData.events_image.alt} title={eventsData.events_hero} />
     {/* <div className="container"> */}
       <MainEvents/>
