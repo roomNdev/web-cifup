@@ -79,6 +79,7 @@ const joinData = data.sanityPageContent;
               <p className={`${ load === true ? 'loaded' : 'loading'}`}>Cargando...</p>
               <div className={`${ load === true ? 'loaded' : 'loading'} form`}>
               <FormfacadeEmbed
+                onFormLoad={()=> {setLoad(true)}}                
                 formFacadeURL="https://formfacade.com/include/107440999561169314154/form/1FAIpQLSe4JDpzHLHZ0A0OwmrZ3hOmlfmhSvJWh9xkxEUXWXEP78ygdA/classic.js/?div=ff-compose"
                 onSubmitForm={() => console.log('Form submitted')}
                 />
