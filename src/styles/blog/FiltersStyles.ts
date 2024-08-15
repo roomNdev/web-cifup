@@ -72,10 +72,13 @@ export const FiltersStyles = styled.div`
     }
     @media (max-width: 400px) {
         .filters {
-            a {
-                font-size: 12px;
-                padding: 12px;
+            a, button {
+                width: 100%;
+                padding-inline: 32px;
             }
+        }
+        .filters-container {
+            flex-direction: column-reverse;
         }
     }
 `

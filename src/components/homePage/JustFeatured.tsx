@@ -46,7 +46,7 @@ function JustFeatured() {
   return (
     <FeaturedBlogsStyles>
       <h1>Manténte al día con nuestro blog!</h1>
-      <section className='post_container'>
+      <section className='post_container just-featured'>
       {
         featuredPosts.map((item) => { 
           return (
@@ -56,7 +56,7 @@ function JustFeatured() {
                 className='post_image'
               />
               <h2 className='post_title'>{item.title}</h2>
-              <p className='post_abstract'>{item.excerpt._rawChildren}</p>
+              <p className='post_abstract'>{item.excerpt[0]._rawChildren?.at(0).text}</p>
             </article>
           )
         })

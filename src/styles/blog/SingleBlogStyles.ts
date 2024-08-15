@@ -112,4 +112,7 @@ export const SingleBlogStyles = styled.div`
     background-color: var(--text-1);
     border-radius: 100%;
   }
+  @media only screen and (max-width: 768px) {
+    padding-inline: 10%;
+  }
 `;

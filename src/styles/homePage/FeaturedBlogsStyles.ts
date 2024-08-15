@@ -22,22 +22,74 @@ export const FeaturedBlogsStyles = styled.div`
         
         padding-inline: 4rem;
     }
-    .post_container {
+    .post_container:not(.just-featured) {
         display: flex;
         max-width: 1400px;
         margin-inline: auto;
         gap: 1rem;
-        align-items: center;
         justify-content: center;
+        align-items: start;
         width: 100%;
         overflow-x: auto;
         .post:first-child {
             background-color: var(--cobalt-blue);
+            .post_abstract {
+                
+            display: inline-flex;
+            -webkit-line-clamp: none;
+            -webkit-box-orient: vertical;
+            overflow: visible;
+            text-overflow: unset;
+            }
         }
         .post {
             background-color: var(--text-primary);
             width: 380px;
-            height: 480px;
+            height: auto;
+            max-height: 480px;
+            padding-bottom: 2rem;
+            border-radius: 4px;
+            p {
+                padding-inline: 2rem;
+                font-size: 13px;
+            }
+        }
+        .post_abstract {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .post_image {
+            width: 100%;
+            height: 280px;
+            border-radius: 4px 4px 0 0;
+            user-select: none;
+        }
+        .post_title {
+            font-size: 2rem;
+            line-height: 150%;
+            padding: 2rem;
+            padding-bottom: 0;
+        }
+    }
+    .post_container.just-featured {
+        display: flex;
+        max-width: 1400px;
+        margin-inline: auto;
+        gap: 1rem;
+        justify-content: center;
+        padding-inline: 10%;
+        align-items: start;
+        width: 100%;
+        overflow-x: auto;
+        .post {
+            background-color: var(--text-primary);
+            width: 100%;
+            flex-grow: 1;
+            max-width: 480px;
+            padding-bottom: 2rem;
             border-radius: 4px;
             p {
                 padding-inline: 2rem;
@@ -66,10 +118,7 @@ export const FeaturedBlogsStyles = styled.div`
     }
     @media (max-width: 1300px) {
         .post_container {
-            .post {
-                width: 250px;
-                height: 400px;
-            }
+
             .post_image {
                 height: 200px;
             }
@@ -78,8 +127,7 @@ export const FeaturedBlogsStyles = styled.div`
     @media (max-width: 1060px) {
         .post_container {
             .post {
-                width: 200px;
-                height: 400px;
+                width: 200px !important;
             }
             .post_image {
                 height: 180px;

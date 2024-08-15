@@ -11,7 +11,7 @@ export const ExMemberItemStyles = styled.div`
   justify-content: space-between;
   padding: 3rem;
   max-width: 600px;
-  width: 32%;
+  width: 100%;
   border-radius: 6px;
   .data {
     display: flex;
@@ -62,8 +62,7 @@ export const ExMemberItemStyles = styled.div`
         }
       }
       @media only screen and (max-width: 768px) {
-        flex-grow: 1;
-        width: 250px;
+        width: 100%;
       .profileImage {
         width: 80px;
         aspect-ratio: 1;
@@ -75,5 +74,9 @@ export const ExMemberItemStyles = styled.div`
   .role {
     font-size: 12px;
   }
+  }
+  @media only screen and (max-width: 500px) {
+    
+  grid-column: 1 / -1;
   }
 `;

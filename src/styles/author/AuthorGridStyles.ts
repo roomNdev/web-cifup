@@ -37,15 +37,20 @@ export const AuthorGridStyles = styled.div`
     gap: 1rem;
     margin-bottom: 4rem;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
   .no__members {
     text-align: center;
   }
+  @media only screen and (max-width: 1100px) {
+    .items {
+     grid-template-columns: repeat(3, 1fr) ;
+    }
+  }
   @media only screen and (max-width: 768px) {
     .items {
-      
+     grid-template-columns: repeat(2, 1fr) ;
     }
     .area-container {
       align-items: start;

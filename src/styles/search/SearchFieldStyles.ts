@@ -35,4 +35,12 @@ export const SearchFieldStyles = styled.label`
       }
     }
   }
+  @media (max-width: 800px) {
+    input {
+      /* width: 150px; */
+    }
+    input::placeholder {
+      color: transparent;
+  }
+}
 `;

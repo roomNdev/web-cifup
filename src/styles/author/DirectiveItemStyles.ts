@@ -8,7 +8,8 @@ export const DirectiveItemStyles = styled.div`
   flex-direction: column;
   align-items: center;
   /* max-width: 300px; */
-  min-width: 300px;
+  /* min-width: 250px; */
+  /* max-width: 300px; */
   border-radius: 6px;
   /* flex-grow: .2; */
   flex-basis: 24%;
@@ -31,7 +32,7 @@ export const DirectiveItemStyles = styled.div`
     border-bottom-right-radius:0px;
     border-bottom-left-radius: 0px;
     width: 100%;
-    min-height: 350px;
+    /* min-height: 350px; */
     }
     .data {
       width: 100%;
@@ -80,13 +81,13 @@ export const DirectiveItemStyles = styled.div`
     align-items: center;
     gap: 8px;
     a {
+        aspect-ratio: 1;
         width: 40px;
         margin-block: 8px;
         border: 1px solid #fff;
         border-radius: 100%;
+        height: 40px;
         padding: 8px;
-
-        aspect-ratio: 1;
         display: flex;
         transition: color .3s;
       }
@@ -94,9 +95,10 @@ export const DirectiveItemStyles = styled.div`
           color: var(--light-gray);
         }
       }
-      @media (max-width: 1000px) {
-        flex-basis: 30% !important;
-        width: 30%;
+      @media (max-width: 1100px) {
+        /* flex-basis: 30% !important; */
+        width: 100%;
+
         .data {
           .title {
             font-size: 18px;
@@ -115,7 +117,7 @@ export const DirectiveItemStyles = styled.div`
       height: 220px;
     }
     .profileImage {
-      aspect-ratio: 1/2;
+      aspect-ratio: 1/1.2;
       min-height: 0;
     }
     .title {
@@ -143,12 +145,14 @@ export const DirectiveItemStyles = styled.div`
       padding-inline: 8px;
     }
     .profileImage {
-      aspect-ratio: 1/2;
+      aspect-ratio: 1/1.2;
       min-height: 0;
     }
     .author_socialList{
       a {
+        aspect-ratio: 1;
         width: 25px;
+        height: 25px;
         padding: 4px;
       }
     }

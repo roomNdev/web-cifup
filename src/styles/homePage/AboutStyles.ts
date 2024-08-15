@@ -85,7 +85,8 @@ export const AboutSectionStyles = styled.div`
     } */
         .cards_container {
             width: 100%;
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             justify-content: space-between;
             align-items: center;
             /* gap: aut; */
@@ -195,7 +196,7 @@ export const AboutSectionStyles = styled.div`
             }
         }
     }
-    @media (max-width: 1200px) {
+    @media (max-width: 1200px) and (min-width: 992px) {
         .first_row {
             .cards_container {
                 .card {
@@ -214,6 +215,18 @@ export const AboutSectionStyles = styled.div`
         }
     }
     @media (max-width: 991px) {
+        .first_row {
+            .cards_container {
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+                justify-items: center;
+                .card {
+                    width: 100%;
+                    max-width: none;
+                    padding-inline: 15%;
+                }
+            }
+        }
         .second_row {
             .cards_container {
             grid-column-gap: 20px;
@@ -254,7 +267,7 @@ export const AboutSectionStyles = styled.div`
                 .card {
                     min-width: 220px; 
                     p {
-                        display: none;
+                        font-size: 1.2rem;
                     }
                     /* width: 80%; */
                 }
@@ -286,12 +299,10 @@ export const AboutSectionStyles = styled.div`
                 width: auto;
             } */
             .cards_container {
+                grid-template-columns: 1fr;
                 .card {
                     min-width: 145px; 
-                    max-width: 145px; 
-                    p {
-                        display: none;
-                    }
+                    max-width: 360px; 
                     /* width: 80%; */
                 }
             }
@@ -316,13 +327,7 @@ export const AboutSectionStyles = styled.div`
             .cards_container {
                 gap: 2rem;
                 .card {
-                    max-width: 110px; 
-                    min-width: 110px; 
-                    /* max-width: 100px;  */
-                    height: 160px;
-                    p {
-                        display: none;
-                    }
+                    min-width: 110px;
                     h2 {
                         font-size: 16px;
                     }
@@ -337,7 +342,7 @@ export const AboutSectionStyles = styled.div`
         }
     }
     @media (max-width: 320px) {
-        padding:0;
+        
         .first_row {
             /* flex-direction: column;
             align-items: center;
@@ -346,10 +351,6 @@ export const AboutSectionStyles = styled.div`
             } */
             .cards_container {
                 .card {
-                    max-width: 100px; 
-                    p {
-                        display: none;
-                    }
                     h2 {
                         font-size: 16px;
                     }
